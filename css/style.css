@@ -124,11 +124,22 @@ background:#FFF;
 } 
 .grid_1_of_4:last-child { 
 	margin-right: 0; 
-	float: right;
+	/*float: right;*/
 } 
 .images_1_of_4 {
 	width: 22.7%;
 }
+
+.images_1_of_4 .title{
+	text-align: center;
+	margin-top: 10px;
+	color: rgba(0,0,0,0.5);
+}
+
+.images_1_of_4:hover .title{
+	color: rgba(0,0,0,0.8);
+}
+
 .images_1_of_4  img{
 	max-width:100%;
 	display:block;
@@ -180,7 +191,7 @@ background:#FFF;
 	padding-bottom: 3%;
 }
 .grid {
-	width: 64%;
+	width: 100%;
 	float:left;
 }
 .grid p{
@@ -188,8 +199,14 @@ background:#FFF;
 	font-size: 1em;
 	line-height: 1.5em;
 	text-align: justify;
-	padding-top: 4%;
+	padding-top: 10px;
 }
+
+p a{
+	color: white;
+	text-decoration: underline;
+}
+
 .grid1{
 	float:left;
 }
@@ -201,9 +218,12 @@ background:#FFF;
 .img img{
 	padding:10px;
 	background:#fff;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
 }
 .data{
 	display: inline-block;
+	position: relative;
+	top: -15px;
 }
 .data h3{
 	font-family: 'Fauna One', serif;
