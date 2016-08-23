@@ -1,0 +1,310 @@
+/* line 16, main.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 22, main.scss */
+#outerMaincontainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden; }
+
+/* line 31, main.scss */
+#innerMainContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  @transform (translateZ(0));
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
+  /* line 40, main.scss */
+  #innerMainContainer.showingLeft {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%); }
+    /* line 43, main.scss */
+    #innerMainContainer.showingLeft #skills {
+      opacity: 1; }
+    /* line 47, main.scss */
+    #innerMainContainer.showingLeft #landing {
+      opacity: 0.3; }
+  /* line 52, main.scss */
+  #innerMainContainer.showingRight {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%); }
+    /* line 55, main.scss */
+    #innerMainContainer.showingRight #work {
+      opacity: 1; }
+    /* line 59, main.scss */
+    #innerMainContainer.showingRight #landing {
+      opacity: 0.3; }
+  /* line 64, main.scss */
+  #innerMainContainer .container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
+    /* line 73, main.scss */
+    #innerMainContainer .container .content {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%); }
+    /* line 82, main.scss */
+    #innerMainContainer .container .border {
+      position: absolute;
+      opacity: 0.5;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s; }
+      /* line 87, main.scss */
+      #innerMainContainer .container .border.left {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 60px;
+        border-right: 1px solid #007bbd;
+        -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        -o-transform: translateY(-100%);
+        transform: translateY(-100%); }
+      /* line 96, main.scss */
+      #innerMainContainer .container .border.right {
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 60px;
+        border-left: 1px solid #007bbd;
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        -o-transform: translateY(100%);
+        transform: translateY(100%); }
+      /* line 105, main.scss */
+      #innerMainContainer .container .border.top {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        border-bottom: 1px solid #007bbd;
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        transform: translateX(-100%); }
+      /* line 114, main.scss */
+      #innerMainContainer .container .border.bottom {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        border-top: 1px solid #007bbd;
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        transform: translateX(100%); }
+    /* line 124, main.scss */
+    #innerMainContainer .container .containerTitle {
+      color: #007bbd;
+      font-family: Montserrat;
+      font-size: 34px;
+      position: absolute;
+      top: 16px;
+      left: 85px;
+      -webkit-transform: translateX(-26px) translateY(34px);
+      -ms-transform: translateX(-26px) translateY(34px);
+      -o-transform: translateX(-26px) translateY(34px);
+      transform: translateX(-26px) translateY(34px);
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
+    /* line 135, main.scss */
+    #innerMainContainer .container .detailsContainer {
+      position: absolute;
+      top: 120px;
+      left: 25px;
+      font-family: Hind;
+      color: #777;
+      width: 100%;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+      -webkit-transform: translateX(35px);
+      -ms-transform: translateX(35px);
+      -o-transform: translateX(35px);
+      transform: translateX(35px); }
+      /* line 145, main.scss */
+      #innerMainContainer .container .detailsContainer .detailItem {
+        font-size: 20px;
+        line-height: 20px;
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        position: relative;
+        overflow: hidden;
+        padding-left: 25px; }
+        /* line 155, main.scss */
+        #innerMainContainer .container .detailsContainer .detailItem .number {
+          width: 25px;
+          font-size: 14px;
+          font-weight: bold;
+          opacity: 0.5;
+          position: absolute;
+          top: 10px;
+          left: 0px; }
+        /* line 165, main.scss */
+        #innerMainContainer .container .detailsContainer .detailItem .titleContainer {
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+          height: 30px; }
+          /* line 171, main.scss */
+          #innerMainContainer .container .detailsContainer .detailItem .titleContainer .title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s; }
+    /* line 183, main.scss */
+    #innerMainContainer .container.detailView .border {
+      -webkit-transform: translateX(0) translateY(0);
+      -ms-transform: translateX(0) translateY(0);
+      -o-transform: translateX(0) translateY(0);
+      transform: translateX(0) translateY(0); }
+    /* line 187, main.scss */
+    #innerMainContainer .container.detailView .detailsContainer {
+      width: 25px;
+      -webkit-transform: translateX(0px);
+      -ms-transform: translateX(0px);
+      -o-transform: translateX(0px);
+      transform: translateX(0px); }
+      /* line 191, main.scss */
+      #innerMainContainer .container.detailView .detailsContainer .titleContainer .title {
+        opacity: 0;
+        @transform (translateX(-300%)); }
+    /* line 197, main.scss */
+    #innerMainContainer .container.detailView .containerTitle {
+      font-size: 22px;
+      -webkit-transform: translateX(0) translateY(0);
+      -ms-transform: translateX(0) translateY(0);
+      -o-transform: translateX(0) translateY(0);
+      transform: translateX(0) translateY(0); }
+  /* line 204, main.scss */
+  #innerMainContainer #landing {
+    background: #007bbd;
+    color: white; }
+    /* line 208, main.scss */
+    #innerMainContainer #landing .content {
+      text-align: center; }
+      /* line 211, main.scss */
+      #innerMainContainer #landing .content .headline {
+        font-family: Montserrat; }
+        /* line 214, main.scss */
+        #innerMainContainer #landing .content .headline .small {
+          font-size: 26px;
+          font-weight: 300;
+          margin-bottom: 20px; }
+        /* line 220, main.scss */
+        #innerMainContainer #landing .content .headline .big {
+          font-size: 92px;
+          text-transform: uppercase; }
+      /* line 226, main.scss */
+      #innerMainContainer #landing .content .description {
+        font-family: Hind;
+        font-size: 24px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: inline-block;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        padding: 10px 20px; }
+      /* line 237, main.scss */
+      #innerMainContainer #landing .content .links {
+        font-family: Hind; }
+        /* line 240, main.scss */
+        #innerMainContainer #landing .content .links .left, #innerMainContainer #landing .content .links .right {
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          opacity: 0.6;
+          cursor: pointer;
+          -webkit-transition: all 0.2s;
+          -o-transition: all 0.2s;
+          transition: all 0.2s; }
+          /* line 248, main.scss */
+          #innerMainContainer #landing .content .links .left:hover, #innerMainContainer #landing .content .links .right:hover {
+            opacity: 1; }
+          /* line 252, main.scss */
+          #innerMainContainer #landing .content .links .left .text, #innerMainContainer #landing .content .links .right .text {
+            float: left;
+            font-size: 34px;
+            line-height: 34px;
+            padding-top: 6px;
+            box-sizing: border-box; }
+          /* line 260, main.scss */
+          #innerMainContainer #landing .content .links .left .arrow, #innerMainContainer #landing .content .links .right .arrow {
+            height: 40px;
+            width: 25px;
+            float: left;
+            overflow: hidden;
+            margin-left: 20px;
+            margin-right: 20px; }
+            /* line 268, main.scss */
+            #innerMainContainer #landing .content .links .left .arrow img, #innerMainContainer #landing .content .links .right .arrow img {
+              height: 40px;
+              width: 100%; }
+          /* line 275, main.scss */
+          #innerMainContainer #landing .content .links .left.left .arrow img, #innerMainContainer #landing .content .links .right.left .arrow img {
+            -webkit-transform: scaleX(-1);
+            -ms-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            transform: scaleX(-1); }
+        /* line 282, main.scss */
+        #innerMainContainer #landing .content .links .separatorContainer {
+          display: inline-block;
+          height: 40px;
+          margin-top: 17px;
+          margin-left: 20px;
+          margin-right: 20px;
+          opacity: 0.6; }
+          /* line 290, main.scss */
+          #innerMainContainer #landing .content .links .separatorContainer .separator {
+            height: 6px;
+            width: 6px;
+            background: #fff;
+            border-radius: 100%;
+            margin-top: 20px; }
+  /* line 302, main.scss */
+  #innerMainContainer #skills {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 0.3; }
+  /* line 307, main.scss */
+  #innerMainContainer #work {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 0.3; }
+
+/*# sourceMappingURL=main.css.map */

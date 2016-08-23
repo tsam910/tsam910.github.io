@@ -1,0 +1,311 @@
+$colorTurquoise: rgb(0, 123, 189);
+
+@mixin transform($value){
+	-webkit-transform: $value;
+	-ms-transform: $value;
+	-o-transform: $value;
+	transform: $value;
+}
+
+@mixin transition($value){
+	-webkit-transition: $value;
+	-o-transition: $value;
+	transition: $value;
+}
+
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#outerMaincontainer{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+#innerMainContainer{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	@transform(translateZ(0));
+	@include transition(all 0.5s);
+
+	&.showingLeft{
+		@include transform(translateX(100%));
+
+		#skills{
+			opacity: 1;
+		}
+
+		#landing{
+			opacity: 0.3;
+		}
+	}
+
+	&.showingRight{
+		@include transform(translateX(-100%));
+
+		#work{
+			opacity: 1;
+		}
+
+		#landing{
+			opacity: 0.3;
+		}
+	}
+
+	.container{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		@include transition(opacity 0.3s);
+
+		.content{
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: 50%;
+			@include transform(translateY(-50%));
+
+		}
+
+		.border{
+			position: absolute;
+			opacity: 0.5;
+			@include transition(all 0.5s);
+
+		    &.left{
+				top: 0;
+			    left: 0;
+			    height: 100%;
+			    width: 60px;
+			    border-right: 1px solid $colorTurquoise;
+			    @include transform(translateY(-100%));
+		    }
+
+		    &.right{
+				top: 0;
+			    right: 0;
+			    height: 100%;
+			    width: 60px;
+			    border-left: 1px solid $colorTurquoise;
+			    @include transform(translateY(100%));
+		    }
+
+		    &.top{
+				top: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 60px;
+			    border-bottom: 1px solid $colorTurquoise;
+			    @include transform(translateX(-100%));
+		    }
+
+		    &.bottom{
+				bottom: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 60px;
+			    border-top: 1px solid $colorTurquoise;
+			    @include transform(translateX(100%));
+		    }
+		}
+
+		.containerTitle{
+	        color: $colorTurquoise;
+		    font-family: Montserrat;
+		    font-size: 34px;
+		    position: absolute;
+		    top: 16px;
+		    left: 85px;
+		    @include transform(translateX(-26px) translateY(34px));
+		    @include transition(all 0.3s);
+		}
+
+		.detailsContainer{
+		    position: absolute;
+		    top: 120px;
+		    left: 25px;
+		    font-family: Hind;
+		    color: #777;
+		    width: 100%;
+		    @include transition(all 0.3s);
+		    @include transform(translateX(35px));
+
+		    .detailItem{
+	    	    font-size: 20px;
+			    line-height: 20px;
+			    height: 40px;
+			    padding-top: 10px;
+			    padding-bottom: 10px;
+			    position: relative;
+			    overflow: hidden;
+			    padding-left: 25px;
+
+			    .number{
+			        width: 25px;
+				    font-size: 14px;
+				    font-weight: bold;
+				    opacity: 0.5;
+				    position: absolute;
+				    top: 10px;
+				    left: 0px;
+			    }
+
+			    .titleContainer{
+			    	width: 100%;
+			    	overflow: hidden;
+			    	position: relative;
+			    	height: 30px;
+
+			    	.title{
+						position: absolute;
+						top: 0;
+						left: 0;
+						@include transition(all 0.3s);
+			    	}
+			    }
+		    }
+		}
+
+		&.detailView{
+
+			.border{
+				@include transform(translateX(0) translateY(0));
+			}
+
+			.detailsContainer{
+				width: 25px;
+				@include transform(translateX(0px));
+
+				.titleContainer .title{
+					opacity: 0;
+					@transform(translateX(-300%));
+				}
+			}
+
+			.containerTitle{
+				font-size: 22px;
+				@include transform(translateX(0) translateY(0));
+			}
+		}
+	}
+
+	#landing{
+		background: $colorTurquoise;
+		color: white;
+
+		.content{
+			text-align: center;
+
+			.headline{
+				font-family: Montserrat;
+
+				.small{
+			        font-size: 26px;
+				    font-weight: 300;
+				    margin-bottom: 20px;
+				}
+
+				.big{
+				    font-size: 92px;
+					text-transform: uppercase;
+				}
+			}
+
+			.description{
+		        font-family: Hind;
+			    font-size: 24px;
+			    margin-top: 50px;
+			    margin-bottom: 50px;
+			    display: inline-block;
+			    border-top: 1px solid white;
+			    border-bottom: 1px solid white;
+			    padding: 10px 20px;
+			}
+
+			.links{
+				 font-family: Hind;
+
+				.left, .right{
+					display: inline-block;
+					position: relative;
+					overflow: hidden;
+					opacity: 0.6;
+					cursor: pointer;
+					@include transition(all 0.2s);
+
+					&:hover{
+						opacity: 1;
+					}
+
+					.text{
+				        float: left;
+					    font-size: 34px;
+					    line-height: 34px;
+					    padding-top: 6px;
+					    box-sizing: border-box;
+					}
+
+					.arrow{
+						height: 40px;
+						width: 25px;
+						float: left;
+						overflow: hidden;
+						margin-left: 20px;
+						margin-right: 20px;
+
+						img{
+							height: 40px;
+							width: 100%;
+						}
+					}
+
+					&.left{
+						.arrow img{
+							@include transform(scaleX(-1));
+						}
+					}
+
+				}
+
+				.separatorContainer{
+					display: inline-block;
+					height: 40px;
+					margin-top: 17px;
+					margin-left: 20px;
+					margin-right: 20px;
+					opacity: 0.6;
+
+					.separator{
+						height: 6px;
+						width: 6px;
+						background: #fff;
+						border-radius: 100%;
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	#skills{
+		@include transform(translateX(-100%));
+		opacity: 0.3;
+	}
+
+	#work{
+		@include transform(translateX(100%));
+		opacity: 0.3;
+	}
+}
