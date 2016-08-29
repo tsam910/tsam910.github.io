@@ -1,0 +1,148 @@
+/* line 21, style.scss */
+* {
+  box-sizing: border-box; }
+
+/* line 25, style.scss */
+.cb {
+  clear: both; }
+
+/* line 29, style.scss */
+body {
+  background: #fafafa;
+  position: relative; }
+  /* line 33, style.scss */
+  body .scrollCover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 17px;
+    background: #fafafa; }
+
+/* line 43, style.scss */
+.mainContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto; }
+
+/* line 52, style.scss */
+.introContainer {
+  height: 70%;
+  min-height: 400px;
+  position: relative; }
+  /* line 57, style.scss */
+  .introContainer .intro {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+    /* line 64, style.scss */
+    .introContainer .intro .illustration {
+      height: 100px;
+      background-image: url("../images/octopus.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-bottom: 30px; }
+    /* line 73, style.scss */
+    .introContainer .intro .headline {
+      color: #4F9AE2;
+      font-family: 'Montserrat';
+      font-size: 44px;
+      font-weight: 600;
+      margin-bottom: 20px; }
+    /* line 81, style.scss */
+    .introContainer .intro .description {
+      width: 100%;
+      font-size: 20px;
+      max-width: 500px;
+      font-family: 'Hind';
+      color: rgba(0, 0, 0, 0.5);
+      margin: 0 auto; }
+
+/* line 92, style.scss */
+.workContainer {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  position: relative; }
+  /* line 98, style.scss */
+  .workContainer .categoriesContainer {
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    /* line 102, style.scss */
+    .workContainer .categoriesContainer .categoriesSelector {
+      width: 600px;
+      margin: 0 auto;
+      font-family: 'Hind';
+      position: relative; }
+      /* line 108, style.scss */
+      .workContainer .categoriesContainer .categoriesSelector .categories {
+        overflow: hidden;
+        border: 1px solid #f1f1f1;
+        background: white;
+        position: relative;
+        z-index: 10; }
+      /* line 116, style.scss */
+      .workContainer .categoriesContainer .categoriesSelector .category {
+        width: 25%;
+        float: left;
+        line-height: 50px;
+        text-align: center;
+        font-size: 13px;
+        text-transform: uppercase;
+        border-right: 1px solid #f1f1f1;
+        box-sizing: border-box;
+        color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        -webkit-transition: color 0.2s;
+        -o-transition: color 0.2s;
+        transition: color 0.2s; }
+        /* line 129, style.scss */
+        .workContainer .categoriesContainer .categoriesSelector .category:hover {
+          color: rgba(0, 0, 0, 0.6); }
+        /* line 133, style.scss */
+        .workContainer .categoriesContainer .categoriesSelector .category.active {
+          color: #4F9AE2; }
+        /* line 137, style.scss */
+        .workContainer .categoriesContainer .categoriesSelector .category:last-child {
+          border-right: none; }
+      /* line 142, style.scss */
+      .workContainer .categoriesContainer .categoriesSelector .selectedIndicator {
+        height: 58px;
+        width: 25%;
+        position: absolute;
+        top: -3px;
+        left: 0;
+        background: #91c0ed; }
+  /* line 153, style.scss */
+  .workContainer .workItems {
+    width: 100%;
+    max-width: 1000px;
+    padding-left: 30px;
+    margin: 0 auto;
+    margin-top: 20px; }
+    /* line 160, style.scss */
+    .workContainer .workItems .column {
+      float: left;
+      width: 33.33%;
+      margin-left: 15px; }
+      /* line 165, style.scss */
+      .workContainer .workItems .column:first-child {
+        margin-left: -30px; }
+      /* line 169, style.scss */
+      .workContainer .workItems .column .item {
+        background: white;
+        width: 100%;
+        height: 200px;
+        -webkit-box-shadow: 1px 1px 3px 0px #f1f1f1;
+        box-shadow: 1px 1px 3px 0px #f1f1f1; }
+
+/*# sourceMappingURL=style.css.map */

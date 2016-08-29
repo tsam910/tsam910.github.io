@@ -19,5 +19,9 @@ var skills = [
 		id : 'jquery',
 		name : 'jQuery',
 		description : ''
+	},{
+		id : 'ux',
+		name : 'UX Design',
+		description : 'UX design is more about the more abstract thought of what the users wants from a product, and how to get it to them. '
 	}
 ]
