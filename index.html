@@ -3,7 +3,9 @@
 		<link href="https://fonts.googleapis.com/css?family=Hind|Montserrat" rel="stylesheet">
 		<link rel="stylesheet" href="style/style.css">
 		<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
-		<script src="scripts/main.js"></script>
+		<script src="scripts/jquery.tmpl.min.js"></script>
+		<script src="scripts/data.js"></script>
+		<script src="scripts/script.js"></script>
 	</head>
 	<body>
 		<div class="mainContainer">
@@ -19,24 +21,15 @@
 					<div class="categoriesContainer">
 						<div class="categoriesSelector">
 							<div class="categories">
-								<div class="category active">All</div>
-								<div class="category">UI/UX Design</div>
-								<div class="category">Branding</div>
-								<div class="category">Graphic Design</div>
+								
 							</div>
 							<div class="selectedIndicator"></div>
 						</div>
 					</div>
 					<div class="workItems">
-						<div class="column">
-							<div class="item"></div>
-						</div>
-						<div class="column">
-							<div class="item"></div>
-						</div>
-						<div class="column">
-							<div class="item"></div>
-						</div>
+						<div class="column"></div>
+						<div class="column"></div>
+						<div class="column"></div>
 						<div class="cb"></div>
 					</div>
 				</div>
@@ -45,4 +38,39 @@
 		</div>
 		<div class="scrollCover"></div>
 	</body>
+
+	<script id="categorySelectorCategoryTemplate" type="text/x-jquery-tmpl">
+	  {{each(key,value) $data}}
+		    {{tmpl(value) "#categorySingleTemplate"}}
+		{{/each}}
+	</script>
+
+	<script id="categorySingleTemplate" type="text/x-jquery-templ">
+		<div class="category">${name}</div>
+	</script>
+
+
+
+
+	<script id="workItemTemplate" type="text/x-jquery-tmpl">
+		<div class="item">
+			<div class="imageContainer">
+				<div class="image"></div>
+			</div>
+			<div class="detailsContainer">
+				<div class="name">${name}</div>
+				<div class="description">${description}</div>
+				<div class="tags">
+					{{each(key,value) skills}}
+					    {{tmpl(value) "#categoryTagTemplate"}}
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<script id="categoryTagTemplate" type="text/x-jquery-templ">
+		<div class="category">${categories[$data].name}</div>
+	</script>
+
 </html>

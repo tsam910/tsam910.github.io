@@ -26,14 +26,15 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  overflow: auto; }
+  overflow: auto;
+  padding-left: 17px; }
 
-/* line 52, style.scss */
+/* line 53, style.scss */
 .introContainer {
   height: 70%;
   min-height: 400px;
   position: relative; }
-  /* line 57, style.scss */
+  /* line 58, style.scss */
   .introContainer .intro {
     width: 100%;
     position: absolute;
@@ -43,7 +44,7 @@ body {
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     transform: translateY(-50%); }
-    /* line 64, style.scss */
+    /* line 65, style.scss */
     .introContainer .intro .illustration {
       height: 100px;
       background-image: url("../images/octopus.png");
@@ -51,14 +52,14 @@ body {
       background-repeat: no-repeat;
       background-position: center;
       margin-bottom: 30px; }
-    /* line 73, style.scss */
+    /* line 74, style.scss */
     .introContainer .intro .headline {
       color: #4F9AE2;
       font-family: 'Montserrat';
       font-size: 44px;
       font-weight: 600;
       margin-bottom: 20px; }
-    /* line 81, style.scss */
+    /* line 82, style.scss */
     .introContainer .intro .description {
       width: 100%;
       font-size: 20px;
@@ -67,32 +68,39 @@ body {
       color: rgba(0, 0, 0, 0.5);
       margin: 0 auto; }
 
-/* line 92, style.scss */
+/* line 93, style.scss */
 .workContainer {
   height: 100%;
   width: 100%;
   overflow: auto;
   position: relative; }
-  /* line 98, style.scss */
+  /* line 99, style.scss */
+  .workContainer .work {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    position: relative;
+    padding-left: 17px; }
+  /* line 107, style.scss */
   .workContainer .categoriesContainer {
     padding-top: 20px;
     padding-bottom: 20px; }
-    /* line 102, style.scss */
+    /* line 111, style.scss */
     .workContainer .categoriesContainer .categoriesSelector {
       width: 600px;
       margin: 0 auto;
       font-family: 'Hind';
       position: relative; }
-      /* line 108, style.scss */
+      /* line 117, style.scss */
       .workContainer .categoriesContainer .categoriesSelector .categories {
         overflow: hidden;
         border: 1px solid #f1f1f1;
         background: white;
         position: relative;
         z-index: 10; }
-      /* line 116, style.scss */
+      /* line 125, style.scss */
       .workContainer .categoriesContainer .categoriesSelector .category {
-        width: 25%;
+        width: 20%;
         float: left;
         line-height: 50px;
         text-align: center;
@@ -105,44 +113,78 @@ body {
         -webkit-transition: color 0.2s;
         -o-transition: color 0.2s;
         transition: color 0.2s; }
-        /* line 129, style.scss */
+        /* line 138, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .category:hover {
           color: rgba(0, 0, 0, 0.6); }
-        /* line 133, style.scss */
+        /* line 142, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .category.active {
           color: #4F9AE2; }
-        /* line 137, style.scss */
+        /* line 146, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .category:last-child {
           border-right: none; }
-      /* line 142, style.scss */
+      /* line 151, style.scss */
       .workContainer .categoriesContainer .categoriesSelector .selectedIndicator {
         height: 58px;
-        width: 25%;
+        width: 20%;
         position: absolute;
         top: -3px;
         left: 0;
-        background: #91c0ed; }
-  /* line 153, style.scss */
+        background: #91c0ed;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s; }
+        /* line 160, style.scss */
+        .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos0 {
+          left: 0%; }
+        /* line 164, style.scss */
+        .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos1 {
+          left: 20%; }
+        /* line 168, style.scss */
+        .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos2 {
+          left: 40%; }
+        /* line 172, style.scss */
+        .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos3 {
+          left: 60%; }
+        /* line 176, style.scss */
+        .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos4 {
+          left: 80%; }
+  /* line 183, style.scss */
   .workContainer .workItems {
     width: 100%;
     max-width: 1000px;
     padding-left: 30px;
     margin: 0 auto;
-    margin-top: 20px; }
-    /* line 160, style.scss */
-    .workContainer .workItems .column {
+    margin-top: 20px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+    /* line 191, style.scss */
+    .workContainer .workItems.hidden {
+      opacity: 0; }
+    /* line 195, style.scss */
+    .workContainer .workItems .item {
+      background: white;
+      width: 33%;
       float: left;
-      width: 33.33%;
+      -webkit-box-shadow: 1px 1px 3px 0px #f1f1f1;
+      box-shadow: 1px 1px 3px 0px #f1f1f1;
+      text-align: center;
+      margin-bottom: 15px;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
       margin-left: 15px; }
-      /* line 165, style.scss */
-      .workContainer .workItems .column:first-child {
+      /* line 205, style.scss */
+      .workContainer .workItems .item .imageContainer {
+        height: 250px; }
+      /* line 209, style.scss */
+      .workContainer .workItems .item.visible {
+        opacity: 1; }
+      /* line 213, style.scss */
+      .workContainer .workItems .item:nth-child(3n+1) {
         margin-left: -30px; }
-      /* line 169, style.scss */
-      .workContainer .workItems .column .item {
-        background: white;
-        width: 100%;
-        height: 200px;
-        -webkit-box-shadow: 1px 1px 3px 0px #f1f1f1;
-        box-shadow: 1px 1px 3px 0px #f1f1f1; }
+      /* line 217, style.scss */
+      .workContainer .workItems .item:nth-child(3n+2) {
+        width: 34%; }
 
 /*# sourceMappingURL=style.css.map */
