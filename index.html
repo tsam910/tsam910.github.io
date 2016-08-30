@@ -36,7 +36,7 @@
 				<div class="scrollCover"></div>
 			</div>
 		</div>
-		<div class="scrollCover"></div>
+		<!-- <div class="scrollCover"></div> -->
 	</body>
 
 	<script id="categorySelectorCategoryTemplate" type="text/x-jquery-tmpl">
@@ -58,19 +58,24 @@
 				<div class="image"></div>
 			</div>
 			<div class="detailsContainer">
-				<div class="name">${name}</div>
-				<div class="description">${description}</div>
-				<div class="tags">
-					{{each(key,value) skills}}
-					    {{tmpl(value) "#categoryTagTemplate"}}
-					{{/each}}
+				<div class="titleContainer">
+					<div class="name">${name}</div>
+					<div class="year">${year}</div>
+					<div class="cb"></div>
 				</div>
+				<div class="description">${description}</div>
+			</div>
+			<div class="tagsContainer">
+				{{each(key,value) skills}}
+				    {{tmpl(value) "#categoryTagTemplate"}}
+				{{/each}}
+				<div class="cb"></div>
 			</div>
 		</div>
 	</script>
 
 	<script id="categoryTagTemplate" type="text/x-jquery-templ">
-		<div class="category">${categories[$data].name}</div>
+		<div class="tag">${categories[$data].name}</div>
 	</script>
 
 </html>

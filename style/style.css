@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* line 21, style.scss */
 * {
   box-sizing: border-box; }
@@ -26,8 +27,7 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  overflow: auto;
-  padding-left: 17px; }
+  overflow: auto; }
 
 /* line 53, style.scss */
 .introContainer {
@@ -173,17 +173,79 @@ body {
       -webkit-transition: all 0.2s;
       -o-transition: all 0.2s;
       transition: all 0.2s;
-      margin-left: 15px; }
-      /* line 205, style.scss */
+      margin-left: 15px;
+      cursor: pointer; }
+      /* line 206, style.scss */
+      .workContainer .workItems .item:hover {
+        -webkit-box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2); }
+      /* line 210, style.scss */
       .workContainer .workItems .item .imageContainer {
-        height: 250px; }
-      /* line 209, style.scss */
+        height: 250px;
+        background: rgba(0, 0, 0, 0.15); }
+      /* line 215, style.scss */
+      .workContainer .workItems .item .detailsContainer {
+        padding: 20px;
+        padding-bottom: 0;
+        text-align: left; }
+        /* line 220, style.scss */
+        .workContainer .workItems .item .detailsContainer .titleContainer {
+          font-family: 'Montserrat';
+          margin-bottom: 10px; }
+          /* line 224, style.scss */
+          .workContainer .workItems .item .detailsContainer .titleContainer .name {
+            float: left;
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 16px;
+            line-height: 16px; }
+          /* line 231, style.scss */
+          .workContainer .workItems .item .detailsContainer .titleContainer .year {
+            float: left;
+            color: rgba(0, 0, 0, 0.3);
+            font-size: 12px;
+            line-height: 12px;
+            margin-top: 3px;
+            margin-left: 8px; }
+        /* line 241, style.scss */
+        .workContainer .workItems .item .detailsContainer .description {
+          font-family: 'Hind';
+          font-size: 14px;
+          color: rgba(0, 0, 0, 0.6);
+          margin-bottom: 10px; }
+      /* line 249, style.scss */
+      .workContainer .workItems .item .tagsContainer {
+        border-top: 1px dashed rgba(0, 0, 0, 0.1);
+        padding-left: 10px; }
+        /* line 253, style.scss */
+        .workContainer .workItems .item .tagsContainer .tag {
+          float: left;
+          font-family: 'Hind';
+          margin-right: 10px;
+          line-height: 40px;
+          font-size: 11px;
+          text-transform: uppercase;
+          color: rgba(0, 0, 0, 0.4);
+          cursor: pointer;
+          -webkit-transition: color 0.2s;
+          -o-transition: color 0.2s;
+          transition: color 0.2s; }
+          /* line 264, style.scss */
+          .workContainer .workItems .item .tagsContainer .tag:hover {
+            color: rgba(0, 0, 0, 0.7); }
+          /* line 268, style.scss */
+          .workContainer .workItems .item .tagsContainer .tag::before {
+            content: '·';
+            margin-right: 10px; }
+          /* line 274, style.scss */
+          .workContainer .workItems .item .tagsContainer .tag:first-child::before {
+            content: ''; }
+      /* line 281, style.scss */
       .workContainer .workItems .item.visible {
         opacity: 1; }
-      /* line 213, style.scss */
+      /* line 285, style.scss */
       .workContainer .workItems .item:nth-child(3n+1) {
         margin-left: -30px; }
-      /* line 217, style.scss */
+      /* line 289, style.scss */
       .workContainer .workItems .item:nth-child(3n+2) {
         width: 34%; }
 

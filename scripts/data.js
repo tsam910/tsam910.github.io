@@ -24,40 +24,44 @@ var categories = {
 
 var projects = [
 	{
-		height: 200,
 		name : 'Realbox',
+		year : '2012-2014',
 		description : 'My first real job after college',
 		skills : ['uiux', 'coding']
 	},{
-		height: 180,
 		name : 'Young Wild Free',
+		year : '2015',
 		description : 'Music related branding for a cafe',
 		skills : ['branding', 'graphic']
 	},{
-		height: 210,
 		name : 'Dishoom',
+		year : '2016',
 		description : 'Strong, grungy branding for a cafe',
 		skills : ['branding', 'graphic']
 	},{
-		height: 190,
 		name : 'OrangeTwig',
-		description : 'Hired for design, eventually started coding as well',
+		year : '2014-2016',
+		description : 'Hired for design, also started coding',
 		skills : ['uiux', 'coding']
 	},{
-		height: 195,
 		name : 'Muro',
+		year : '2012',
+		description : 'Branding for wall decoration company',
 		skills : ['branding']
 	},{
-		height: 205,
 		name : 'Desconto',
+		year : '2011',
+		description : 'First freelance project as a designer',
 		skills : ['branding', 'graphic']
 	},{
-		height: 180,
 		name : 'Campusghanta',
+		year : '2012-2014',
+		description : 'First time I got majorly involved in a startup',
 		skills : ['branding', 'graphic', 'coding']
 	},{
-		height: 180,
 		name : 'CG posters',
+		year : '2012-2014',
+		description : 'Graphic designing I did for CG',
 		skills : ['graphic']
 	}
 ]

@@ -12,8 +12,8 @@
 }
 
 @mixin boxShadow($value){
-	-webkit-box-shadow: 1px 1px 3px 0px #f1f1f1;
-	box-shadow: 1px 1px 3px 0px #f1f1f1;
+	-webkit-box-shadow: $value;
+	box-shadow: $value;
 }
 
 $colorPrimary : #4F9AE2;
@@ -47,7 +47,7 @@ body{
 	height: 100%;
 	width: 100%;
 	overflow: auto;
-	padding-left: 17px;
+	// padding-left: 17px;
 }
 
 .introContainer{
@@ -201,9 +201,81 @@ body{
 			margin-bottom: 15px;
 			@include transition(all 0.2s);
 			margin-left: 15px;
+			cursor: pointer;
+
+			&:hover{
+				@include boxShadow(1px 1px 13px 0px rgba(0,0,0,0.2));
+			}
 
 			.imageContainer{
 				height: 250px;
+				background: rgba(0,0,0,0.15);
+			}
+
+			.detailsContainer{
+				padding: 20px;
+				padding-bottom: 0;
+				text-align: left;
+
+				.titleContainer{
+					font-family: 'Montserrat';
+					margin-bottom: 10px;
+
+					.name{
+						float: left;
+						color: rgba(0,0,0,0.6);
+					    font-size: 16px;
+    					line-height: 16px;
+					}
+
+					.year{
+						float: left;
+					    color: rgba(0, 0, 0, 0.3);
+					    font-size: 12px;
+					    line-height: 12px;
+					    margin-top: 3px;
+					    margin-left: 8px;
+					}
+				}
+
+				.description{
+					font-family: 'Hind';
+				    font-size: 14px;
+				    color: rgba(0,0,0,0.6);
+				    margin-bottom: 10px;
+				}
+			}
+
+			.tagsContainer{
+				border-top: 1px dashed rgba(0,0,0,0.1);
+				padding-left: 10px;
+
+				.tag{
+				    float: left;
+				    font-family: 'Hind';
+				    margin-right: 10px;
+				    line-height: 40px;
+				    font-size: 11px;
+				    text-transform: uppercase;
+				    color: rgba(0,0,0,0.4);
+				    cursor: pointer;
+				    @include transition(color 0.2s);
+
+				    &:hover{
+				    	color: rgba(0,0,0,0.7);
+				    }
+
+				    &::before{
+				    	content: '·';
+				    	margin-right: 10px;
+				    }
+
+				    &:first-child{
+				    	&::before{
+				    		content: '';
+				    	}
+				    }
+				}
 			}
 
 			&.visible{
