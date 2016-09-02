@@ -119,6 +119,7 @@ var populateWorkItems = function(items){
 var showItemDetails = function(e){
 	var divDimensions = this.getBoundingClientRect();
 	selectedItem = this;
+	var selectedItemData = $.tmplItem(this).data;
 	$(selectedItem).css('opacity', 0);
 	$('.itemDetailsContainer').show();
 	$('.animate').removeClass('transition');
@@ -143,6 +144,18 @@ var showItemDetails = function(e){
 					top: '20px',
 					left: '20px'
 				});
+
+				setTimeout(function(){
+					$.get(selectedItemData.details)
+					 .success(function(data) {
+					     $('.itemDetails').html(data);
+					     $('.itemDetails').addClass('show');
+					     $('.itemDetailsContainer .backdrop, .itemDetailsContainer .buttonClose').unbind().bind(eventToUse, closeItemDetails);
+					 });
+
+
+					}, 400)
+
 			}, 300)
 
 		}, 10)
@@ -150,5 +163,29 @@ var showItemDetails = function(e){
 }
 
 var closeItemDetails = function(e){
-	
+	var divDimensions = selectedItem.getBoundingClientRect();
+
+	$('.itemDetails').removeClass('show');
+
+	setTimeout(function(){
+		$('.animate').css({
+				height: divDimensions.height,
+				width : divDimensions.width,
+				top: divDimensions.top,
+				left: divDimensions.left
+			});
+
+			$('.backdrop').removeClass('show');
+
+			setTimeout(function(){
+				$('.animate').removeClass('show');
+				$(selectedItem).css('opacity', 1);
+
+				setTimeout(function(){
+					$('.itemDetailsContainer').hide();
+				}, 350)
+
+			}, 400)
+	}, 350);
+
 }

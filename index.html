@@ -39,12 +39,12 @@
 				<div class="backdrop"></div>
 				<div class="animate">
 				</div>
-				<div class="itemDetails">
-					
+				<div class="itemDetailsBuffer">
+					<div class="itemDetails"></div>
 				</div>
 			</div>
 		</div>
-		<!-- <div class="scrollCover"></div> -->
+		<div class="scrollCover"></div>
 	</body>
 
 	<script id="categorySelectorCategoryTemplate" type="text/x-jquery-tmpl">
@@ -63,7 +63,7 @@
 	<script id="workItemTemplate" type="text/x-jquery-tmpl">
 		<div class="item">
 			<div class="imageContainer">
-				<div class="image"></div>
+				<div class="image" style="background-image: url(${thumbnail});"></div>
 			</div>
 			<div class="detailsContainer">
 				<div class="titleContainer">

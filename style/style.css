@@ -28,7 +28,8 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  overflow: auto; }
+  overflow: auto;
+  padding-left: 17px; }
 
 /* line 62, style.scss */
 .introContainer {
@@ -182,24 +183,31 @@ body {
         box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2); }
       /* line 219, style.scss */
       .workContainer .workItems .item .imageContainer {
-        height: 250px;
-        background: rgba(0, 0, 0, 0.15); }
-      /* line 224, style.scss */
+        height: 250px; }
+        /* line 223, style.scss */
+        .workContainer .workItems .item .imageContainer .image {
+          height: 100%;
+          width: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center; }
+      /* line 232, style.scss */
       .workContainer .workItems .item .detailsContainer {
         padding: 20px;
         padding-bottom: 0;
-        text-align: left; }
-        /* line 229, style.scss */
+        text-align: left;
+        border-top: 1px solid rgba(0, 0, 0, 0.05); }
+        /* line 238, style.scss */
         .workContainer .workItems .item .detailsContainer .titleContainer {
           font-family: 'Montserrat';
           margin-bottom: 10px; }
-          /* line 233, style.scss */
+          /* line 242, style.scss */
           .workContainer .workItems .item .detailsContainer .titleContainer .name {
             float: left;
             color: rgba(0, 0, 0, 0.6);
             font-size: 16px;
             line-height: 16px; }
-          /* line 240, style.scss */
+          /* line 249, style.scss */
           .workContainer .workItems .item .detailsContainer .titleContainer .year {
             float: left;
             color: rgba(0, 0, 0, 0.3);
@@ -207,17 +215,17 @@ body {
             line-height: 12px;
             margin-top: 3px;
             margin-left: 8px; }
-        /* line 250, style.scss */
+        /* line 259, style.scss */
         .workContainer .workItems .item .detailsContainer .description {
           font-family: 'Hind';
           font-size: 14px;
           color: rgba(0, 0, 0, 0.6);
           margin-bottom: 10px; }
-      /* line 258, style.scss */
+      /* line 267, style.scss */
       .workContainer .workItems .item .tagsContainer {
         border-top: 1px dashed rgba(0, 0, 0, 0.1);
         padding-left: 10px; }
-        /* line 262, style.scss */
+        /* line 271, style.scss */
         .workContainer .workItems .item .tagsContainer .tag {
           float: left;
           font-family: 'Hind';
@@ -230,27 +238,27 @@ body {
           -webkit-transition: color 0.2s;
           -o-transition: color 0.2s;
           transition: color 0.2s; }
-          /* line 273, style.scss */
+          /* line 282, style.scss */
           .workContainer .workItems .item .tagsContainer .tag:hover {
             color: rgba(0, 0, 0, 0.7); }
-          /* line 277, style.scss */
+          /* line 286, style.scss */
           .workContainer .workItems .item .tagsContainer .tag::before {
             content: '·';
             margin-right: 10px; }
-          /* line 283, style.scss */
+          /* line 292, style.scss */
           .workContainer .workItems .item .tagsContainer .tag:first-child::before {
             content: ''; }
-      /* line 290, style.scss */
+      /* line 299, style.scss */
       .workContainer .workItems .item.visible {
         opacity: 1; }
-      /* line 294, style.scss */
+      /* line 303, style.scss */
       .workContainer .workItems .item:nth-child(3n+1) {
         margin-left: -30px; }
-      /* line 298, style.scss */
+      /* line 307, style.scss */
       .workContainer .workItems .item:nth-child(3n+2) {
         width: 34%; }
 
-/* line 306, style.scss */
+/* line 315, style.scss */
 .itemDetailsContainer {
   position: fixed;
   top: 0;
@@ -259,10 +267,11 @@ body {
   width: 100%;
   display: none;
   z-index: 10; }
-  /* line 315, style.scss */
+  /* line 325, style.scss */
   .itemDetailsContainer .backdrop {
     position: absolute;
     left: 0;
+    top: 0;
     height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, 0.2);
@@ -270,10 +279,10 @@ body {
     -webkit-transition: all 1s;
     -o-transition: all 1s;
     transition: all 1s; }
-    /* line 324, style.scss */
+    /* line 335, style.scss */
     .itemDetailsContainer .backdrop.show {
       opacity: 1; }
-  /* line 329, style.scss */
+  /* line 340, style.scss */
   .itemDetailsContainer .animate {
     position: absolute;
     top: 0;
@@ -284,19 +293,101 @@ body {
     opacity: 0;
     -webkit-box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2); }
-    /* line 339, style.scss */
+    /* line 350, style.scss */
     .itemDetailsContainer .animate.full {
       top: 10%;
       left: 10%;
       height: 80%;
       width: 80%; }
-    /* line 346, style.scss */
+    /* line 357, style.scss */
     .itemDetailsContainer .animate.transition {
       -webkit-transition: all 0.3s;
       -o-transition: all 0.3s;
       transition: all 0.3s; }
-    /* line 350, style.scss */
+    /* line 361, style.scss */
     .itemDetailsContainer .animate.show {
       opacity: 1; }
+  /* line 366, style.scss */
+  .itemDetailsContainer .itemDetailsBuffer {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    padding: 20px; }
+  /* line 375, style.scss */
+  .itemDetailsContainer .buttonClose {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    height: 20px;
+    width: 20px;
+    background-image: url("../images/cancel.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s; }
+    /* line 388, style.scss */
+    .itemDetailsContainer .buttonClose:hover {
+      opacity: 0.8; }
+  /* line 393, style.scss */
+  .itemDetailsContainer .itemDetails {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    padding: 50px;
+    padding-left: 60px;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+    /* line 404, style.scss */
+    .itemDetailsContainer .itemDetails.show {
+      opacity: 1; }
+    /* line 408, style.scss */
+    .itemDetailsContainer .itemDetails .titleContainer {
+      margin-bottom: 30px; }
+      /* line 411, style.scss */
+      .itemDetailsContainer .itemDetails .titleContainer .title {
+        font-family: 'Montserrat';
+        font-size: 46px;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 25px; }
+      /* line 418, style.scss */
+      .itemDetailsContainer .itemDetails .titleContainer .meta {
+        overflow: hidden;
+        font-family: 'Montserrat';
+        font-weight: bold; }
+        /* line 423, style.scss */
+        .itemDetailsContainer .itemDetails .titleContainer .meta .designation {
+          float: left;
+          font-size: 22px;
+          color: rgba(0, 0, 0, 0.4); }
+        /* line 429, style.scss */
+        .itemDetailsContainer .itemDetails .titleContainer .meta .duration {
+          float: left;
+          font-size: 22px;
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.3);
+          margin-left: 15px; }
+    /* line 439, style.scss */
+    .itemDetailsContainer .itemDetails .storyContainer {
+      font-family: 'Hind';
+      font-size: 18px;
+      color: rgba(0, 0, 0, 0.7); }
+    /* line 446, style.scss */
+    .itemDetailsContainer .itemDetails .imageContainer img {
+      width: 100%; }
+    /* line 450, style.scss */
+    .itemDetailsContainer .itemDetails .imageContainer .caption {
+      text-align: center;
+      font-style: italic;
+      color: rgba(0, 0, 0, 0.5);
+      margin-bottom: 50px; }
 
 /*# sourceMappingURL=style.css.map */
