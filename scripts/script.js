@@ -76,6 +76,8 @@ var eventToUse = 'click';
 
 var selectedCategory = 'all';
 
+var selectedItem = false;
+
 var selectCategory = function(){
 
 	var category = $.tmplItem(this).data;
@@ -108,6 +110,45 @@ var populateWorkItems = function(items){
 	setTimeout(function(){
 		$('.workItems').children().remove();
 		$( "#workItemTemplate" ).tmpl(items).appendTo($('.workItems'));
+		$('.item').bind(eventToUse, showItemDetails)
 		$('.workItems').removeClass('hidden');
 	}, 350)
+}
+
+
+var showItemDetails = function(e){
+	var divDimensions = this.getBoundingClientRect();
+	selectedItem = this;
+	$(selectedItem).css('opacity', 0);
+	$('.itemDetailsContainer').show();
+	$('.animate').removeClass('transition');
+
+	setTimeout(function(){
+		$('.backdrop').addClass('show');
+		$('.animate').css({
+			height: divDimensions.height,
+			width: divDimensions.width,
+			top: divDimensions.top,
+			left: divDimensions.left
+		}, 10);	
+
+		setTimeout(function(){
+			$('.animate').addClass('transition');
+			$('.animate').addClass('show');
+
+			setTimeout(function(){
+				$('.animate').css({
+					height: ($('.itemDetailsContainer').height() - 40)+ 'px',
+					width : ($('.itemDetailsContainer').width() - 40) + 'px',
+					top: '20px',
+					left: '20px'
+				});
+			}, 300)
+
+		}, 10)
+	}, 10)
+}
+
+var closeItemDetails = function(e){
+	
 }

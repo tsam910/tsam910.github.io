@@ -11,6 +11,14 @@
 	transition: $value;
 }
 
+@mixin transformOrigin($value){
+	-webkit-transform-origin: $value;
+	-moz-transform-origin: $value;
+	-ms-transform-origin: $value;
+	-o-transform-origin: $value;
+	transform-origin: $value;
+}
+
 @mixin boxShadow($value){
 	-webkit-box-shadow: $value;
 	box-shadow: $value;
@@ -29,6 +37,7 @@ $colorPrimary : #4F9AE2;
 body{
 	background: #fafafa;
 	position: relative;
+	font-family: Helvetica, Arial;
 
 	.scrollCover{
 		position: absolute;
@@ -291,5 +300,59 @@ body{
 			}
 		}
 
+	}
+}
+
+.itemDetailsContainer{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
+	z-index: 10;
+
+	.backdrop{
+		position: absolute;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba(0,0,0,0.2);
+		opacity: 0;
+		@include transition(all 1s);
+
+		&.show{
+			opacity: 1;
+		}
+	}
+
+	.animate{
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 0;
+		width: 0;
+		background: white;
+		opacity: 0;
+		@include boxShadow(1px 1px 13px 0px rgba(0,0,0,0.2));
+
+		&.full{
+			top: 10%;
+			left: 10%;
+			height: 80%;
+			width: 80%;
+		}
+
+		&.transition{
+			@include transition(all 0.3s);
+		}
+
+		&.show{
+			opacity: 1;
+		}
+	}
+
+	.itemDetails{
+		
 	}
 }

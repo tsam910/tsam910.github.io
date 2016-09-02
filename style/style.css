@@ -1,17 +1,18 @@
 @charset "UTF-8";
-/* line 21, style.scss */
+/* line 29, style.scss */
 * {
   box-sizing: border-box; }
 
-/* line 25, style.scss */
+/* line 33, style.scss */
 .cb {
   clear: both; }
 
-/* line 29, style.scss */
+/* line 37, style.scss */
 body {
   background: #fafafa;
-  position: relative; }
-  /* line 33, style.scss */
+  position: relative;
+  font-family: Helvetica, Arial; }
+  /* line 42, style.scss */
   body .scrollCover {
     position: absolute;
     top: 0;
@@ -20,7 +21,7 @@ body {
     width: 17px;
     background: #fafafa; }
 
-/* line 43, style.scss */
+/* line 52, style.scss */
 .mainContainer {
   position: absolute;
   top: 0;
@@ -29,12 +30,12 @@ body {
   width: 100%;
   overflow: auto; }
 
-/* line 53, style.scss */
+/* line 62, style.scss */
 .introContainer {
   height: 70%;
   min-height: 400px;
   position: relative; }
-  /* line 58, style.scss */
+  /* line 67, style.scss */
   .introContainer .intro {
     width: 100%;
     position: absolute;
@@ -44,7 +45,7 @@ body {
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     transform: translateY(-50%); }
-    /* line 65, style.scss */
+    /* line 74, style.scss */
     .introContainer .intro .illustration {
       height: 100px;
       background-image: url("../images/octopus.png");
@@ -52,14 +53,14 @@ body {
       background-repeat: no-repeat;
       background-position: center;
       margin-bottom: 30px; }
-    /* line 74, style.scss */
+    /* line 83, style.scss */
     .introContainer .intro .headline {
       color: #4F9AE2;
       font-family: 'Montserrat';
       font-size: 44px;
       font-weight: 600;
       margin-bottom: 20px; }
-    /* line 82, style.scss */
+    /* line 91, style.scss */
     .introContainer .intro .description {
       width: 100%;
       font-size: 20px;
@@ -68,37 +69,37 @@ body {
       color: rgba(0, 0, 0, 0.5);
       margin: 0 auto; }
 
-/* line 93, style.scss */
+/* line 102, style.scss */
 .workContainer {
   height: 100%;
   width: 100%;
   overflow: auto;
   position: relative; }
-  /* line 99, style.scss */
+  /* line 108, style.scss */
   .workContainer .work {
     height: 100%;
     width: 100%;
     overflow-y: scroll;
     position: relative;
     padding-left: 17px; }
-  /* line 107, style.scss */
+  /* line 116, style.scss */
   .workContainer .categoriesContainer {
     padding-top: 20px;
     padding-bottom: 20px; }
-    /* line 111, style.scss */
+    /* line 120, style.scss */
     .workContainer .categoriesContainer .categoriesSelector {
       width: 600px;
       margin: 0 auto;
       font-family: 'Hind';
       position: relative; }
-      /* line 117, style.scss */
+      /* line 126, style.scss */
       .workContainer .categoriesContainer .categoriesSelector .categories {
         overflow: hidden;
         border: 1px solid #f1f1f1;
         background: white;
         position: relative;
         z-index: 10; }
-      /* line 125, style.scss */
+      /* line 134, style.scss */
       .workContainer .categoriesContainer .categoriesSelector .category {
         width: 20%;
         float: left;
@@ -113,16 +114,16 @@ body {
         -webkit-transition: color 0.2s;
         -o-transition: color 0.2s;
         transition: color 0.2s; }
-        /* line 138, style.scss */
+        /* line 147, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .category:hover {
           color: rgba(0, 0, 0, 0.6); }
-        /* line 142, style.scss */
+        /* line 151, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .category.active {
           color: #4F9AE2; }
-        /* line 146, style.scss */
+        /* line 155, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .category:last-child {
           border-right: none; }
-      /* line 151, style.scss */
+      /* line 160, style.scss */
       .workContainer .categoriesContainer .categoriesSelector .selectedIndicator {
         height: 58px;
         width: 20%;
@@ -133,22 +134,22 @@ body {
         -webkit-transition: all 0.3s;
         -o-transition: all 0.3s;
         transition: all 0.3s; }
-        /* line 160, style.scss */
+        /* line 169, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos0 {
           left: 0%; }
-        /* line 164, style.scss */
+        /* line 173, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos1 {
           left: 20%; }
-        /* line 168, style.scss */
+        /* line 177, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos2 {
           left: 40%; }
-        /* line 172, style.scss */
+        /* line 181, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos3 {
           left: 60%; }
-        /* line 176, style.scss */
+        /* line 185, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos4 {
           left: 80%; }
-  /* line 183, style.scss */
+  /* line 192, style.scss */
   .workContainer .workItems {
     width: 100%;
     max-width: 1000px;
@@ -158,10 +159,10 @@ body {
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
-    /* line 191, style.scss */
+    /* line 200, style.scss */
     .workContainer .workItems.hidden {
       opacity: 0; }
-    /* line 195, style.scss */
+    /* line 204, style.scss */
     .workContainer .workItems .item {
       background: white;
       width: 33%;
@@ -175,30 +176,30 @@ body {
       transition: all 0.2s;
       margin-left: 15px;
       cursor: pointer; }
-      /* line 206, style.scss */
+      /* line 215, style.scss */
       .workContainer .workItems .item:hover {
         -webkit-box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2);
         box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2); }
-      /* line 210, style.scss */
+      /* line 219, style.scss */
       .workContainer .workItems .item .imageContainer {
         height: 250px;
         background: rgba(0, 0, 0, 0.15); }
-      /* line 215, style.scss */
+      /* line 224, style.scss */
       .workContainer .workItems .item .detailsContainer {
         padding: 20px;
         padding-bottom: 0;
         text-align: left; }
-        /* line 220, style.scss */
+        /* line 229, style.scss */
         .workContainer .workItems .item .detailsContainer .titleContainer {
           font-family: 'Montserrat';
           margin-bottom: 10px; }
-          /* line 224, style.scss */
+          /* line 233, style.scss */
           .workContainer .workItems .item .detailsContainer .titleContainer .name {
             float: left;
             color: rgba(0, 0, 0, 0.6);
             font-size: 16px;
             line-height: 16px; }
-          /* line 231, style.scss */
+          /* line 240, style.scss */
           .workContainer .workItems .item .detailsContainer .titleContainer .year {
             float: left;
             color: rgba(0, 0, 0, 0.3);
@@ -206,17 +207,17 @@ body {
             line-height: 12px;
             margin-top: 3px;
             margin-left: 8px; }
-        /* line 241, style.scss */
+        /* line 250, style.scss */
         .workContainer .workItems .item .detailsContainer .description {
           font-family: 'Hind';
           font-size: 14px;
           color: rgba(0, 0, 0, 0.6);
           margin-bottom: 10px; }
-      /* line 249, style.scss */
+      /* line 258, style.scss */
       .workContainer .workItems .item .tagsContainer {
         border-top: 1px dashed rgba(0, 0, 0, 0.1);
         padding-left: 10px; }
-        /* line 253, style.scss */
+        /* line 262, style.scss */
         .workContainer .workItems .item .tagsContainer .tag {
           float: left;
           font-family: 'Hind';
@@ -229,24 +230,73 @@ body {
           -webkit-transition: color 0.2s;
           -o-transition: color 0.2s;
           transition: color 0.2s; }
-          /* line 264, style.scss */
+          /* line 273, style.scss */
           .workContainer .workItems .item .tagsContainer .tag:hover {
             color: rgba(0, 0, 0, 0.7); }
-          /* line 268, style.scss */
+          /* line 277, style.scss */
           .workContainer .workItems .item .tagsContainer .tag::before {
             content: '·';
             margin-right: 10px; }
-          /* line 274, style.scss */
+          /* line 283, style.scss */
           .workContainer .workItems .item .tagsContainer .tag:first-child::before {
             content: ''; }
-      /* line 281, style.scss */
+      /* line 290, style.scss */
       .workContainer .workItems .item.visible {
         opacity: 1; }
-      /* line 285, style.scss */
+      /* line 294, style.scss */
       .workContainer .workItems .item:nth-child(3n+1) {
         margin-left: -30px; }
-      /* line 289, style.scss */
+      /* line 298, style.scss */
       .workContainer .workItems .item:nth-child(3n+2) {
         width: 34%; }
+
+/* line 306, style.scss */
+.itemDetailsContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  z-index: 10; }
+  /* line 315, style.scss */
+  .itemDetailsContainer .backdrop {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s; }
+    /* line 324, style.scss */
+    .itemDetailsContainer .backdrop.show {
+      opacity: 1; }
+  /* line 329, style.scss */
+  .itemDetailsContainer .animate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    background: white;
+    opacity: 0;
+    -webkit-box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2); }
+    /* line 339, style.scss */
+    .itemDetailsContainer .animate.full {
+      top: 10%;
+      left: 10%;
+      height: 80%;
+      width: 80%; }
+    /* line 346, style.scss */
+    .itemDetailsContainer .animate.transition {
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
+    /* line 350, style.scss */
+    .itemDetailsContainer .animate.show {
+      opacity: 1; }
 
 /*# sourceMappingURL=style.css.map */
