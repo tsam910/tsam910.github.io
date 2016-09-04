@@ -47,6 +47,11 @@ body{
 		width: 17px;
 		background: #fafafa;
 	}
+
+	a{
+		text-decoration: none;
+		color: $colorPrimary;
+	}
 }
 
 .mainContainer{
@@ -102,6 +107,8 @@ body{
 .workContainer{
     height: 100%;
     width: 100%;
+    max-width: 1500;
+    margin: 0 auto;
     overflow: auto;
     position: relative;
 
@@ -445,6 +452,8 @@ body{
 		.imageContainer{
 			img{
 				width: 100%;
+				border: 1px solid rgba(0,0,0,0.1);
+    			margin-bottom: 10px;
 			}
 
 			.caption{

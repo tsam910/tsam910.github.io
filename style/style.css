@@ -20,8 +20,12 @@ body {
     height: 100%;
     width: 17px;
     background: #fafafa; }
+  /* line 51, style.scss */
+  body a {
+    text-decoration: none;
+    color: #4F9AE2; }
 
-/* line 52, style.scss */
+/* line 57, style.scss */
 .mainContainer {
   position: absolute;
   top: 0;
@@ -31,12 +35,12 @@ body {
   overflow: auto;
   padding-left: 17px; }
 
-/* line 62, style.scss */
+/* line 67, style.scss */
 .introContainer {
   height: 70%;
   min-height: 400px;
   position: relative; }
-  /* line 67, style.scss */
+  /* line 72, style.scss */
   .introContainer .intro {
     width: 100%;
     position: absolute;
@@ -46,7 +50,7 @@ body {
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     transform: translateY(-50%); }
-    /* line 74, style.scss */
+    /* line 79, style.scss */
     .introContainer .intro .illustration {
       height: 100px;
       background-image: url("../images/octopus.png");
@@ -54,14 +58,14 @@ body {
       background-repeat: no-repeat;
       background-position: center;
       margin-bottom: 30px; }
-    /* line 83, style.scss */
+    /* line 88, style.scss */
     .introContainer .intro .headline {
       color: #4F9AE2;
       font-family: 'Montserrat';
       font-size: 44px;
       font-weight: 600;
       margin-bottom: 20px; }
-    /* line 91, style.scss */
+    /* line 96, style.scss */
     .introContainer .intro .description {
       width: 100%;
       font-size: 20px;
@@ -70,37 +74,39 @@ body {
       color: rgba(0, 0, 0, 0.5);
       margin: 0 auto; }
 
-/* line 102, style.scss */
+/* line 107, style.scss */
 .workContainer {
   height: 100%;
   width: 100%;
+  max-width: 1500;
+  margin: 0 auto;
   overflow: auto;
   position: relative; }
-  /* line 108, style.scss */
+  /* line 115, style.scss */
   .workContainer .work {
     height: 100%;
     width: 100%;
     overflow-y: scroll;
     position: relative;
     padding-left: 17px; }
-  /* line 116, style.scss */
+  /* line 123, style.scss */
   .workContainer .categoriesContainer {
     padding-top: 20px;
     padding-bottom: 20px; }
-    /* line 120, style.scss */
+    /* line 127, style.scss */
     .workContainer .categoriesContainer .categoriesSelector {
       width: 600px;
       margin: 0 auto;
       font-family: 'Hind';
       position: relative; }
-      /* line 126, style.scss */
+      /* line 133, style.scss */
       .workContainer .categoriesContainer .categoriesSelector .categories {
         overflow: hidden;
         border: 1px solid #f1f1f1;
         background: white;
         position: relative;
         z-index: 10; }
-      /* line 134, style.scss */
+      /* line 141, style.scss */
       .workContainer .categoriesContainer .categoriesSelector .category {
         width: 20%;
         float: left;
@@ -115,16 +121,16 @@ body {
         -webkit-transition: color 0.2s;
         -o-transition: color 0.2s;
         transition: color 0.2s; }
-        /* line 147, style.scss */
+        /* line 154, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .category:hover {
           color: rgba(0, 0, 0, 0.6); }
-        /* line 151, style.scss */
+        /* line 158, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .category.active {
           color: #4F9AE2; }
-        /* line 155, style.scss */
+        /* line 162, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .category:last-child {
           border-right: none; }
-      /* line 160, style.scss */
+      /* line 167, style.scss */
       .workContainer .categoriesContainer .categoriesSelector .selectedIndicator {
         height: 58px;
         width: 20%;
@@ -135,22 +141,22 @@ body {
         -webkit-transition: all 0.3s;
         -o-transition: all 0.3s;
         transition: all 0.3s; }
-        /* line 169, style.scss */
+        /* line 176, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos0 {
           left: 0%; }
-        /* line 173, style.scss */
+        /* line 180, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos1 {
           left: 20%; }
-        /* line 177, style.scss */
+        /* line 184, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos2 {
           left: 40%; }
-        /* line 181, style.scss */
+        /* line 188, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos3 {
           left: 60%; }
-        /* line 185, style.scss */
+        /* line 192, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos4 {
           left: 80%; }
-  /* line 192, style.scss */
+  /* line 199, style.scss */
   .workContainer .workItems {
     width: 100%;
     max-width: 1000px;
@@ -160,10 +166,10 @@ body {
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
-    /* line 200, style.scss */
+    /* line 207, style.scss */
     .workContainer .workItems.hidden {
       opacity: 0; }
-    /* line 204, style.scss */
+    /* line 211, style.scss */
     .workContainer .workItems .item {
       background: white;
       width: 33%;
@@ -177,37 +183,37 @@ body {
       transition: all 0.2s;
       margin-left: 15px;
       cursor: pointer; }
-      /* line 215, style.scss */
+      /* line 222, style.scss */
       .workContainer .workItems .item:hover {
         -webkit-box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2);
         box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2); }
-      /* line 219, style.scss */
+      /* line 226, style.scss */
       .workContainer .workItems .item .imageContainer {
         height: 250px; }
-        /* line 223, style.scss */
+        /* line 230, style.scss */
         .workContainer .workItems .item .imageContainer .image {
           height: 100%;
           width: 100%;
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center; }
-      /* line 232, style.scss */
+      /* line 239, style.scss */
       .workContainer .workItems .item .detailsContainer {
         padding: 20px;
         padding-bottom: 0;
         text-align: left;
         border-top: 1px solid rgba(0, 0, 0, 0.05); }
-        /* line 238, style.scss */
+        /* line 245, style.scss */
         .workContainer .workItems .item .detailsContainer .titleContainer {
           font-family: 'Montserrat';
           margin-bottom: 10px; }
-          /* line 242, style.scss */
+          /* line 249, style.scss */
           .workContainer .workItems .item .detailsContainer .titleContainer .name {
             float: left;
             color: rgba(0, 0, 0, 0.6);
             font-size: 16px;
             line-height: 16px; }
-          /* line 249, style.scss */
+          /* line 256, style.scss */
           .workContainer .workItems .item .detailsContainer .titleContainer .year {
             float: left;
             color: rgba(0, 0, 0, 0.3);
@@ -215,17 +221,17 @@ body {
             line-height: 12px;
             margin-top: 3px;
             margin-left: 8px; }
-        /* line 259, style.scss */
+        /* line 266, style.scss */
         .workContainer .workItems .item .detailsContainer .description {
           font-family: 'Hind';
           font-size: 14px;
           color: rgba(0, 0, 0, 0.6);
           margin-bottom: 10px; }
-      /* line 267, style.scss */
+      /* line 274, style.scss */
       .workContainer .workItems .item .tagsContainer {
         border-top: 1px dashed rgba(0, 0, 0, 0.1);
         padding-left: 10px; }
-        /* line 271, style.scss */
+        /* line 278, style.scss */
         .workContainer .workItems .item .tagsContainer .tag {
           float: left;
           font-family: 'Hind';
@@ -238,27 +244,27 @@ body {
           -webkit-transition: color 0.2s;
           -o-transition: color 0.2s;
           transition: color 0.2s; }
-          /* line 282, style.scss */
+          /* line 289, style.scss */
           .workContainer .workItems .item .tagsContainer .tag:hover {
             color: rgba(0, 0, 0, 0.7); }
-          /* line 286, style.scss */
+          /* line 293, style.scss */
           .workContainer .workItems .item .tagsContainer .tag::before {
             content: '·';
             margin-right: 10px; }
-          /* line 292, style.scss */
+          /* line 299, style.scss */
           .workContainer .workItems .item .tagsContainer .tag:first-child::before {
             content: ''; }
-      /* line 299, style.scss */
+      /* line 306, style.scss */
       .workContainer .workItems .item.visible {
         opacity: 1; }
-      /* line 303, style.scss */
+      /* line 310, style.scss */
       .workContainer .workItems .item:nth-child(3n+1) {
         margin-left: -30px; }
-      /* line 307, style.scss */
+      /* line 314, style.scss */
       .workContainer .workItems .item:nth-child(3n+2) {
         width: 34%; }
 
-/* line 315, style.scss */
+/* line 322, style.scss */
 .itemDetailsContainer {
   position: fixed;
   top: 0;
@@ -267,7 +273,7 @@ body {
   width: 100%;
   display: none;
   z-index: 10; }
-  /* line 325, style.scss */
+  /* line 332, style.scss */
   .itemDetailsContainer .backdrop {
     position: absolute;
     left: 0;
@@ -279,10 +285,10 @@ body {
     -webkit-transition: all 1s;
     -o-transition: all 1s;
     transition: all 1s; }
-    /* line 335, style.scss */
+    /* line 342, style.scss */
     .itemDetailsContainer .backdrop.show {
       opacity: 1; }
-  /* line 340, style.scss */
+  /* line 347, style.scss */
   .itemDetailsContainer .animate {
     position: absolute;
     top: 0;
@@ -293,21 +299,21 @@ body {
     opacity: 0;
     -webkit-box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2); }
-    /* line 350, style.scss */
+    /* line 357, style.scss */
     .itemDetailsContainer .animate.full {
       top: 10%;
       left: 10%;
       height: 80%;
       width: 80%; }
-    /* line 357, style.scss */
+    /* line 364, style.scss */
     .itemDetailsContainer .animate.transition {
       -webkit-transition: all 0.3s;
       -o-transition: all 0.3s;
       transition: all 0.3s; }
-    /* line 361, style.scss */
+    /* line 368, style.scss */
     .itemDetailsContainer .animate.show {
       opacity: 1; }
-  /* line 366, style.scss */
+  /* line 373, style.scss */
   .itemDetailsContainer .itemDetailsBuffer {
     position: relative;
     z-index: 10;
@@ -315,7 +321,7 @@ body {
     width: 100%;
     overflow: auto;
     padding: 20px; }
-  /* line 375, style.scss */
+  /* line 382, style.scss */
   .itemDetailsContainer .buttonClose {
     position: absolute;
     top: 50px;
@@ -330,10 +336,10 @@ body {
     -webkit-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s; }
-    /* line 388, style.scss */
+    /* line 395, style.scss */
     .itemDetailsContainer .buttonClose:hover {
       opacity: 0.8; }
-  /* line 393, style.scss */
+  /* line 400, style.scss */
   .itemDetailsContainer .itemDetails {
     position: relative;
     z-index: 10;
@@ -346,44 +352,46 @@ body {
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
-    /* line 404, style.scss */
+    /* line 411, style.scss */
     .itemDetailsContainer .itemDetails.show {
       opacity: 1; }
-    /* line 408, style.scss */
+    /* line 415, style.scss */
     .itemDetailsContainer .itemDetails .titleContainer {
       margin-bottom: 30px; }
-      /* line 411, style.scss */
+      /* line 418, style.scss */
       .itemDetailsContainer .itemDetails .titleContainer .title {
         font-family: 'Montserrat';
         font-size: 46px;
         color: rgba(0, 0, 0, 0.6);
         margin-bottom: 25px; }
-      /* line 418, style.scss */
+      /* line 425, style.scss */
       .itemDetailsContainer .itemDetails .titleContainer .meta {
         overflow: hidden;
         font-family: 'Montserrat';
         font-weight: bold; }
-        /* line 423, style.scss */
+        /* line 430, style.scss */
         .itemDetailsContainer .itemDetails .titleContainer .meta .designation {
           float: left;
           font-size: 22px;
           color: rgba(0, 0, 0, 0.4); }
-        /* line 429, style.scss */
+        /* line 436, style.scss */
         .itemDetailsContainer .itemDetails .titleContainer .meta .duration {
           float: left;
           font-size: 22px;
           font-weight: 300;
           color: rgba(0, 0, 0, 0.3);
           margin-left: 15px; }
-    /* line 439, style.scss */
+    /* line 446, style.scss */
     .itemDetailsContainer .itemDetails .storyContainer {
       font-family: 'Hind';
       font-size: 18px;
       color: rgba(0, 0, 0, 0.7); }
-    /* line 446, style.scss */
+    /* line 453, style.scss */
     .itemDetailsContainer .itemDetails .imageContainer img {
-      width: 100%; }
-    /* line 450, style.scss */
+      width: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px; }
+    /* line 459, style.scss */
     .itemDetailsContainer .itemDetails .imageContainer .caption {
       text-align: center;
       font-style: italic;

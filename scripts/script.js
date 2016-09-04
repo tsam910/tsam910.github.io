@@ -6,8 +6,23 @@ $(document).ready(function(){
 
 	workContainerOffset = $('.workContainer').offset().top;
 
+	// the scrollbars are hidden on the page
+	// when a user scrolls the first time, it would be a good experience to just scroll to the category selector part
+	// that's why the scrolljacking. but it's buggy
 	$('.mainContainer').bind('scroll', checkMainContainerScroll);
 	$('.work').bind('scroll', checkWorkContainerScroll);
+
+	// the work details modal should close on escape
+	$(document).keyup(function(e) {
+	     if (e.keyCode == 27) {
+	     	if(selectedItem)
+	     		closeItemDetails();
+	    }
+	});
+
+	console.log('Hey! Great to see you here. If you\'re checking out my code, you can head to https://github.com/tsam910/tsam910.github.io.')
+	console.log('Also, I\'m still working on this, so there are some bugs. pls to ignore :)')
+
 })
 
 var checkMainContainerScroll = function(){
@@ -25,13 +40,10 @@ var checkMainContainerScroll = function(){
 			$('.mainContainer').bind('scroll', checkMainContainerScroll);
 			$('.work').bind('scroll', checkWorkContainerScroll);
 		}, 500);
-		console.log('scrolling to bottom')
 	}
 }
 
 var checkWorkContainerScroll = function(){
-
-	// console.log('work scroll -> '+ $('.work').scrollTop()+' at showing = '+showingIntro)
 
 	if(showingIntro && $('.work').scrollTop() > 0){
 		$('.mainContainer').unbind('scroll');
@@ -45,8 +57,6 @@ var checkWorkContainerScroll = function(){
 			$('.mainContainer').bind('scroll', checkMainContainerScroll);
 			$('.work').bind('scroll', checkWorkContainerScroll);
 		}, 1000);
-
-		console.log('scrolling to bottom 1')
 	}
 
 	if(!showingIntro && $('.work').scrollTop() == 0){
@@ -68,14 +78,8 @@ var checkWorkContainerScroll = function(){
 
 var showingIntro = true;
 var workContainerOffset = 0;
-
-	// var themeData = $.tmplItem(event.target).data;
-	// $( "#workItemTemplate" ).tmpl({height:40, name:'Tarun'}).appendTo( ".websiteThemes .themesList" );
-	
-var eventToUse = 'click';
-
+var eventToUse = 'click'; // will detect and change it to tap for mobile, when I make the mobile version.
 var selectedCategory = 'all';
-
 var selectedItem = false;
 
 var selectCategory = function(){
@@ -146,7 +150,7 @@ var showItemDetails = function(e){
 				});
 
 				setTimeout(function(){
-					$.get(selectedItemData.details)
+					$.get(selectedItemData.details,{ "_": $.now() })
 					 .success(function(data) {
 					     $('.itemDetails').html(data);
 					     $('.itemDetails').addClass('show');
@@ -180,9 +184,11 @@ var closeItemDetails = function(e){
 			setTimeout(function(){
 				$('.animate').removeClass('show');
 				$(selectedItem).css('opacity', 1);
+				$('.itemDetails').scrollTop(0);
 
 				setTimeout(function(){
 					$('.itemDetailsContainer').hide();
+					selectedItem = false;
 				}, 350)
 
 			}, 400)
