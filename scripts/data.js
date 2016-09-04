@@ -24,6 +24,20 @@ var categories = {
 
 var projects = [
 	{
+		name : 'OrangeTwig',
+		year : '2014 - Present',
+		description : 'Web Dashboard + Mobile App for OT users',
+		details : 'views/otDashboard.html',
+		skills : ['uiux', 'coding'],
+		thumbnail : 'images/thumbOt.jpg'
+	},{
+		name : 'OrangeTwig Landing Page',
+		year : '2016',
+		description : 'Landing Page for small online sellers',
+		details : 'views/otLanding.html',
+		skills : ['uiux', 'coding'],
+		thumbnail : 'images/thumbOtLanding.jpg'
+	},{
 		name : 'Realbox',
 		year : '2012-2014',
 		description : 'My first real job after college',
@@ -36,7 +50,7 @@ var projects = [
 		description : 'Music related branding for a cafe',
 		details : 'views/test.html',
 		skills : ['branding', 'graphic'],
-		thumbnail : 'images/thumbYwf.jpg'
+		thumbnail : 'images/thumbYwf.png'
 	},{
 		name : 'Dishoom',
 		year : '2016',
@@ -62,7 +76,7 @@ var projects = [
 		name : 'Campusghanta',
 		year : '2012-2014',
 		description : 'First time I got majorly involved in a startup',
-		details : 'views/test.html',
+		details : 'views/cg.html',
 		skills : ['branding', 'graphic', 'coding'],
 		thumbnail : 'images/thumbCg.jpg'
 	},{
