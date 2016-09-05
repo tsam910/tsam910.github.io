@@ -11,8 +11,9 @@
 body {
   background: #fafafa;
   position: relative;
-  font-family: Helvetica, Arial; }
-  /* line 42, style.scss */
+  font-family: Helvetica, Arial;
+  height: 100%; }
+  /* line 43, style.scss */
   body .scrollCover {
     position: absolute;
     top: 0;
@@ -20,12 +21,12 @@ body {
     height: 100%;
     width: 17px;
     background: #fafafa; }
-  /* line 51, style.scss */
+  /* line 52, style.scss */
   body a {
     text-decoration: none;
     color: #4F9AE2; }
 
-/* line 57, style.scss */
+/* line 58, style.scss */
 .mainContainer {
   position: absolute;
   top: 0;
@@ -35,12 +36,12 @@ body {
   overflow: auto;
   padding-left: 17px; }
 
-/* line 67, style.scss */
+/* line 68, style.scss */
 .introContainer {
   height: 70%;
   min-height: 400px;
   position: relative; }
-  /* line 72, style.scss */
+  /* line 73, style.scss */
   .introContainer .intro {
     width: 100%;
     position: absolute;
@@ -50,7 +51,7 @@ body {
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     transform: translateY(-50%); }
-    /* line 79, style.scss */
+    /* line 80, style.scss */
     .introContainer .intro .illustration {
       height: 100px;
       background-image: url("../images/octopus.png");
@@ -58,14 +59,14 @@ body {
       background-repeat: no-repeat;
       background-position: center;
       margin-bottom: 30px; }
-    /* line 88, style.scss */
+    /* line 89, style.scss */
     .introContainer .intro .headline {
       color: #4F9AE2;
       font-family: 'Montserrat';
       font-size: 44px;
       font-weight: 600;
       margin-bottom: 20px; }
-    /* line 96, style.scss */
+    /* line 97, style.scss */
     .introContainer .intro .description {
       width: 100%;
       font-size: 20px;
@@ -74,7 +75,7 @@ body {
       color: rgba(0, 0, 0, 0.5);
       margin: 0 auto; }
 
-/* line 107, style.scss */
+/* line 108, style.scss */
 .workContainer {
   height: 100%;
   width: 100%;
@@ -82,31 +83,31 @@ body {
   margin: 0 auto;
   overflow: auto;
   position: relative; }
-  /* line 115, style.scss */
+  /* line 116, style.scss */
   .workContainer .work {
     height: 100%;
     width: 100%;
     overflow-y: scroll;
     position: relative;
     padding-left: 17px; }
-  /* line 123, style.scss */
+  /* line 124, style.scss */
   .workContainer .categoriesContainer {
     padding-top: 20px;
     padding-bottom: 20px; }
-    /* line 127, style.scss */
+    /* line 128, style.scss */
     .workContainer .categoriesContainer .categoriesSelector {
       width: 600px;
       margin: 0 auto;
       font-family: 'Hind';
       position: relative; }
-      /* line 133, style.scss */
+      /* line 134, style.scss */
       .workContainer .categoriesContainer .categoriesSelector .categories {
         overflow: hidden;
         border: 1px solid #f1f1f1;
         background: white;
         position: relative;
         z-index: 10; }
-      /* line 141, style.scss */
+      /* line 142, style.scss */
       .workContainer .categoriesContainer .categoriesSelector .category {
         width: 20%;
         float: left;
@@ -121,16 +122,16 @@ body {
         -webkit-transition: color 0.2s;
         -o-transition: color 0.2s;
         transition: color 0.2s; }
-        /* line 154, style.scss */
+        /* line 155, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .category:hover {
           color: rgba(0, 0, 0, 0.6); }
-        /* line 158, style.scss */
+        /* line 159, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .category.active {
           color: #4F9AE2; }
-        /* line 162, style.scss */
+        /* line 163, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .category:last-child {
           border-right: none; }
-      /* line 167, style.scss */
+      /* line 168, style.scss */
       .workContainer .categoriesContainer .categoriesSelector .selectedIndicator {
         height: 58px;
         width: 20%;
@@ -141,22 +142,22 @@ body {
         -webkit-transition: all 0.3s;
         -o-transition: all 0.3s;
         transition: all 0.3s; }
-        /* line 176, style.scss */
+        /* line 177, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos0 {
           left: 0%; }
-        /* line 180, style.scss */
+        /* line 181, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos1 {
           left: 20%; }
-        /* line 184, style.scss */
+        /* line 185, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos2 {
           left: 40%; }
-        /* line 188, style.scss */
+        /* line 189, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos3 {
           left: 60%; }
-        /* line 192, style.scss */
+        /* line 193, style.scss */
         .workContainer .categoriesContainer .categoriesSelector .selectedIndicator.pos4 {
           left: 80%; }
-  /* line 199, style.scss */
+  /* line 200, style.scss */
   .workContainer .workItems {
     width: 100%;
     max-width: 1000px;
@@ -166,10 +167,10 @@ body {
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
-    /* line 207, style.scss */
+    /* line 208, style.scss */
     .workContainer .workItems.hidden {
       opacity: 0; }
-    /* line 211, style.scss */
+    /* line 212, style.scss */
     .workContainer .workItems .item {
       background: white;
       width: 33%;
@@ -183,37 +184,37 @@ body {
       transition: all 0.2s;
       margin-left: 15px;
       cursor: pointer; }
-      /* line 222, style.scss */
+      /* line 223, style.scss */
       .workContainer .workItems .item:hover {
         -webkit-box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2);
         box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2); }
-      /* line 226, style.scss */
+      /* line 227, style.scss */
       .workContainer .workItems .item .imageContainer {
         height: 250px; }
-        /* line 230, style.scss */
+        /* line 231, style.scss */
         .workContainer .workItems .item .imageContainer .image {
           height: 100%;
           width: 100%;
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center; }
-      /* line 239, style.scss */
+      /* line 240, style.scss */
       .workContainer .workItems .item .detailsContainer {
         padding: 20px;
         padding-bottom: 0;
         text-align: left;
         border-top: 1px solid rgba(0, 0, 0, 0.05); }
-        /* line 245, style.scss */
+        /* line 246, style.scss */
         .workContainer .workItems .item .detailsContainer .titleContainer {
           font-family: 'Montserrat';
           margin-bottom: 10px; }
-          /* line 249, style.scss */
+          /* line 250, style.scss */
           .workContainer .workItems .item .detailsContainer .titleContainer .name {
             float: left;
             color: rgba(0, 0, 0, 0.6);
             font-size: 16px;
             line-height: 16px; }
-          /* line 256, style.scss */
+          /* line 257, style.scss */
           .workContainer .workItems .item .detailsContainer .titleContainer .year {
             float: left;
             color: rgba(0, 0, 0, 0.3);
@@ -221,17 +222,17 @@ body {
             line-height: 12px;
             margin-top: 3px;
             margin-left: 8px; }
-        /* line 266, style.scss */
+        /* line 267, style.scss */
         .workContainer .workItems .item .detailsContainer .description {
           font-family: 'Hind';
           font-size: 14px;
           color: rgba(0, 0, 0, 0.6);
           margin-bottom: 10px; }
-      /* line 274, style.scss */
+      /* line 275, style.scss */
       .workContainer .workItems .item .tagsContainer {
         border-top: 1px dashed rgba(0, 0, 0, 0.1);
         padding-left: 10px; }
-        /* line 278, style.scss */
+        /* line 279, style.scss */
         .workContainer .workItems .item .tagsContainer .tag {
           float: left;
           font-family: 'Hind';
@@ -244,27 +245,27 @@ body {
           -webkit-transition: color 0.2s;
           -o-transition: color 0.2s;
           transition: color 0.2s; }
-          /* line 289, style.scss */
+          /* line 290, style.scss */
           .workContainer .workItems .item .tagsContainer .tag:hover {
             color: rgba(0, 0, 0, 0.7); }
-          /* line 293, style.scss */
+          /* line 294, style.scss */
           .workContainer .workItems .item .tagsContainer .tag::before {
             content: '·';
             margin-right: 10px; }
-          /* line 299, style.scss */
+          /* line 300, style.scss */
           .workContainer .workItems .item .tagsContainer .tag:first-child::before {
             content: ''; }
-      /* line 306, style.scss */
+      /* line 307, style.scss */
       .workContainer .workItems .item.visible {
         opacity: 1; }
-      /* line 310, style.scss */
+      /* line 311, style.scss */
       .workContainer .workItems .item:nth-child(3n+1) {
         margin-left: -30px; }
-      /* line 314, style.scss */
+      /* line 315, style.scss */
       .workContainer .workItems .item:nth-child(3n+2) {
         width: 34%; }
 
-/* line 322, style.scss */
+/* line 323, style.scss */
 .itemDetailsContainer {
   position: fixed;
   top: 0;
@@ -273,7 +274,7 @@ body {
   width: 100%;
   display: none;
   z-index: 10; }
-  /* line 332, style.scss */
+  /* line 333, style.scss */
   .itemDetailsContainer .backdrop {
     position: absolute;
     left: 0;
@@ -285,10 +286,10 @@ body {
     -webkit-transition: all 1s;
     -o-transition: all 1s;
     transition: all 1s; }
-    /* line 342, style.scss */
+    /* line 343, style.scss */
     .itemDetailsContainer .backdrop.show {
       opacity: 1; }
-  /* line 347, style.scss */
+  /* line 348, style.scss */
   .itemDetailsContainer .animate {
     position: absolute;
     top: 0;
@@ -299,21 +300,21 @@ body {
     opacity: 0;
     -webkit-box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.2); }
-    /* line 357, style.scss */
+    /* line 358, style.scss */
     .itemDetailsContainer .animate.full {
       top: 10%;
       left: 10%;
       height: 80%;
       width: 80%; }
-    /* line 364, style.scss */
+    /* line 365, style.scss */
     .itemDetailsContainer .animate.transition {
       -webkit-transition: all 0.3s;
       -o-transition: all 0.3s;
       transition: all 0.3s; }
-    /* line 368, style.scss */
+    /* line 369, style.scss */
     .itemDetailsContainer .animate.show {
       opacity: 1; }
-  /* line 373, style.scss */
+  /* line 374, style.scss */
   .itemDetailsContainer .itemDetailsBuffer {
     position: relative;
     z-index: 10;
@@ -321,7 +322,7 @@ body {
     width: 100%;
     overflow: auto;
     padding: 20px; }
-  /* line 382, style.scss */
+  /* line 383, style.scss */
   .itemDetailsContainer .buttonClose {
     position: absolute;
     top: 50px;
@@ -336,10 +337,10 @@ body {
     -webkit-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s; }
-    /* line 395, style.scss */
+    /* line 396, style.scss */
     .itemDetailsContainer .buttonClose:hover {
       opacity: 0.8; }
-  /* line 400, style.scss */
+  /* line 401, style.scss */
   .itemDetailsContainer .itemDetails {
     position: relative;
     z-index: 10;
@@ -352,46 +353,46 @@ body {
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
-    /* line 411, style.scss */
+    /* line 412, style.scss */
     .itemDetailsContainer .itemDetails.show {
       opacity: 1; }
-    /* line 415, style.scss */
+    /* line 416, style.scss */
     .itemDetailsContainer .itemDetails .titleContainer {
       margin-bottom: 30px; }
-      /* line 418, style.scss */
+      /* line 419, style.scss */
       .itemDetailsContainer .itemDetails .titleContainer .title {
         font-family: 'Montserrat';
         font-size: 46px;
         color: rgba(0, 0, 0, 0.6);
         margin-bottom: 25px; }
-      /* line 425, style.scss */
+      /* line 426, style.scss */
       .itemDetailsContainer .itemDetails .titleContainer .meta {
         overflow: hidden;
         font-family: 'Montserrat';
         font-weight: bold; }
-        /* line 430, style.scss */
+        /* line 431, style.scss */
         .itemDetailsContainer .itemDetails .titleContainer .meta .designation {
           float: left;
           font-size: 22px;
           color: rgba(0, 0, 0, 0.4); }
-        /* line 436, style.scss */
+        /* line 437, style.scss */
         .itemDetailsContainer .itemDetails .titleContainer .meta .duration {
           float: left;
           font-size: 22px;
           font-weight: 300;
           color: rgba(0, 0, 0, 0.3);
           margin-left: 15px; }
-    /* line 446, style.scss */
+    /* line 447, style.scss */
     .itemDetailsContainer .itemDetails .storyContainer {
       font-family: 'Hind';
       font-size: 18px;
       color: rgba(0, 0, 0, 0.7); }
-    /* line 453, style.scss */
+    /* line 454, style.scss */
     .itemDetailsContainer .itemDetails .imageContainer img {
       width: 100%;
       border: 1px solid rgba(0, 0, 0, 0.1);
       margin-bottom: 10px; }
-    /* line 459, style.scss */
+    /* line 460, style.scss */
     .itemDetailsContainer .itemDetails .imageContainer .caption {
       text-align: center;
       font-style: italic;
