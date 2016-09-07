@@ -72,7 +72,6 @@ var checkWorkContainerScroll = function(){
 			$('.work').bind('scroll', checkWorkContainerScroll);
 		}, 1000);
 		
-		console.log('scrolling to top')
 	}
 }
 
@@ -92,6 +91,13 @@ var selectCategory = function(){
 	var filteredItems = getFilteredItems(selectedCategory);
 
 	populateWorkItems(filteredItems);
+
+	ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'Category',
+	  eventAction: 'select',
+	  eventLabel: category.id
+	});
 }
 
 var getFilteredItems = function(category){
@@ -127,6 +133,13 @@ var showItemDetails = function(e){
 	$(selectedItem).css('opacity', 0);
 	$('.itemDetailsContainer').show();
 	$('.animate').removeClass('transition');
+
+	ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'showWork Item',
+	  eventAction: 'select',
+	  eventLabel: selectedItemData.name
+	});
 
 	setTimeout(function(){
 		$('.backdrop').addClass('show');
@@ -170,6 +183,13 @@ var closeItemDetails = function(e){
 	var divDimensions = selectedItem.getBoundingClientRect();
 
 	$('.itemDetails').removeClass('show');
+
+	ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'Work Item',
+	  eventAction: 'close',
+	  eventLabel: $.tmplItem(selectedItem).data.name
+	});
 
 	setTimeout(function(){
 		$('.animate').css({
