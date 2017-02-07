@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	hideAllScreens();
-	showScreen('otp');
+	showScreen('disclaimer');
 })
 
 function hideAllScreens(){
@@ -8,5 +8,6 @@ function hideAllScreens(){
 }
 
 function showScreen(screenId){
+	hideAllScreens();
 	$('#'+screenId).show();
 }

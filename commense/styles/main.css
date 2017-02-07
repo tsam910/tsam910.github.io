@@ -108,3 +108,27 @@ body{
     left: 0;
     bottom: 0;
 }
+
+.numberInput{
+    display: inline-block;
+    margin-top: 20px;
+    position: relative;
+}
+
+.numberInput input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    letter-spacing: 5px;
+    border: none;
+    background: transparent;
+    width: 100%;
+    color: #5C6770;
+}
+
+.numberInput .dashes{
+    font-size: 24px;
+    letter-spacing: 5px;
+    color: #5C6770;
+}
