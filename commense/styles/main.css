@@ -22,19 +22,26 @@
     src: url("../fonts/Mark Simonson - Proxima Nova A Bold.otf") format("opentype");
 }
 
+*{
+    box-sizing: border-box;
+}
+
 body{
-	font-family: ProximaNova;
-	padding: 0;
-	margin: 0;
+    font-family: ProximaNova;
+    padding: 0;
+    margin: 0;
     background: #f1f1f1;
 }
 
 .screen{
-	padding: 40px;
-	min-height: 100%;
-	position: relative;
-	box-sizing: border-box;
+    padding: 40px;
+    min-height: 100%;
+    position: relative;
+    box-sizing: border-box;
     background: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
 }
 
 .screen.mobileKeypad{
@@ -47,18 +54,18 @@ body{
 }
 
 .screen.withCta{
-	padding-bottom: 100px;
+    padding-bottom: 100px;
 }
 
 .title{
-	color: #EC008C;
+    color: #EC008C;
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
 .content{
-	color: #5C6770;
+    color: #5C6770;
 }
 
 .actions{
@@ -74,8 +81,8 @@ body{
 }
 
 .cta{
-	height: 70px;
-    line-height: 70px;
+    height: 60px;
+    line-height: 60px;
     text-align: center;
     font-size: 18px;
     float: left;
@@ -84,21 +91,29 @@ body{
 }
 
 .cta:first-child{
-	margin-left: -20px;
+    margin-left: -20px;
 }
 
 .cta.primary{
-	color: white;
+    color: white;
     background: #EC008C;
 }
 
 .cta.secondary{
-	color: #5C6770;
+    color: #5C6770;
+}
+
+.cta .rightArrow{
+    background-image: url(../images/iconRight.png);
+    background-size: auto 70%;
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-right: 20px;
 }
 
 .ctaSingle{
-    height: 70px;
-    line-height: 70px;
+    height: 60px;
+    line-height: 60px;
     text-align: center;
     font-size: 18px;
     width: 100%;
@@ -131,4 +146,132 @@ body{
     font-size: 24px;
     letter-spacing: 5px;
     color: #5C6770;
+}
+
+.homeOptions{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.homeOption{
+    width: 100%;
+    height: 25%;
+    border-bottom: 1px solid #d2d2d2;
+    text-align: center;
+}
+
+.optionDetails{
+    display: inline-block;
+    text-align: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-size: auto 40px;
+    background-position: left;
+    background-repeat: no-repeat;
+    padding-left: 60px;
+}
+
+.optionTitle{
+    font-size: 22px;
+    color: #5C6770;
+}
+
+.optionDetails .description{
+    color: #5C6770;
+    margin-top: 5px;
+    opacity: 0.7;
+}
+
+.homeOption:last-child{
+    border-bottom: none;
+}
+
+.inputBlock{
+    margin-top: 40px;
+}
+
+.question{
+    color: #5C6770;
+}
+
+.input.tagCloud{
+    /*margin-top: 10px;*/
+}
+
+.tag{
+    padding: 10px 20px;
+    border: 1px solid #7d858d;
+    display: inline-block;
+    border-radius: 3px;
+    margin-top: 15px;
+    margin-right: 15px;
+    color: #7d858d;
+    box-sizing: border-box;
+}
+
+.tag.selected{
+    background: #EC008C;
+    color: white;
+    border: 1px solid #EC008C;
+}
+
+.input.radio{
+    margin-top: 15px;
+}
+
+.radio .option{
+    padding-left: 30px;
+    margin-top: 15px;
+    position: relative;
+}
+
+.radio .indicator{
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 14px;
+    width: 14px;
+    border: 1px solid #7d858d;
+    border-radius: 100px;
+}
+
+.radio .text{
+    color: #7d858d;
+}
+
+.option.selected .text{
+    color: #EC008C;
+}
+
+.option.selected .indicator{
+    border: 1px solid #EC008C;
+}
+
+.option.selected .indicator .inner{
+    position: absolute;
+    background: #EC008C;
+    height: 10px;
+    width: 10px;
+    border-radius: 100px;
+    top: 2px;
+    left: 2px;
+}
+
+.input.text{
+    margin-top: 20px;
+}
+
+.input textarea{
+    border: 1px solid #7d858d;
+    width: 100%;
+    height: 130px;
+    resize: none;
+    font-family: ProximaNova;
+    font-size: 14px;
+    color: #7d858d;
+    padding: 15px
 }

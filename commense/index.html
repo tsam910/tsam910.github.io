@@ -15,7 +15,7 @@
 			In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.
 		</div>
 		<div class="actions">
-			<div class="cta primary" onclick="showScreen('otp')">Accept</div>
+			<div class="cta primary" onclick="showScreen('delivery')">Accept</div>
 			<div class="cta secondary">Decline</div>
 		</div>
 	</div>
@@ -34,6 +34,125 @@
 		</div>
 		<div class="ctaSingle">Request Code</div>
 	</div>
+
+	<div class="screen" id="delivery" style="background-image: url('images/iconDelivery.png');">
+		<div class="title">When are you due for delivery?</div>
+		<div class="actions">
+			<div class="cta primary" onclick="showScreen('datePickerDelivery')">Pick a date</div>
+			<div class="cta secondary" onclick="showScreen('home')">
+				<span class="rightArrow">Later</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="screen" id="datePickerDelivery">
+		<div class="content">Stock android date picker here</div>
+		<div class="actions">
+			<div class="cta primary" onclick="showScreen('discharge')">Okay</div>
+		</div>
+	</div>
+
+	<div class="screen" id="discharge" style="background-image:url('images/iconHospital.png')">
+		<div class="title">Have you been discharged from the hospital?</div>
+		<div class="actions">
+			<div style="overflow:hidden">
+				<div class="cta secondary" style="float: right;" onclick="showScreen('home')">
+					<span class="rightArrow">Skip for now</span>
+				</div>
+			</div>
+			
+			<div>
+				<div class="cta primary">Yes</div>
+				<div class="cta secondary">No</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="screen" id="home">
+		<div class="homeOptions">
+			<div class="homeOption">
+				<div class="optionDetails" style="background-image: url('images/iconBarcode.svg');">
+					<div class="optionTitle">Scan barcode</div>
+					<div class="description">Collect next sample in 24 days</div>
+				</div>
+				
+			</div>
+			<div class="homeOption" onclick="showScreen('questions')">
+				<div class="optionDetails" style="background-image: url('images/iconQuestions.svg');">
+					<div class="optionTitle">Answer Questions</div>
+					<div class="description">Next questionnaire up tomorrow</div>
+				</div>
+			</div>
+			<div class="homeOption">
+				<div class="optionDetails" style="background-image: url('images/iconProfile.svg');">
+					<div class="optionTitle">Personal Details</div>
+					<div class="description">Last updated 11 days ago</div>
+				</div>
+			</div>
+			<div class="homeOption">
+				<div class="optionDetails" style="background-image: url('images/iconHelp.svg');">
+					<div class="optionTitle">Help</div>
+					<div class="description">Frequently Asked Questions</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="screen" id="questions">
+		<div class="title">Answer Questions</div>
+		<div class="inputBlock">
+			<div class="question">
+				What words would you use to describe your baby's behaviour today?
+			</div>
+			<div class="input tagCloud">
+				<div class="tag selected">funky</div>
+				<div class="tag">groovy</div>
+				<div class="tag selected">happy</div>
+				<div class="tag">kamikaze</div>
+			</div>
+		</div>
+		<div class="inputBlock">
+			<div class="question">
+				When did you take last take your child to a doctor?
+			</div>
+			<div class="input radio">
+				<div class="option">
+					<div class="indicator">
+						<div class="inner"></div>
+					</div>
+					<div class="text">Within the last week</div>
+				</div>
+				<div class="option">
+					<div class="indicator">
+						<div class="inner"></div>
+					</div>
+					<div class="text">Within the last month</div>
+				</div>
+				<div class="option">
+					<div class="indicator">
+						<div class="inner"></div>
+					</div>
+					<div class="text">More than a month ago</div>
+				</div>
+				<div class="option selected">
+					<div class="indicator">
+						<div class="inner"></div>
+					</div>
+					<div class="text">Don't remember</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="inputBlock">
+			<div class="question">How has the child been doing recently?</div>
+			<div class="input text">
+				<textarea placeholder="Write your answer here"></textarea>
+			</div>
+		</div>
+
+	</div>
+
 
 </body>
 </html>
