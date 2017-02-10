@@ -241,7 +241,7 @@
 		<div class="actions">
 			<div class="cta primary" onclick="showScreen('home')">Home</div>
 			<div class="cta secondary" onclick="showScreen('faq')">
-				<span class="rightArrow">Cancel</span>
+				<span class="rightArrow">FAQs</span>
 			</div>
 		</div>
 	</div>
@@ -260,6 +260,94 @@
 		</div>
 	</div>
 
+	<div class="screen withCta" id="faq">
+		<div class="title">FAQs</div>
+		<div class="inputBlock">
+			<div class="question">
+				How can you convince a chicken to cross a road?
+			</div>
+			<div class="input answer">
+				You cannot. They believe in free will. For more on free will, write to <a href="mailto:support@commensehealth.com">support@commensehealth.com</a>.
+			</div>
+		</div>
+
+		<div class="inputBlock">
+			<div class="question">
+				Why did the rooster recolor his plume from orange to pink?
+			</div>
+			<div class="input answer">
+				He was unhappy with the more recent associations with orange. Also, nothing rhymes with orange. This makes writing memes hard.
+			</div>
+		</div>
+
+		<div class="inputBlock">
+			<div class="question">
+				What is the duration of this study?
+			</div>
+			<div class="input answer">
+				3 years.
+			</div>
+		</div>
+		<div class="actions">
+			<div class="cta primary" onclick="showScreen('home')">Home</div>
+			<div class="cta secondary" onclick="showScreen('submitQuery')">
+				<span class="leftArrow">Write to us</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="screen" id="barcode">
+		<div class="barTop">Position barcode in the frame</div>
+		<div class="barBottom">
+			<div class="buttonLeft" onclick="showScreen('home')">Cancel</div>
+			<div class="buttonCamera" onclick="showScreen('barcodeDetails')"></div>
+			<div class="buttonRight" onclick="showScreen('barcodeType')">Type It</div>
+		</div>
+		<div class="photo">
+			<div class="frameMainContainerOuter">
+				<div class="frameMainContainer">
+					<div class="frameContainer left">
+						<div class="frame"></div>
+					</div>
+					<div class="frameContainer right">
+						<div class="frame"></div>
+					</div>
+				</div>
+				<div class="toast">
+					Barcode found
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="screen" id="barcodeDetails">
+		<div class="title">Scanned Barcode Details</div>
+		<div class="barcode"></div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Barcode Id</div>
+			<div class="data">3298472398</div>
+		</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Sample's Description</div>
+			<div class="data">Baby's stool, Day 30</div>
+		</div>
+
+		<div class="actions">
+			<div style="overflow:hidden">
+				<div class="cta secondary" style="float: right;" onclick="showScreen('submitQuery')">
+					Need Help?
+				</div>
+			</div>
+			
+			<div>
+				<div class="cta primary">Confirm</div>
+				<div class="cta secondary">Cancel</div>
+			</div>
+			
+		</div>
+	</div>
 
 </body>
 </html>

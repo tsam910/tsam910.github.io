@@ -130,6 +130,14 @@ body{
     padding-right: 20px;
 }
 
+.cta .LeftArrow{
+    background-image: url(../images/iconLeftGrey.svg);
+    background-size: auto 70%;
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
 .ctaSingle{
     height: 60px;
     line-height: 60px;
@@ -215,6 +223,17 @@ body{
 
 .question{
     color: #5C6770;
+    font-weight: 600;
+}
+
+.answer{
+    color: #7d858d;
+    margin-top: 10px;
+}
+
+.answer a{
+    text-decoration: none;
+    color: #EC008C;
 }
 
 .input.tagCloud{
@@ -304,7 +323,7 @@ body{
     bottom: 40px;
 }
 
-.buttonLeft, .buttonRight{
+.pagination .buttonLeft, .pagination .buttonRight{
     height: 30px;
     width: 30px;
     background: #ec008c;
@@ -325,10 +344,159 @@ body{
     display: inline-block;
 }
 
-.buttonLeft{
+.pagination .buttonLeft{
     transform: rotateZ(180deg);
 }
 
 .buttonLeft.disabled, .buttonRight.disabled{
     opacity: 0.3;
+}
+
+#barcode .barTop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 10;
+    line-height: 50px;
+    text-align: center;
+    color: #5C6770;
+}
+
+#barcode .barBottom{
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.9);
+    z-index: 10;
+}
+
+#barcode .photo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/sample.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+#barcode .buttonLeft, #barcode .buttonRight{
+    width: 33%;
+    position: absolute;
+    top: 0;
+    line-height: 100px;
+    text-align: center;
+    color: #5C6770;
+}
+
+#barcode .buttonLeft{
+    left: 0;
+}
+
+#barcode .buttonRight{
+    right: 0;
+}
+
+#barcode .buttonCamera{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-image:url('../images/iconCameraWhite.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: auto 40%;
+    background-size: auto 40%;
+    height: 80px;
+    width: 80px;
+    background-color: #ec008c;
+    border-radius: 100px;
+}
+
+.frameMainContainerOuter{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.frameMainContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 200px;
+    width: 320px;
+}
+
+.frameContainer{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 60px;
+    overflow: hidden;
+}
+
+.frame{
+    position: absolute;
+    height: 100%;
+    width: 110%;
+    border: 5px solid #ec008c;
+    box-sizing: border-box;
+    top: 0;
+}
+
+.frameContainer.left{
+    left: 0;
+}
+
+.frameContainer.left .frame{
+    left: 0;
+}
+
+.frameContainer.right{
+    right: 0;
+}
+
+.frameContainer.right .frame{
+    right: 0;
+}
+
+#barcode .toast{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 3px;
+    color: #5C6770;
+}
+
+#barcodeDetails .barcode{
+    width: 100%;
+    height: 190px;
+    background: #d2d2d2;
+}
+
+.dataBlock{
+    margin-top: 30px;
+}
+
+.dataTitle{
+    font-size: 14px;
+    color: #5C6770;
+}
+
+.data{
+    font-size: 26px;
+    margin-top: 10px;
+    color: #5C6770;
 }

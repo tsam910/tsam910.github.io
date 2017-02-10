@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	hideAllScreens();
-	showScreen('submitQuery');
+	showScreen('barcode');
 })
 
 function hideAllScreens(){
