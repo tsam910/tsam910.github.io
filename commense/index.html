@@ -99,7 +99,7 @@
 		</div>
 	</div>
 
-	<div class="screen" id="questions">
+	<div class="screen withCta" id="questions">
 		<div class="title">Answer Questions</div>
 		<div class="inputBlock">
 			<div class="question">
@@ -149,8 +149,115 @@
 			<div class="input text">
 				<textarea placeholder="Write your answer here"></textarea>
 			</div>
+			<div class="pagination">
+				<div class="buttonLeft disabled"></div>
+				<div class="pageNumber">1 of 5</div>
+				<div class="buttonRight" onclick="showScreen('questions2')"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="screen withCta withPagination" id="questions2">
+		<div class="title">Answer Questions</div>
+		<div class="inputBlock">
+			<div class="question">
+				What words would you use to describe your baby's behaviour today?
+			</div>
+			<div class="input tagCloud">
+				<div class="tag selected">funky</div>
+				<div class="tag">groovy</div>
+				<div class="tag selected">happy</div>
+				<div class="tag">kamikaze</div>
+			</div>
+		</div>
+		<div class="inputBlock">
+			<div class="question">
+				When did you take last take your child to a doctor?
+			</div>
+			<div class="input radio">
+				<div class="option">
+					<div class="indicator">
+						<div class="inner"></div>
+					</div>
+					<div class="text">Within the last week</div>
+				</div>
+				<div class="option">
+					<div class="indicator">
+						<div class="inner"></div>
+					</div>
+					<div class="text">Within the last month</div>
+				</div>
+				<div class="option">
+					<div class="indicator">
+						<div class="inner"></div>
+					</div>
+					<div class="text">More than a month ago</div>
+				</div>
+				<div class="option selected">
+					<div class="indicator">
+						<div class="inner"></div>
+					</div>
+					<div class="text">Don't remember</div>
+				</div>
+			</div>
 		</div>
 
+		<div class="pagination">
+			<div class="buttonLeft disabled"></div>
+			<div class="pageNumber">1 of 5</div>
+			<div class="buttonRight" onclick="showScreen('questions2')"></div>
+		</div>
+
+		<div class="actions">
+			<div class="cta primary" onclick="showScreen('answersSubmitted')">Submit</div>
+			<div class="cta secondary" onclick="showScreen('home')">Cancel</div>
+		</div>
+	</div>
+
+	<div class="screen centered" id="answersSubmitted">
+		<div class="title">Thank you!</div>
+		<img src="images/iconTickWhite.svg" style="width:50%; margin-top: 50px; margin-bottom: 50px; "/>
+		<div class="content">
+			Your data will be analyzed alongside data from other participants to accelerate the pace of research.
+		</div>
+		<div class="actions">
+			<div class="cta primary" onclick="showScreen('home')">Home</div>
+		</div>
+	</div>
+
+	<div class="screen withCta" id="submitQuery">
+		<div class="title">Write to us</div>
+		<div class="content">If you have a question or concern not addressed in the FAQs, send us a note. We'll reply via email.</div>
+		<div class="inputBlock">
+			<div class="input text">
+				<textarea placeholder="Write your query here"></textarea>
+			</div>
+		</div>
+
+		<div class="actions inline">
+			<div class="cta primary" onclick="showScreen('querySubmitted')">Submit</div>
+		</div>
+
+		<div class="actions">
+			<div class="cta primary" onclick="showScreen('home')">Home</div>
+			<div class="cta secondary" onclick="showScreen('faq')">
+				<span class="rightArrow">Cancel</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="screen centered" id="querySubmitted">
+		<div class="title">Thank you for reaching out</div>
+		<img src="images/iconTickWhite.svg" style="width:50%; margin-top: 50px; margin-bottom: 50px; "/>
+		<div class="content">
+			We will be in touch shortly.
+		</div>
+		<div class="actions">
+			<div class="cta primary" onclick="showScreen('home')">Home</div>
+			<div class="cta secondary" onclick="showScreen('faq')">
+				<span class="rightArrow">FAQs</span>
+			</div>
+		</div>
 	</div>
 
 

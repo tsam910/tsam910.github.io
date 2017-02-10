@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	hideAllScreens();
-	showScreen('disclaimer');
+	showScreen('submitQuery');
 })
 
 function hideAllScreens(){
