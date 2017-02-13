@@ -93,6 +93,7 @@ body{
     margin-top: 40px;
     padding-left: 20px;
     padding-right: 0;
+    padding-bottom: 0;
 }
 
 .withPagination .actions{
@@ -497,6 +498,58 @@ body{
 
 .data{
     font-size: 26px;
+    line-height: 32px;
     margin-top: 10px;
     color: #5C6770;
+    position: relative;
+}
+
+.data input{
+    border: none;
+    border-bottom: 1px solid #5C6770;
+    font-size: 26px;
+    color: #5C6770;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.data .required::-webkit-input-placeholder {
+   color: #fba6a3;
+}
+
+.data .required:-moz-placeholder { /* Firefox 18- */
+   color: #fba6a3;  
+}
+
+.data .required::-moz-placeholder {  /* Firefox 19+ */
+   color: #fba6a3;  
+}
+
+.data .required:-ms-input-placeholder {  
+   color: #fba6a3;  
+}
+
+.data .buttonEdit{
+    color: #5C6770;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 32px;
+}
+
+.dataInfo{
+    color: #5C6770;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 18px;
+    opacity: 0.5;
+}
+
+.inputBarcode input{
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    border: none;
+    border-bottom: 1px solid #5C6770;
 }

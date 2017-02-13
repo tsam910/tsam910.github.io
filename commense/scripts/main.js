@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	hideAllScreens();
-	showScreen('barcode');
+	showScreen('disclaimer');
 })
 
 function hideAllScreens(){

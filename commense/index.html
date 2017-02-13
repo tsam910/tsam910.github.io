@@ -62,8 +62,8 @@
 			</div>
 			
 			<div>
-				<div class="cta primary">Yes</div>
-				<div class="cta secondary">No</div>
+				<div class="cta primary" onclick="showScreen('home')">Yes</div>
+				<div class="cta secondary" onclick="showScreen('home')">No</div>
 			</div>
 			
 		</div>
@@ -71,27 +71,27 @@
 
 	<div class="screen" id="home">
 		<div class="homeOptions">
-			<div class="homeOption">
-				<div class="optionDetails" style="background-image: url('images/iconBarcode.svg');">
+			<div class="homeOption" onclick="showScreen('barcode')">
+				<div class="optionDetails" style="background-image: url('images/iconBarcode.png');">
 					<div class="optionTitle">Scan barcode</div>
 					<div class="description">Collect next sample in 24 days</div>
 				</div>
 				
 			</div>
 			<div class="homeOption" onclick="showScreen('questions')">
-				<div class="optionDetails" style="background-image: url('images/iconQuestions.svg');">
+				<div class="optionDetails" style="background-image: url('images/iconQuestions.png');">
 					<div class="optionTitle">Answer Questions</div>
 					<div class="description">Next questionnaire up tomorrow</div>
 				</div>
 			</div>
-			<div class="homeOption">
-				<div class="optionDetails" style="background-image: url('images/iconProfile.svg');">
+			<div class="homeOption" onclick="showScreen('personalDetails')">
+				<div class="optionDetails" style="background-image: url('images/iconProfile.png');">
 					<div class="optionTitle">Personal Details</div>
 					<div class="description">Last updated 11 days ago</div>
 				</div>
 			</div>
-			<div class="homeOption">
-				<div class="optionDetails" style="background-image: url('images/iconHelp.svg');">
+			<div class="homeOption" onclick="showScreen('submitQuery')">
+				<div class="optionDetails" style="background-image: url('images/iconHelp.png');">
 					<div class="optionTitle">Help</div>
 					<div class="description">Frequently Asked Questions</div>
 				</div>
@@ -342,8 +342,187 @@
 			</div>
 			
 			<div>
-				<div class="cta primary">Confirm</div>
-				<div class="cta secondary">Cancel</div>
+				<div class="cta primary" onclick="showScreen('barcodeSubmitted')">Confirm</div>
+				<div class="cta secondary" onclick="showScreen('home')">Cancel</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="screen" id="personalDetailsEdit">
+		<div class="title">Personal Details</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Name</div>
+			<div class="data">
+				Hermione Granger
+				<div class="buttonEdit">Edit</div>
+			</div>
+		</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Mobile Number</div>
+			<div class="data">
+				989-982-1117
+				<div class="buttonEdit">Edit</div>
+			</div>
+		</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Home Phone Number</div>
+			<div class="data">
+				614-311-9477
+				<div class="buttonEdit">Edit</div>
+			</div>
+		</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Email ID</div>
+			<div class="data">
+				hermione@hogwarts.edu
+				<div class="buttonEdit">Edit</div>
+			</div>
+		</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Due Date</div>
+			<div class="data">
+				September 14, 2017
+				<div class="dataInfo">Expected delivery date cannot be changed if it is less than 2 weeks away.</div>
+			</div>
+		</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Shipping Address</div>
+			<div class="data">
+				<input type="text" value="545, Babylon Street" placeholder="Address Line 1" style="width: 270px;"><br>
+				<input type="text" value="Apt 125" placeholder="Address Line 2" style="width: 270px;"><br>
+				<input type="text" class="required" placeholder="Sample required" style="width: 270px;"><br>
+				<input type="text" placeholder="City" value="Boston" style="width: 100px;"> <input type="text" placeholder="Zip" value="02163" style="width: 90px;"> MA
+			</div>
+		</div>
+
+		<div class="actions inline">			
+			<div>
+				<div class="cta primary" onclick="showScreen('personalDetails')">Save</div>
+				<div class="cta secondary" onclick="showScreen('personalDetails')">Cancel</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="screen" id="personalDetails">
+		<div class="title">Personal Details</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Name</div>
+			<div class="data">
+				Hermione Granger
+				<div class="buttonEdit">Edit</div>
+			</div>
+		</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Mobile Number</div>
+			<div class="data">
+				989-982-1117
+				<div class="buttonEdit">Edit</div>
+			</div>
+		</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Home Phone Number</div>
+			<div class="data">
+				614-311-9477
+				<div class="buttonEdit">Edit</div>
+			</div>
+		</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Email ID</div>
+			<div class="data">
+				hermione@hogwarts.edu
+				<div class="buttonEdit">Edit</div>
+			</div>
+		</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Due Date</div>
+			<div class="data">
+				September 14, 2017
+				<div class="dataInfo">Expected delivery date cannot be changed if it is less than 2 weeks away.</div>
+			</div>
+		</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Shipping Address</div>
+			<div class="data">
+				545, Babylon Street<br>
+				Apt. 125,<br>
+				Boston, 02163 MA
+				<div class="buttonEdit" onclick="showScreen('personalDetailsEdit')">Edit</div>
+			</div>
+		</div>
+
+		<div class="actions inline">			
+			<div>
+				<div class="cta primary" onclick="showScreen('home')">Home</div>
+				<!-- <div class="cta secondary" onclick="showScreen('home')">Cancel</div> -->
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="screen mobileKeypad" id="barcodeType">
+		<div class="title">Type Barcode</div>
+
+		<div class="inputBarcode">
+			<input type="text" placeholder="Type barcode ID here">
+		</div>
+
+		<div class="actions">
+			<div class="cta primary" onclick="showScreen('barcodeTypeDetails')">Submit</div>
+			<div class="cta secondary" onclick="showScreen('home')">Cancel</div>		
+		</div>
+	</div>
+
+	<div class="screen centered" id="barcodeSubmitted">
+		<div class="title">Barcode submitted</div>
+		<img src="images/iconTickWhite.svg" style="width:50%; margin-top: 50px; margin-bottom: 50px; "/>
+		<div class="content">
+			You data has been recorded.
+		</div>
+		<div class="actions">
+			<div class="cta primary" onclick="showScreen('home')">Home</div>
+			<div class="cta secondary" onclick="showScreen('faq')">
+				<span class="rightArrow">FAQs</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="screen" id="barcodeTypeDetails">
+		<div class="title">Barcode Details</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Barcode Id</div>
+			<div class="data">3298472398</div>
+		</div>
+
+		<div class="dataBlock">
+			<div class="dataTitle">Sample's Description</div>
+			<div class="data">Baby's stool, Day 30</div>
+		</div>
+
+		<div class="actions">
+			<div style="overflow:hidden">
+				<div class="cta secondary" style="float: right;" onclick="showScreen('submitQuery')">
+					Need Help?
+				</div>
+			</div>
+			
+			<div>
+				<div class="cta primary" onclick="showScreen('barcodeSubmitted')">Confirm</div>
+				<div class="cta secondary" onclick="showScreen('home')">Cancel</div>
 			</div>
 			
 		</div>
