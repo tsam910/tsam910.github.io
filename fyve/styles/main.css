@@ -623,6 +623,13 @@ body {
   #mainContainer .patientDetailsContainer {
     display: none;
     width: 100%; }
+    #mainContainer .patientDetailsContainer .patientDetails .actions {
+      top: 10px;
+      width: 150px; }
+      #mainContainer .patientDetailsContainer .patientDetails .actions .action .actionName {
+        padding-left: 0;
+        padding-top: 15px;
+        background-position: top center; }
     #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .config .configOption .configOptionValue {
       width: 200px; }
     #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.dataTable .config .configOptionValue {
