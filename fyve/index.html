@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<title>FYVE</title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="styles/main.css">
+		<script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="scripts/main.js"></script>
+	</head>
+	<body>
+		<div id="mainContainer">
+			<div class="patientsMainContainer">
+				<div class="header">
+					<div class="logo">FYVE</div>
+					<div class="tabs">
+						<div class="tab active tabPatients">
+							<div class="icon"></div>
+							<div class="tabLabel">Patients</div>
+						</div>
+						<div class="tab tabAlarms">
+							<div class="icon"></div>
+							<div class="tabLabel">Alarms</div>
+						</div>
+					</div>
+				</div>
+				<div class="mobileHeader">
+					All Patients
+				</div>
+				<div class="patientsContainer">
+					<div class="filters">
+						<div class="search">
+							<div class="icon"></div>
+							<input type="text" placeholder="Search for patients here">
+						</div>
+						<div class="otherOptions">
+							<div class="option optionFilter">
+								<div class="icon"></div>
+								<div class="optionLabel">Filter</div>
+							</div>
+							<div class="option optionSort">
+								<div class="icon"></div>
+								<div class="optionLabel">Sort</div>
+							</div>
+						</div>
+					</div>
+					<div class="patients">
+						<div class="listTitle">Patients in alarm</div>
+						<div class="patientsList urgent"></div>
+
+						<div class="listTitle">Patients in Ward 1</div>
+						<div class="patientsList ward1"></div>
+
+						<div class="listTitle">Patients in Ward 2</div>
+						<div class="patientsList ward2"></div>
+					</div>
+				</div>
+			</div>
+			<div class="patientDetailsContainer">
+				<div class="patientSummary"></div>
+				<div class="patientLiveData"></div>
+			</div>
+		</div>
+
+		<script type="text/jquery-tmpl" id="patientTemplate">
+			<div class="patientContainer ${ alarm.active ? 'alarm' : '' }">
+				<div class="patientInfo">
+					<div class="patientName">
+						${name}
+					</div>
+					<div class="patientDetails">
+						<div class="detailsDesktop">${sex} | ${age} Yrs | Bed no. ${bed}</div>
+						{{if alarm.active}}
+							<div class="alarmDesktop active">${alarm.message}</div>
+						{{else}}
+							<div class="alarmDesktop">${alarm.message}</div>
+						{{/if}}
+					</div>
+				</div>
+				<div class="patientStats">
+					<div class="kvPair ${ alarm.active && alarm.parameter == 'hr' ? 'alarm' : '' }">
+						<div class="key">HR</div>
+						<div class="value">${hr}</div>
+					</div>
+					<div class="kvPair ${ alarm.active && alarm.parameter == 'rr' ? 'alarm' : '' }">
+						<div class="key">RR</div>
+						<div class="value">${rr}</div>
+					</div>
+					<div class="kvPair ${ alarm.active && alarm.parameter == 'spo' ? 'alarm' : '' }">
+						<div class="key">SPO<sub>2</sub></div>
+						<div class="value">${spo}</div>
+					</div>
+					<div class="kvPair ${ alarm.active && alarm.parameter == 'temp' ? 'alarm' : '' }">
+						<div class="key">TEMP</div>
+						<div class="value">${temp}</div>
+					</div>
+					<div class="kvPair ${ alarm.active && alarm.parameter == 'nibp' ? 'alarm' : '' }">
+						<div class="key">NIBP</div>
+						<div class="value">${nibp}</div>
+					</div>
+				</div>
+				<div class="actions">
+					<div class="action">
+						<div class="actionName history">History</div>
+					</div>
+					<div class="action">
+						<div class="actionName vitals">Vitals</div>
+					</div>
+				</div>
+			</div>
+		</script>
+	</body>
+</html>

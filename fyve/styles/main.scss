@@ -1,0 +1,599 @@
+@font-face{
+	font-family: 'Montserrat';
+	font-weight: 400;
+  	src: url('../fonts/Montserrat-Regular.ttf') format('truetype')
+}
+
+@font-face{
+	font-family: 'Montserrat';
+	font-weight: 600;
+  	src: url('../fonts/Montserrat-Bold.ttf') format('truetype')
+}
+
+// variables
+
+$colorPrimary : #4fc3f7;
+$colorError : #EF585A;
+// common styles
+
+*{
+	box-sizing: border-box;
+	font-family: 'Montserrat';
+	font-weight: 400;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+}
+
+#mainContainer{
+	position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    .patientsMainContainer{
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background: #f1f1f1;
+		padding-top: 50px;
+
+		.header{
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    height: 50px;
+		    background: white;
+		    width: 100%;
+		    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+		    z-index: 10;
+
+		    .logo{
+	    	    float: left;
+			    line-height: 50px;
+			    margin-left: 20px;
+			    background-image: url(../images/logo.png);
+			    background-size: contain;
+			    background-repeat: no-repeat;
+			    background-position: center;
+			    color: transparent;
+			    width: 100px;
+		    }
+
+		    .tabs{
+	    	    float: right;
+			    line-height: 50px;
+			    margin-right: 40px;
+
+			    .tab{
+			    	float: left;
+				    margin-left: 40px;
+				    font-size: 12px;
+				    color: rgba(0,0,0,0.5);
+				    overflow: hidden;
+
+				    .icon{
+			    	    float: left;
+					    height: 16px;
+					    width: 16px;
+					    margin-top: 17px;
+					    margin-right: 10px;
+					    background-size: contain;
+					    background-repeat: no-repeat;
+					    background-position: center;
+					    opacity: 0.7;
+				    }
+
+				    .tabLabel{
+				    	float: left;
+				    }
+
+				    &.active{
+						color: $colorPrimary;
+
+						.icon{
+							opacity: 1;
+						}
+				    }
+
+				    &.tabAlarms{
+						.icon{
+							background-image: url("../images/iconAlarmBlack.svg")
+						}
+
+						&.active{
+							.icon{
+								background-image: url("../images/iconAlarmActive.svg")
+							}
+						}
+				    }
+
+				    &.tabPatients{
+						.icon{
+							background-image: url("../images/iconListBlack.svg")
+						}
+
+						&.active{
+							.icon{
+								background-image: url("../images/iconListActive.svg")
+							}
+						}
+				    }
+			    }
+		    }
+		}
+
+		.mobileHeader{
+			display: none;
+		}
+
+		.patientsContainer{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			padding-top: 30px;
+
+			.filters{
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 30px;
+				width: 100%;
+				background: #fafafa;
+				border-top: 1px solid  rgba(0,0,0,0.05);
+				border-bottom: 1px solid  rgba(0,0,0,0.05);
+
+				.search{
+				    width: 100%;
+				    height: 100%;
+				    position: relative;
+				    padding-left: 30px;
+
+					.icon{
+						background-image: url(../images/iconSearch.svg);
+					    position: absolute;
+					    top: 0;
+					    left: 0;
+					    height: 30px;
+					    width: 30px;
+					    background-size: 12px;
+					    background-repeat: no-repeat;
+					    background-position: center;
+					    opacity: 0.5;
+					}
+
+					input{
+					    border: none;
+					    height: 28px;
+					    line-height: 28px;
+					    background: none;
+					    padding: 0;
+					    font-weight: 300;
+					    margin: 0;
+					}
+				}
+
+				.otherOptions{
+					position: absolute;
+				    top: 0;
+				    right: 0px;
+
+				    .option{
+				    	float: left;
+					    line-height: 18px;
+					    font-size: 12px;
+					    color: rgba(0,0,0,0.3);
+					    position: relative;
+					    padding-left: 30px;
+					    border-left: 1px solid rgba(0,0,0,0.1);
+					    margin-top: 5px;
+					    margin-right: 20px;
+
+					    .icon{
+					    	position: absolute;
+						    top: 0;
+						    left: 0;
+						    height: 18px;
+						    width: 30px;
+						    background-size: 10px;
+						    background-repeat: no-repeat;
+						    background-position: center;
+						    opacity: 0.5;
+					    }
+				    }
+				}
+
+				.optionFilter{
+					.icon{
+						background-image: url("../images/iconFilter.svg");
+					}
+				}
+
+				.optionSort{
+					.icon{
+						background-image: url("../images/iconSort.svg");
+					}
+				}
+			}
+		}
+
+		.patients{
+		    width: 100%;
+		    height: 100%;
+		    padding: 0px 20px;
+		    overflow: auto;
+
+		    .listTitle{
+	    	    font-size: 13px;
+	    	    margin-top: 20px;
+			    margin-bottom: 20px;
+			    color: rgba(0,0,0,0.3);
+		    }
+
+		    .patientsList{
+		    	overflow: hidden;
+				padding-left: 40px;
+		    }
+		}
+
+		.patientContainer{
+		    float: left;
+		    width: 33.33%;
+		    margin-left: 20px;
+		    margin-bottom: 20px;
+		    background: white;
+		    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+
+		    &:nth-child(3n+1){
+	    	   margin-left: -40px;
+		    }
+
+		    .patientInfo{
+		    	padding: 15px 20px;
+		    }
+
+		    .patientName{
+    	       font-size: 16px;
+			   color: rgba(0, 0, 0, 0.5);
+			   margin-bottom: 7px;
+			}
+
+		    .patientDetails{
+	    	    font-size: 10px;
+    			color: rgba(0,0,0,0.3);
+
+    			.alarmDesktop{
+    				margin-top: 5px;
+    				color: rgba(0,0,0,0.2);
+
+    				&.active{
+    					color: $colorError;
+    				}
+    			}
+		    }
+
+		    .patientStats{
+		    	position: relative;
+			    background: rgba(0,0,0,0.01);
+			    overflow: hidden;
+			    border-top: 1px solid rgba(0,0,0,0.05);
+			    border-bottom: 1px solid rgba(0,0,0,0.05);
+			    // padding: 10px 20px;
+
+			    .kvPair{
+			    	width: 50%;
+				    float: left;
+				    text-align: center;
+			        padding-top: 10px;
+				    padding-bottom: 10px;
+				    border-bottom: 1px solid rgba(0,0,0,0.05);
+
+
+				    .key{
+				    	// float: left;
+					    color: $colorPrimary;
+					    font-size: 10px;
+					    height: 13px;
+				    }
+
+				    .value{
+			    	    // float: left;
+					    font-size: 16px;
+					    color: rgba(0,0,0,0.4);
+					    margin-top: 5px;
+				    }
+
+				    &:nth-child(2n+1){
+				    	border-right: 1px solid rgba(0,0,0,0.05);
+				    }
+
+				    &:last-child{
+				    	border-bottom: none;
+				    	width: 100%;
+				    	border-right: none;
+				    }
+
+				    &.alarm{
+				    	background: $colorError;
+
+				    	.key{
+				    		color: white;
+				    		opacity: 0.6;
+				    	}
+
+				    	.value{
+				    		color: white;
+				    	}
+				    }
+			    }
+		    }
+
+		    .actions{
+		    	overflow: hidden;
+		    	padding-top: 10px;
+		    	padding-bottom: 10px;
+		    	background: $colorPrimary;
+
+		    	.action{
+		    		width: 50%;
+		    		float: left;
+		    		line-height: 30px;
+		    		text-align: center;
+
+		    		.actionName{
+						font-size: 11px;
+						color: white;
+					    background-size: 15px;
+					    background-position: left;
+					    background-repeat: no-repeat;
+					    display: inline-block;
+					    padding-left: 22px;
+
+					    &.history{
+							background-image: url("../images/iconHistoryWhite.svg")
+					    }
+
+					    &.vitals{
+							background-image: url("../images/iconVitalsWhite.svg")
+					    }
+		    		}
+
+		    		&:first-child{
+		    			border-right: 1px solid rgba(255,255,255,0.3);
+		    		}
+		    	}
+		    }
+		}
+    }
+
+    .patientDetailsContainer{
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 100%;
+		width: 50%;
+		background: #f1f1f1;
+
+		display: none;
+    }
+}
+
+// mobile specific
+
+@media (max-width: 600px) {
+  #mainContainer{
+
+  	.patientsMainContainer{
+	    padding-top: 40px;
+    	padding-bottom: 50px;
+
+    	.header{
+    		top: initial;
+    		bottom: 0;
+    		background: $colorPrimary;
+
+    		.logo{
+    			display: none;
+    		}
+
+    		.tabs{
+			    width: 100%;
+			    float: none;
+			    margin-right: 0px;
+
+			    .tab{
+			    	margin-left: 0px;
+				    text-align: center;
+				    width: 50%;
+				    color: white;
+				    opacity: 0.4;
+
+				    .icon{
+				    	margin-top: 0;
+				    	float: none;
+				    	vertical-align: middle;
+				    	display: inline-block;
+				    }
+
+				    .tabLabel{
+				    	float: none;
+				    	vertical-align: middle;
+				    	display: inline-block;
+				    }
+
+				    &.active{
+						color: white;
+						opacity: 1;
+				    }
+
+				    &.tabAlarms{
+						.icon{
+							background-image: url("../images/iconAlarmWhite.svg")
+						}
+
+						&.active{
+							.icon{
+								background-image: url("../images/iconAlarmWhite.svg")
+							}
+						}
+				    }
+
+				    &.tabPatients{
+						.icon{
+							background-image: url("../images/iconListWhite.svg")
+						}
+
+						&.active{
+							.icon{
+								background-image: url("../images/iconListWhite.svg")
+							}
+						}
+				    }
+			    }
+    		}
+
+
+    	}
+
+    	.mobileHeader{
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 40px;
+    		background: $colorPrimary;
+    		color: white;
+    		line-height: 40px;
+    		padding-left: 20px;
+    		font-size: 13px;
+    		display: block;
+    	}
+
+    	.patients{
+    		padding: 0;
+
+    		.listTitle{
+			    margin-top: 10px;
+			    margin-bottom: 10px;
+			    padding-left: 20px
+    		}
+
+    		.patientsList{
+    			padding-left: 0px;
+    		}
+    	}
+
+    	.patientContainer{
+    		float: none;
+		    width: 100%;
+		    margin-left: 0px !important;
+		    margin-bottom: 0px;
+		    box-shadow: none;
+	        padding-left: 20px;
+		    padding-top: 15px;
+		    padding-bottom: 15px;
+		    border-bottom: 1px solid rgba(0,0,0,0.1);
+		    position: relative;
+
+		    .patientInfo{
+		    	padding: 0;
+		    	overflow: hidden;
+		    }
+
+		    .patientName{
+		    	font-size: 18px;
+		    	float: left;
+		    	margin-bottom: 0px;
+		    }
+
+		    .patientDetails{
+		    	float: left;
+		    	margin-left: 10px;
+		    	padding-left: 1px solid rgba(0,0,0,0.1);
+		    	padding-left: 10px;
+		    	line-height: 12px;
+
+		    	.alarmDesktop{
+		    		margin-top: 0;
+		    	}
+		    }
+
+		    .patientStats{
+		    	background: white;
+		    	border-top: none;
+		    	border-bottom: none;
+		    	overflow: hidden;
+		    	margin-top: 10px;
+
+		    	.kvPair{
+		    		border-right: none !important;
+		    		width: auto !important;
+		    		padding-top: 0;
+		    		padding-bottom: 0;
+		    		margin-right: 15px;
+
+		    		&.alarm{
+		    			background: none;
+
+		    			.key{
+		    				color: $colorError;
+		    			}
+
+		    			.value{
+		    				color: $colorError;
+		    			}
+		    		}
+		    	}
+		    }
+
+		    .actions{
+	    	    background: white;
+			    position: absolute;
+			    top: 20px;
+			    right: 0px;
+			    height: 63px;
+			    width: 90px;
+			    border-left: 1px solid rgba(0,0,0,0.1);
+
+				.action{
+				    width: auto;
+				    position: absolute;
+				    top: 50%;
+				    left: 50%;
+				    transform: translateX(-50%) translateY(-50%);
+
+					.actionName{
+					    padding-left: 0px;
+					    padding-top: 20px;
+					    background-position: center top;
+					    background-size: 20px;
+					    text-transform: uppercase;
+					    color: $colorPrimary;
+
+					    &.vitals{
+					    	background-image: url("../images/iconVitalsActive.svg")
+					    }
+					}
+
+					&:first-child{
+						display: none;
+					}
+				}
+		    }
+
+		    &.alarm{
+
+		    	.patientName{
+		    		color: $colorError;
+		    	}
+		    }
+    	}
+  	}
+
+  }
+}
