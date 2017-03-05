@@ -72,6 +72,9 @@ var patient = [{
 }]
 
 $(document).ready(function(){
+
+	document.documentElement.requestFullscreen();
+
 	$.tmpl( $('#patientTemplate').html(), patient).appendTo( "#mainContainer .patientsList.urgent" )
 	$.tmpl( $('#patientTemplate').html(), patient).appendTo( "#mainContainer .patientsList.ward1" )
 	$.tmpl( $('#patientTemplate').html(), patient).appendTo( "#mainContainer .patientsList.ward2" )
