@@ -536,6 +536,15 @@ body{
 		    		padding-top: 0;
 		    		padding-bottom: 0;
 		    		margin-right: 15px;
+		    		border-bottom: none;
+
+		    		.key{
+						font-size: 9px;
+		    		}
+
+		    		.value{
+						font-size: 14px;
+		    		}
 
 		    		&.alarm{
 		    			background: none;
@@ -554,10 +563,10 @@ body{
 		    .actions{
 	    	    background: white;
 			    position: absolute;
-			    top: 20px;
+			    top: 35px;
 			    right: 0px;
-			    height: 63px;
-			    width: 90px;
+			    height: 33px;
+			    width: 70px;
 			    border-left: 1px solid rgba(0,0,0,0.1);
 
 				.action{
@@ -569,11 +578,12 @@ body{
 
 					.actionName{
 					    padding-left: 0px;
-					    padding-top: 20px;
+					    padding-top: 16px;
 					    background-position: center top;
 					    background-size: 20px;
 					    text-transform: uppercase;
 					    color: $colorPrimary;
+					    font-size: 9px;
 
 					    &.vitals{
 					    	background-image: url("../images/iconVitalsActive.svg")

@@ -352,7 +352,12 @@ body {
           width: auto !important;
           padding-top: 0;
           padding-bottom: 0;
-          margin-right: 15px; }
+          margin-right: 15px;
+          border-bottom: none; }
+          #mainContainer .patientsMainContainer .patientContainer .patientStats .kvPair .key {
+            font-size: 9px; }
+          #mainContainer .patientsMainContainer .patientContainer .patientStats .kvPair .value {
+            font-size: 14px; }
           #mainContainer .patientsMainContainer .patientContainer .patientStats .kvPair.alarm {
             background: none; }
             #mainContainer .patientsMainContainer .patientContainer .patientStats .kvPair.alarm .key {
@@ -362,10 +367,10 @@ body {
       #mainContainer .patientsMainContainer .patientContainer .actions {
         background: white;
         position: absolute;
-        top: 20px;
+        top: 35px;
         right: 0px;
-        height: 63px;
-        width: 90px;
+        height: 33px;
+        width: 70px;
         border-left: 1px solid rgba(0, 0, 0, 0.1); }
         #mainContainer .patientsMainContainer .patientContainer .actions .action {
           width: auto;
@@ -375,11 +380,12 @@ body {
           transform: translateX(-50%) translateY(-50%); }
           #mainContainer .patientsMainContainer .patientContainer .actions .action .actionName {
             padding-left: 0px;
-            padding-top: 20px;
+            padding-top: 16px;
             background-position: center top;
             background-size: 20px;
             text-transform: uppercase;
-            color: #4fc3f7; }
+            color: #4fc3f7;
+            font-size: 9px; }
             #mainContainer .patientsMainContainer .patientContainer .actions .action .actionName.vitals {
               background-image: url("../images/iconVitalsActive.svg"); }
           #mainContainer .patientsMainContainer .patientContainer .actions .action:first-child {
