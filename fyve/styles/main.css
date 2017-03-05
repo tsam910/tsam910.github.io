@@ -28,7 +28,7 @@ body {
     left: 0;
     top: 0;
     height: 100%;
-    width: 100%;
+    width: 50%;
     background: #f1f1f1;
     padding-top: 50px; }
     #mainContainer .patientsMainContainer .header {
@@ -50,6 +50,16 @@ body {
         background-position: center;
         color: transparent;
         width: 100px; }
+      #mainContainer .patientsMainContainer .header .refreshBlock {
+        line-height: 50px;
+        margin-left: 30px;
+        float: left;
+        font-size: 10px; }
+        #mainContainer .patientsMainContainer .header .refreshBlock .status {
+          color: rgba(0, 0, 0, 0.4); }
+        #mainContainer .patientsMainContainer .header .refreshBlock .button {
+          color: #4fc3f7;
+          margin-left: 10px; }
       #mainContainer .patientsMainContainer .header .tabs {
         float: right;
         line-height: 50px;
@@ -163,7 +173,6 @@ body {
         margin-bottom: 20px;
         color: rgba(0, 0, 0, 0.3); }
       #mainContainer .patientsMainContainer .patients .patientsList {
-        overflow: hidden;
         padding-left: 40px; }
     #mainContainer .patientsMainContainer .patientContainer {
       float: left;
@@ -172,6 +181,8 @@ body {
       margin-bottom: 20px;
       background: white;
       box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); }
+      #mainContainer .patientsMainContainer .patientContainer:first-child {
+        outline: 5px solid #4fc3f7; }
       #mainContainer .patientsMainContainer .patientContainer:nth-child(3n+1) {
         margin-left: -40px; }
       #mainContainer .patientsMainContainer .patientContainer .patientInfo {
@@ -250,20 +261,220 @@ body {
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 10;
     height: 100%;
     width: 50%;
-    background: #f1f1f1;
-    display: none; }
+    background: white;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+    padding-top: 80px; }
+    #mainContainer .patientDetailsContainer .patientDetails {
+      padding: 15px 20px;
+      background: #4fc3f7;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 80px;
+      width: 100%; }
+      #mainContainer .patientDetailsContainer .patientDetails .patientInfo .patientName {
+        font-size: 24px;
+        color: white; }
+      #mainContainer .patientDetailsContainer .patientDetails .patientInfo .patientDescription {
+        font-size: 10px;
+        color: white;
+        margin-top: 6px;
+        opacity: 0.7; }
+      #mainContainer .patientDetailsContainer .patientDetails .actions {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        width: 200px;
+        overflow: hidden;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: #4fc3f7; }
+        #mainContainer .patientDetailsContainer .patientDetails .actions .action {
+          width: 50%;
+          float: left;
+          line-height: 30px;
+          text-align: center; }
+          #mainContainer .patientDetailsContainer .patientDetails .actions .action .actionName {
+            font-size: 11px;
+            color: white;
+            background-size: 15px;
+            background-position: left;
+            background-repeat: no-repeat;
+            display: inline-block;
+            padding-left: 22px;
+            opacity: 0.5; }
+            #mainContainer .patientDetailsContainer .patientDetails .actions .action .actionName.history {
+              background-image: url("../images/iconHistoryWhite.svg"); }
+            #mainContainer .patientDetailsContainer .patientDetails .actions .action .actionName.vitals {
+              background-image: url("../images/iconVitalsWhite.svg"); }
+          #mainContainer .patientDetailsContainer .patientDetails .actions .action:first-child {
+            border-right: 1px solid rgba(255, 255, 255, 0.3); }
+          #mainContainer .patientDetailsContainer .patientDetails .actions .action.active .actionName {
+            opacity: 1; }
+    #mainContainer .patientDetailsContainer .patientHistory {
+      width: 100%;
+      height: 100%;
+      padding-top: 60px;
+      position: relative; }
+      #mainContainer .patientDetailsContainer .patientHistory .historyOptionsContainer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        width: 100%; }
+        #mainContainer .patientDetailsContainer .patientHistory .historyOptionsContainer .historyOptions {
+          border: 1px solid #4fc3f7;
+          border-radius: 5px;
+          width: 342px;
+          margin-top: 15px;
+          display: inline-block;
+          overflow: hidden; }
+        #mainContainer .patientDetailsContainer .patientHistory .historyOptionsContainer .option {
+          float: left;
+          width: 33%;
+          font-size: 10px;
+          text-align: center;
+          line-height: 28px;
+          color: #4fc3f7; }
+          #mainContainer .patientDetailsContainer .patientHistory .historyOptionsContainer .option:nth-child(2) {
+            width: 34%;
+            border-left: 1px solid #4fc3f7;
+            border-right: 1px solid #4fc3f7; }
+          #mainContainer .patientDetailsContainer .patientHistory .historyOptionsContainer .option.active {
+            background: #4fc3f7;
+            color: white; }
+      #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: none; }
+        #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.active {
+          display: block; }
+        #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .config {
+          position: absolute;
+          left: 0;
+          bottom: 15px;
+          width: 100%;
+          text-align: center; }
+          #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .config .configOption {
+            width: 300px;
+            display: inline-block;
+            text-align: left;
+            overflow: hidden; }
+            #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .config .configOption .configOptionTitle {
+              float: left;
+              font-size: 12px;
+              color: rgba(0, 0, 0, 0.5);
+              width: 110px;
+              line-height: 20px; }
+            #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .config .configOption .configOptionValue {
+              float: left; }
+              #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .config .configOption .configOptionValue .buttonMinus, #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .config .configOption .configOptionValue .buttonPlus {
+                float: left;
+                background: #4fc3f7;
+                width: 20px;
+                line-height: 20px;
+                border-radius: 2px;
+                text-align: center;
+                color: white;
+                height: 20px; }
+              #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .config .configOption .configOptionValue .value {
+                float: left;
+                font-size: 12px;
+                margin-left: 20px;
+                margin-right: 20px;
+                color: rgba(0, 0, 0, 0.7);
+                line-height: 20px; }
+          #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .config .radioOption {
+            float: left;
+            position: relative;
+            font-size: 12px;
+            margin-right: 40px;
+            color: rgba(0, 0, 0, 0.8);
+            line-height: 20px;
+            padding-left: 18px; }
+            #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .config .radioOption .radioOuter {
+              position: absolute;
+              height: 12px;
+              width: 12px;
+              border: 1px solid #4fc3f7;
+              border-radius: 10px;
+              left: 0px;
+              top: 4px; }
+              #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .config .radioOption .radioOuter .radioInner {
+                position: absolute;
+                height: 6px;
+                width: 6px;
+                background: #4fc3f7;
+                border-radius: 10px;
+                top: 2px;
+                left: 2px;
+                display: none; }
+            #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .config .radioOption.active .radioInner {
+              display: block; }
+        #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .table {
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          height: 100%;
+          overflow: auto; }
+          #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .table .row {
+            line-height: 40px;
+            height: 40px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            color: rgba(0, 0, 0, 0.6); }
+            #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .table .row.title {
+              background: #4fc3f7;
+              color: white; }
+            #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .table .row:nth-child(2n+3) {
+              background: #fafafa; }
+          #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .table .dt {
+            float: left;
+            font-size: 10px;
+            text-align: center; }
+        #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.dataTable {
+          padding-bottom: 50px;
+          padding-left: 20px;
+          padding-right: 20px; }
+          #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.dataTable .dt {
+            width: 16.6%; }
+        #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.alarmHistory {
+          padding-bottom: 50px;
+          padding-left: 20px;
+          padding-right: 20px; }
+          #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.alarmHistory .dt {
+            width: 16.6%; }
+          #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.alarmHistory .configOption {
+            width: 550px; }
+        #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.trendGraphs {
+          padding-bottom: 100px;
+          padding-left: 20px;
+          padding-right: 20px; }
+          #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.trendGraphs .graphContainer {
+            width: 100%;
+            height: 100%;
+            background: #f1f1f1;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            color: rgba(0, 0, 0, 0.4);
+            font-size: 28px;
+            line-height: 300px;
+            text-align: center; }
+          #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.trendGraphs .configOption {
+            width: 550px;
+            margin-bottom: 10px; }
 
 @media (max-width: 600px) {
   #mainContainer .patientsMainContainer {
     padding-top: 40px;
-    padding-bottom: 50px; }
+    padding-bottom: 50px;
+    width: 100%; }
     #mainContainer .patientsMainContainer .header {
       top: initial;
       bottom: 0;
       background: #4fc3f7; }
-      #mainContainer .patientsMainContainer .header .logo {
+      #mainContainer .patientsMainContainer .header .logo, #mainContainer .patientsMainContainer .header .refreshBlock {
         display: none; }
       #mainContainer .patientsMainContainer .header .tabs {
         width: 100%;
@@ -302,11 +513,26 @@ body {
       width: 100%;
       height: 40px;
       background: #4fc3f7;
-      color: white;
-      line-height: 40px;
       padding-left: 20px;
-      font-size: 13px;
-      display: block; }
+      padding-right: 20px;
+      display: block;
+      line-height: 40px; }
+      #mainContainer .patientsMainContainer .mobileHeader .headerTitle {
+        color: white;
+        font-size: 13px;
+        float: left; }
+      #mainContainer .patientsMainContainer .mobileHeader .refreshBlock {
+        font-size: 9px;
+        float: right; }
+        #mainContainer .patientsMainContainer .mobileHeader .refreshBlock .status {
+          float: left;
+          color: white;
+          opacity: 0.4; }
+        #mainContainer .patientsMainContainer .mobileHeader .refreshBlock .button {
+          float: left;
+          color: white;
+          opacity: 1;
+          margin-left: 10px; }
     #mainContainer .patientsMainContainer .patients {
       padding: 0; }
       #mainContainer .patientsMainContainer .patients .listTitle {
@@ -391,4 +617,29 @@ body {
           #mainContainer .patientsMainContainer .patientContainer .actions .action:first-child {
             display: none; }
       #mainContainer .patientsMainContainer .patientContainer.alarm .patientName {
-        color: #EF585A; } }
+        color: #EF585A; }
+      #mainContainer .patientsMainContainer .patientContainer:first-child {
+        outline: none; }
+  #mainContainer .patientDetailsContainer {
+    display: none;
+    width: 100%; }
+    #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails .config .configOption .configOptionValue {
+      width: 200px; }
+    #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.dataTable .config .configOptionValue {
+      width: 120px; }
+    #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.trendGraphs {
+      padding-bottom: 140px; }
+      #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.trendGraphs .configOption {
+        width: 300px; }
+      #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.trendGraphs .config .configOptionValue {
+        width: 180px; }
+    #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.alarmHistory {
+      padding-bottom: 90px; }
+      #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.alarmHistory .configOption {
+        width: 300px; }
+      #mainContainer .patientDetailsContainer .patientHistory .historyOptionDetails.alarmHistory .config .configOptionValue {
+        width: 180px; }
+  #mainContainer.showingDetails .patientsMainContainer {
+    display: none; }
+  #mainContainer.showingDetails .patientDetailsContainer {
+    display: block; } }

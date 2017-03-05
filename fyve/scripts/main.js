@@ -72,7 +72,31 @@ var patient = [{
 }]
 
 $(document).ready(function(){
-	$.tmpl( $('#patientTemplate').html(), patient).appendTo( "#mainContainer .patientsList.urgent" )
-	$.tmpl( $('#patientTemplate').html(), patient).appendTo( "#mainContainer .patientsList.ward1" )
-	$.tmpl( $('#patientTemplate').html(), patient).appendTo( "#mainContainer .patientsList.ward2" )
+	$.tmpl( $('#patientTemplate').html(), patient).prependTo( "#mainContainer .patientsList.urgent" )
+	$.tmpl( $('#patientTemplate').html(), patient).prependTo( "#mainContainer .patientsList.ward1" )
+	$.tmpl( $('#patientTemplate').html(), patient).prependTo( "#mainContainer .patientsList.ward2" )
+
+	$('.historyOptions .option').bind('click', function(){
+		$('.historyOptions .option').removeClass('active');
+		$(this).addClass('active');
+	})
+
+	$('.historyOptions .option.alarmHistory').bind('click', function(){
+		$('.historyOptionDetails').removeClass('active');
+		$('.historyOptionDetails.alarmHistory').addClass('active');
+	})
+
+	$('.historyOptions .option.dataTable').bind('click', function(){
+		$('.historyOptionDetails').removeClass('active');	
+		$('.historyOptionDetails.dataTable').addClass('active');
+	})
+
+	$('.historyOptions .option.trendGraphs').bind('click', function(){
+		$('.historyOptionDetails').removeClass('active');
+		$('.historyOptionDetails.trendGraphs').addClass('active');
+	})
+
+	$('.patientContainer').bind('click', function(){
+		$('#mainContainer').addClass('showingDetails');
+	})
 })

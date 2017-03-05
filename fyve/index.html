@@ -14,6 +14,9 @@
 			<div class="patientsMainContainer">
 				<div class="header">
 					<div class="logo">FYVE</div>
+					<div class="refreshBlock">
+						<span class="status">Data updated 5 min ago</span><span class="button">Refresh</span>
+					</div>
 					<div class="tabs">
 						<div class="tab active tabPatients">
 							<div class="icon"></div>
@@ -26,7 +29,12 @@
 					</div>
 				</div>
 				<div class="mobileHeader">
-					All Patients
+					<div class="headerTitle">
+						All Patients
+					</div>
+					<div class="refreshBlock">
+						<span class="status">Data updated 5 min ago</span><span class="button">Refresh</span>
+					</div>
 				</div>
 				<div class="patientsContainer">
 					<div class="filters">
@@ -47,18 +55,265 @@
 					</div>
 					<div class="patients">
 						<div class="listTitle">Patients in alarm</div>
-						<div class="patientsList urgent"></div>
+						<div class="patientsList urgent">
+							<div style="clear: both"></div>
+						</div>
 
 						<div class="listTitle">Patients in Ward 1</div>
-						<div class="patientsList ward1"></div>
+						<div class="patientsList ward1">
+							<div style="clear: both"></div>
+						</div>
 
 						<div class="listTitle">Patients in Ward 2</div>
-						<div class="patientsList ward2"></div>
+						<div class="patientsList ward2">
+							<div style="clear: both"></div>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="patientDetailsContainer">
-				<div class="patientSummary"></div>
+				<div class="patientDetails">
+					<div class="patientInfo">
+						<div class="patientName">Haripad Bhatia</div>
+						<div class="patientDescription">Male | 32 Years | Ward no. 3 - Bed no. 52</div>
+					</div>
+					<div class="actions">
+						<div class="action active">
+							<div class="actionName history">History</div>
+						</div>
+						<div class="action">
+							<div class="actionName vitals">Vitals</div>
+						</div>
+					</div>
+				</div>
+				<div class="patientHistory">
+					<div class="historyOptionsContainer">
+						<div class="historyOptions">
+							<div class="option trendGraphs">Trend Graphs</div>
+							<div class="option active dataTable">Data Table</div>
+							<div class="option alarmHistory">Alarm History</div>
+						</div>
+					</div>
+					<div class="historyOptionDetails dataTable active">
+						<div class="table">
+							<div class="row title">
+								<div class="dt">Timestamp</div>
+								<div class="dt">Heart Rate</div>
+								<div class="dt">Respiration Rate</div>
+								<div class="dt">SPO<sub>2</sub></div>
+								<div class="dt">Temperature</div>
+								<div class="dt">NIBP</div>
+							</div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+							<div class="row"><div class="dt">Jan 22 08:22</div><div class="dt">72</div><div class="dt">98</div><div class="dt">143</div><div class="dt">98/93</div><div class="dt">122/115</div></div>
+						</div>
+						<div class="config">
+							<div class="configOption">
+								<div class="configOptionTitle">Resolution</div>
+								<div class="configOptionValue">
+									<div class="buttonMinus">-</div>
+									<div class="value">10 s</div>
+									<div class="buttonPlus">+</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="historyOptionDetails alarmHistory">
+						<div class="table">
+							<div class="row title">
+								<div class="dt">Time</div>
+								<div class="dt">Level</div>
+								<div class="dt">Duration</div>
+								<div class="dt">Parameter</div>
+								<div class="dt">Average Value</div>
+								<div class="dt">Peak Value</div>
+							</div>
+							<div class="row">
+								<div class="dt">Jan 22 10:46</div>
+								<div class="dt">Medium</div>
+								<div class="dt">10 min</div>
+								<div class="dt">Heart Rate</div>
+								<div class="dt">82</div>
+								<div class="dt">110</div>
+							</div>
+							<div class="row">
+								<div class="dt">Jan 22 10:10</div>
+								<div class="dt">High</div>
+								<div class="dt">5 min</div>
+								<div class="dt">Heart Rate</div>
+								<div class="dt">85</div>
+								<div class="dt">112</div>
+							</div>
+							<div class="row">
+								<div class="dt">Jan 21 23:15</div>
+								<div class="dt">Low</div>
+								<div class="dt">3 min</div>
+								<div class="dt">Respiration Rate</div>
+								<div class="dt">98</div>
+								<div class="dt">95</div>
+							</div>
+							<div class="row">
+								<div class="dt">Jan 22 10:46</div>
+								<div class="dt">Medium</div>
+								<div class="dt">10 min</div>
+								<div class="dt">Heart Rate</div>
+								<div class="dt">82</div>
+								<div class="dt">110</div>
+							</div>
+							<div class="row">
+								<div class="dt">Jan 22 10:10</div>
+								<div class="dt">High</div>
+								<div class="dt">5 min</div>
+								<div class="dt">Heart Rate</div>
+								<div class="dt">85</div>
+								<div class="dt">112</div>
+							</div>
+							<div class="row">
+								<div class="dt">Jan 21 23:15</div>
+								<div class="dt">Low</div>
+								<div class="dt">3 min</div>
+								<div class="dt">Respiration Rate</div>
+								<div class="dt">98</div>
+								<div class="dt">95</div>
+							</div>
+							<div class="row">
+								<div class="dt">Jan 22 10:46</div>
+								<div class="dt">Medium</div>
+								<div class="dt">10 min</div>
+								<div class="dt">Heart Rate</div>
+								<div class="dt">82</div>
+								<div class="dt">110</div>
+							</div>
+							<div class="row">
+								<div class="dt">Jan 22 10:10</div>
+								<div class="dt">High</div>
+								<div class="dt">5 min</div>
+								<div class="dt">Heart Rate</div>
+								<div class="dt">85</div>
+								<div class="dt">112</div>
+							</div>
+							<div class="row">
+								<div class="dt">Jan 21 23:15</div>
+								<div class="dt">Low</div>
+								<div class="dt">3 min</div>
+								<div class="dt">Respiration Rate</div>
+								<div class="dt">98</div>
+								<div class="dt">95</div>
+							</div>
+							<div class="row">
+								<div class="dt">Jan 22 10:46</div>
+								<div class="dt">Medium</div>
+								<div class="dt">10 min</div>
+								<div class="dt">Heart Rate</div>
+								<div class="dt">82</div>
+								<div class="dt">110</div>
+							</div>
+							<div class="row">
+								<div class="dt">Jan 22 10:10</div>
+								<div class="dt">High</div>
+								<div class="dt">5 min</div>
+								<div class="dt">Heart Rate</div>
+								<div class="dt">85</div>
+								<div class="dt">112</div>
+							</div>
+							<div class="row">
+								<div class="dt">Jan 21 23:15</div>
+								<div class="dt">Low</div>
+								<div class="dt">3 min</div>
+								<div class="dt">Respiration Rate</div>
+								<div class="dt">98</div>
+								<div class="dt">95</div>
+							</div>
+						</div>
+						<div class="config">
+							<div class="configOption">
+								<div class="configOptionTitle">Show alarms</div>
+								<div class="configOptionValue">
+									<div class="radioOption">
+										<div class="radioOuter">
+											<div class="radioInner"></div>
+										</div>
+										<div class="radioLabel">Low Priority</div>
+									</div>
+									<div class="radioOption active">
+										<div class="radioOuter">
+											<div class="radioInner"></div>
+										</div>
+										<div class="radioLabel">Medium Priority</div>
+									</div>
+									<div class="radioOption">
+										<div class="radioOuter">
+											<div class="radioInner"></div>
+										</div>
+										<div class="radioLabel">High Priority</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="historyOptionDetails trendGraphs">
+						<div class="graphContainer">
+							Graph Here
+						</div>
+						<div class="config">
+							<div class="configOption">
+								<div class="configOptionTitle">Resolution</div>
+								<div class="configOptionValue">
+									<div class="buttonMinus">-</div>
+									<div class="value">10 s</div>
+									<div class="buttonPlus">+</div>
+								</div>
+							</div>
+							<div class="configOption">
+								<div class="configOptionTitle">Show alarms</div>
+								<div class="configOptionValue">
+									<div class="radioOption">
+										<div class="radioOuter">
+											<div class="radioInner"></div>
+										</div>
+										<div class="radioLabel">Low Priority</div>
+									</div>
+									<div class="radioOption active">
+										<div class="radioOuter">
+											<div class="radioInner"></div>
+										</div>
+										<div class="radioLabel">Medium Priority</div>
+									</div>
+									<div class="radioOption">
+										<div class="radioOuter">
+											<div class="radioInner"></div>
+										</div>
+										<div class="radioLabel">High Priority</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="patientLiveData"></div>
 			</div>
 		</div>

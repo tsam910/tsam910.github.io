@@ -39,7 +39,7 @@ body{
 		left: 0;
 		top: 0;
 		height: 100%;
-		width: 100%;
+		width: 50%;
 		background: #f1f1f1;
 		padding-top: 50px;
 
@@ -63,6 +63,22 @@ body{
 			    background-position: center;
 			    color: transparent;
 			    width: 100px;
+		    }
+
+		    .refreshBlock{
+	    	    line-height: 50px;
+			    margin-left: 30px;
+			    float: left;
+			    font-size: 10px;
+
+			    .status{
+			    	color: rgba(0,0,0,0.4);
+			    }
+
+			    .button{
+		    	    color: #4fc3f7;
+    				margin-left: 10px;
+			    }
 		    }
 
 		    .tabs{
@@ -236,7 +252,7 @@ body{
 		    }
 
 		    .patientsList{
-		    	overflow: hidden;
+		    	// overflow: hidden;
 				padding-left: 40px;
 		    }
 		}
@@ -248,6 +264,10 @@ body{
 		    margin-bottom: 20px;
 		    background: white;
 		    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+
+		    &:first-child{
+		    	outline: 5px solid $colorPrimary;
+		    }
 
 		    &:nth-child(3n+1){
 	    	   margin-left: -40px;
@@ -375,11 +395,298 @@ body{
 		position: absolute;
 		right: 0;
 		top: 0;
+		z-index: 10;
 		height: 100%;
 		width: 50%;
-		background: #f1f1f1;
+		background: white;
+		box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15);
+		padding-top: 80px;
 
-		display: none;
+		.patientDetails{
+		    padding: 15px 20px;
+		    background: $colorPrimary;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    height: 80px;
+		    width: 100%;
+
+		    .patientInfo{
+
+		    	.patientName{
+		    		font-size: 24px;
+    				color: white;
+		    	}
+
+		    	.patientDescription{
+		    		font-size: 10px;
+				    color: white;
+				    margin-top: 6px;
+				    opacity: 0.7;
+		    	}
+		    }
+
+		    .actions{
+		    	position: absolute;
+		    	top: 15px;
+		    	right: 0;
+		    	width: 200px;
+		    	overflow: hidden;
+		    	padding-top: 10px;
+		    	padding-bottom: 10px;
+		    	background: $colorPrimary;
+
+		    	.action{
+		    		width: 50%;
+		    		float: left;
+		    		line-height: 30px;
+		    		text-align: center;
+
+		    		.actionName{
+						font-size: 11px;
+						color: white;
+					    background-size: 15px;
+					    background-position: left;
+					    background-repeat: no-repeat;
+					    display: inline-block;
+					    padding-left: 22px;
+					    opacity: 0.5;
+
+					    &.history{
+							background-image: url("../images/iconHistoryWhite.svg")
+					    }
+
+					    &.vitals{
+							background-image: url("../images/iconVitalsWhite.svg")
+					    }
+		    		}
+
+		    		&:first-child{
+		    			border-right: 1px solid rgba(255,255,255,0.3);
+		    		}
+
+		    		&.active{
+		    			.actionName{
+		    				opacity: 1;
+		    			}
+		    		}
+		    	}
+		    }
+		}
+
+		.patientHistory{
+		    width: 100%;
+		    height: 100%;
+		    padding-top: 60px;
+		    position: relative;
+
+		    .historyOptionsContainer{
+		    	position: absolute;
+			    top: 0;
+			    left: 0;
+			    text-align: center;
+			    width: 100%;
+
+			    .historyOptions{
+		    	    border: 1px solid $colorPrimary;
+				    border-radius: 5px;
+				    width: 342px;
+				    margin-top: 15px;
+				    display: inline-block;
+				    overflow: hidden;
+			    }
+
+			    .option{
+			    	float: left;
+				    width: 33%;
+				    font-size: 10px;
+				    text-align: center;
+				    line-height: 28px;
+				    color: $colorPrimary;
+
+				    &:nth-child(2){
+			    	    width: 34%;
+					    border-left: 1px solid $colorPrimary;
+					    border-right: 1px solid $colorPrimary;
+				    }
+
+				    &.active{
+				    	background: $colorPrimary;
+				    	color: white;
+				    }
+			    }
+		    }
+
+		    .historyOptionDetails{
+	    	    position: relative;
+			    width: 100%;
+			    height: 100%;
+			    display: none;
+
+			    &.active{
+			    	display: block;
+			    }
+
+			    .config{
+			    	position: absolute;
+				    left: 0;
+				    bottom: 15px;
+				    width: 100%;
+				    text-align: center;
+
+				    .configOption{
+			    	    width: 300px;
+					    display: inline-block;
+					    text-align: left;
+					    overflow: hidden;
+
+					    .configOptionTitle{
+				    	    float: left;
+						    font-size: 12px;
+						    color: rgba(0,0,0,0.5);
+						    width: 110px;
+						    line-height: 20px;
+					    }
+
+					    .configOptionValue{
+					    	float: left;
+
+					    	.buttonMinus, .buttonPlus{
+					    		float: left;
+							    background: #4fc3f7;
+							    width: 20px;
+							    line-height: 20px;
+							    border-radius: 2px;
+							    text-align: center;
+							    color: white;
+							    height: 20px;
+					    	}
+
+					    	.value{
+					    		float: left;
+							    font-size: 12px;
+							    margin-left: 20px;
+							    margin-right: 20px;
+							    color: rgba(0,0,0,0.7);
+							    line-height: 20px;
+					    	}
+					    }
+				    }
+
+				    .radioOption{
+				    	float: left;
+					    position: relative;
+					    font-size: 12px;
+					    margin-right: 40px;
+					    color: rgba(0,0,0,0.8);
+					    line-height: 20px;
+					    padding-left: 18px;
+
+					    .radioOuter{
+				    	    position: absolute;
+						    height: 12px;
+						    width: 12px;
+						    border: 1px solid #4fc3f7;
+						    border-radius: 10px;
+						    left: 0px;
+						    top: 4px;
+
+						    .radioInner{
+					    	    position: absolute;
+							    height: 6px;
+							    width: 6px;
+							    background: #4fc3f7;
+							    border-radius: 10px;
+							    top: 2px;
+							    left: 2px;
+							    display: none;
+						    }
+					    }
+
+					    &.active{
+					    	.radioInner{
+					    		display: block;
+					    	}
+					    }
+				    }
+			    }
+
+			    .table{
+			    	border: 1px solid rgba(0,0,0,0.1);
+				    height: 100%;
+				    overflow: auto;
+
+				    .row{
+			    	    line-height: 40px;
+					    height: 40px;
+					    border-bottom: 1px solid rgba(0,0,0,0.1);
+					    overflow: hidden;
+					    color: rgba(0,0,0,0.6);
+
+					    &.title{
+					    	background: $colorPrimary;
+							color: white;
+					    }
+
+					    &:nth-child(2n+3){
+					    	background: #fafafa;
+					    }
+				    }
+
+				    .dt{
+				    	float: left;
+					    font-size: 10px;
+					    text-align: center;
+				    }
+			    }
+
+			    &.dataTable{
+					padding-bottom: 50px;
+				    padding-left: 20px;
+				    padding-right: 20px;
+
+				    .dt{
+				    	width: 16.6%;
+				    }
+			    }
+
+			    &.alarmHistory{
+			    	padding-bottom: 50px;
+			    	padding-left: 20px;
+			    	padding-right: 20px;
+
+			    	.dt{
+			    		width: 16.6%;
+			    	}
+
+			    	.configOption{
+			    		width: 550px;
+			    	}
+			    }
+
+			    &.trendGraphs{
+			    	padding-bottom: 100px;
+			    	padding-left: 20px;
+			    	padding-right: 20px;
+
+			    	.graphContainer{
+			    		width: 100%;
+					    height: 100%;
+					    background: #f1f1f1;
+					    border: 1px solid rgba(0,0,0,0.05);
+					    color: rgba(0,0,0,0.4);
+					    font-size: 28px;
+					    line-height: 300px;
+					    text-align: center;
+			    	}
+
+			    	.configOption{
+			    		width: 550px;
+			    		margin-bottom: 10px;
+			    	}
+			    }
+		    }
+		}
     }
 }
 
@@ -391,13 +698,14 @@ body{
   	.patientsMainContainer{
 	    padding-top: 40px;
     	padding-bottom: 50px;
+    	width: 100%;
 
     	.header{
     		top: initial;
     		bottom: 0;
     		background: $colorPrimary;
 
-    		.logo{
+    		.logo, .refreshBlock{
     			display: none;
     		}
 
@@ -456,8 +764,6 @@ body{
 				    }
 			    }
     		}
-
-
     	}
 
     	.mobileHeader{
@@ -467,11 +773,34 @@ body{
     		width: 100%;
     		height: 40px;
     		background: $colorPrimary;
-    		color: white;
-    		line-height: 40px;
     		padding-left: 20px;
-    		font-size: 13px;
+    		padding-right: 20px;
     		display: block;
+    		line-height: 40px;
+
+    		.headerTitle{
+				color: white;
+    			font-size: 13px;
+    			float: left;
+    		}
+
+    		.refreshBlock{
+				font-size: 9px;
+				float: right;
+
+				.status{
+					float: left;
+					color: white;
+					opacity: 0.4;
+				}
+
+				.button{
+					float: left;
+					color: white;
+					opacity: 1;
+					margin-left: 10px;
+				}
+    		}
     	}
 
     	.patients{
@@ -602,7 +931,90 @@ body{
 		    		color: $colorError;
 		    	}
 		    }
+
+		    &:first-child{
+		    	outline: none;
+		    }
     	}
+  	}
+
+  	.patientDetailsContainer{
+  		display: none;
+  		width: 100%;
+
+  		.patientDetails{
+  			.actions{
+  				top: 10px;
+  				width: 150px;
+
+  				.action{
+  					.actionName{
+						padding-left: 0;
+					    padding-top: 15px;
+					    background-position: top center;
+  					}
+  				}
+  			}
+  		}
+
+  		.patientHistory{
+  			.historyOptionDetails{
+
+
+  				.config{
+  					.configOption{
+  						.configOptionValue{
+  							width: 200px;
+  						}
+  					}
+  				}
+
+  				&.dataTable{
+  					.config{
+  						.configOptionValue{
+  							width: 120px;
+  						}
+  					}
+  				}
+
+  				&.trendGraphs{
+  					padding-bottom: 140px;
+
+  					.configOption{
+  						width: 300px;
+  					}
+
+  					.config{
+  						.configOptionValue{
+  							width: 180px;
+  						}
+  					}
+  				}
+
+  				&.alarmHistory{
+  					padding-bottom: 90px;
+
+  					.configOption{
+  						width: 300px;
+  					}
+
+  					.config{
+  						.configOptionValue{
+  							width: 180px;
+  						}
+  					}
+  				}
+  			}
+  		}
+  	}
+
+  	&.showingDetails{
+  		.patientsMainContainer{
+  			display: none;
+  		}
+  		.patientDetailsContainer{
+  			display: block;
+  		}
   	}
 
   }
