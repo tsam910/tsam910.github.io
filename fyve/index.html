@@ -11,6 +11,17 @@
 	</head>
 	<body>
 		<div id="mainContainer">
+			<div class="loginMainContainer">
+				<div class="loginContainer">
+					<div class="logo"></div>
+					<div class="description">Please login to continue</div>
+					<div class="credentials">
+						<input type="text" class="username" placeholder="Username">
+						<input type="password" class="password" placeholder="Password">
+						<div class="buttonLogin">Login</div>
+					</div>
+				</div>
+			</div>
 			<div class="patientsMainContainer">
 				<div class="header">
 					<div class="logo">FYVE</div>
@@ -46,10 +57,20 @@
 							<div class="option optionFilter">
 								<div class="icon"></div>
 								<div class="optionLabel">Filter</div>
+								<div class="optionDetails">
+									<div class="optionValue active">All patients</div>
+									<div class="optionValue">Old Patients</div>
+									<div class="optionValue">Patients with recent alarms</div>
+								</div>
 							</div>
 							<div class="option optionSort">
 								<div class="icon"></div>
 								<div class="optionLabel">Sort</div>
+								<div class="optionDetails">
+									<div class="optionValue active">Standard</div>
+									<div class="optionValue">Age Decreasing</div>
+									<div class="optionValue">Alarm</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -69,6 +90,7 @@
 							<div style="clear: both"></div>
 						</div>
 					</div>
+					<div class="alarms"></div>
 				</div>
 			</div>
 			<div class="patientDetailsContainer">
@@ -78,10 +100,10 @@
 						<div class="patientDescription">Male | 32 Years | Ward no. 3 - Bed no. 52</div>
 					</div>
 					<div class="actions">
-						<div class="action active">
+						<div class="action active history">
 							<div class="actionName history">History</div>
 						</div>
-						<div class="action">
+						<div class="action vitals">
 							<div class="actionName vitals">Vitals</div>
 						</div>
 					</div>
@@ -295,26 +317,98 @@
 										<div class="radioOuter">
 											<div class="radioInner"></div>
 										</div>
-										<div class="radioLabel">Low Priority</div>
+										<div class="radioLabel">HR</div>
 									</div>
 									<div class="radioOption active">
 										<div class="radioOuter">
 											<div class="radioInner"></div>
 										</div>
-										<div class="radioLabel">Medium Priority</div>
+										<div class="radioLabel">RR</div>
 									</div>
 									<div class="radioOption">
 										<div class="radioOuter">
 											<div class="radioInner"></div>
 										</div>
-										<div class="radioLabel">High Priority</div>
+										<div class="radioLabel">SPO<sub>2</sub></div>
+									</div>
+									<div class="radioOption">
+										<div class="radioOuter">
+											<div class="radioInner"></div>
+										</div>
+										<div class="radioLabel">Temp</div>
+									</div>
+									<div class="radioOption">
+										<div class="radioOuter">
+											<div class="radioInner"></div>
+										</div>
+										<div class="radioLabel">NIBP</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="patientLiveData"></div>
+				<div class="patientLiveData">
+					<div class="liveDataContainer">
+						<div class="row withGraph">
+							<div class="dataBox">
+								<div class="graph"></div>
+								<div class="readingContainer">
+									<div class="reading">
+										<div class="readingTitle">HR</div>
+										<div class="readingValue">102</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row withGraph">
+							<div class="dataBox">
+								<div class="graph"></div>
+								<div class="readingContainer">
+									<div class="reading">
+										<div class="readingTitle">RR</div>
+										<div class="readingValue">48</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row withGraph">
+							<div class="dataBox">
+								<div class="graph"></div>
+								<div class="readingContainer">
+									<div class="reading">
+										<div class="readingTitle">SPO<sub>2</sub></div>
+										<div class="readingValue">99</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row split">
+							<div class="dataBox">
+								<div class="readingContainer">
+									<div class="reading">
+										<div class="readingTitle">Temp</div>
+										<div class="readingValue">98/102</div>
+										<div class="readingMeta">
+											10:54 AM
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dataBox">
+								<div class="readingContainer">
+									<div class="reading">
+										<div class="readingTitle">NIBP</div>
+										<div class="readingValue">112/88</div>
+										<div class="readingMeta">
+											10:54 AM
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -362,6 +456,51 @@
 					<div class="action">
 						<div class="actionName vitals">Vitals</div>
 					</div>
+				</div>
+			</div>
+		</script>
+
+		<script type="text/jquery-tmpl" id="alarmTemplate">
+			<div class="patientContainer">
+				<div class="patientInfo">
+					<div class="patientName">
+						${name}
+					</div>
+					<div class="patientDetails">
+						<div class="detailsDesktop">${sex} | ${age} Yrs | Bed no. ${bed}</div>
+						<div class="alarmDesktop">${hr} •  ${rr} • ${spo} • ${temp} • ${nibp}</div>
+					</div>
+				</div>
+				<div class="alarmHistory">
+					<div class="alarmItem title">
+						<div class="td">Time</div>
+						<div class="td">Level</div>
+						<div class="td">Parameter</div>
+						<div class="td">Duration</div>
+						<div class="td">Average</div>
+						<div class="td">Peak</div>
+					</div>
+					{{each alarms}}
+						{{if time == 'Ongoing'}}
+					    	<div class="alarmItem ongoing">
+						    	<div class="td">${time}</div>
+						    	<div class="td">Medium</div>
+						    	<div class="td">${duration}</div>
+						    	<div class="td">${parameter}</div>
+						    	<div class="td">${average}</div>
+						    	<div class="td">${peak}</div>
+						    </div>
+					    {{else}}
+					    	<div class="alarmItem">
+						    	<div class="td">${time}</div>
+						    	<div class="td">Medium</div>
+						    	<div class="td">${duration}</div>
+						    	<div class="td">${parameter}</div>
+						    	<div class="td">${average}</div>
+						    	<div class="td">${peak}</div>
+						    </div>
+					    {{/if}}
+					{{/each}}
 				</div>
 			</div>
 		</script>

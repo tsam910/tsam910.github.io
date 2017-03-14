@@ -33,6 +33,82 @@ body{
     left: 0;
     height: 100%;
     width: 100%;
+    // min-width: 1200px; for testing
+
+    .loginMainContainer{
+    	position: absolute;
+	    top: 0;
+	    left: 0;
+	    height: 100%;
+	    width: 100%;
+	    background: white;
+	    z-index: 30;
+
+	    .loginContainer{
+	    	position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    transform: translateX(-50%) translateY(-50%);
+		    width: 300px;
+		    text-align: center;
+	    }
+
+	    .logo{
+    	    width: 100%;
+		    height: 40px;
+		    background-image: url(../images/logo.png);
+		    background-size: contain;
+		    background-position: center;
+		    background-repeat: no-repeat
+	    }
+
+	    .description{
+	    	margin-top: 30px;
+		    margin-bottom: 30px;
+		    color: rgba(0,0,0,0.4);
+		    font-size: 13px;
+	    }
+
+	    .credentials{
+
+	    	input{
+    		    width: 100%;	
+			    line-height: 60px;
+			    border: none;
+			    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			    font-size: 16px;
+			    padding-left: 40px;
+			    background-size: 20px;
+			    background-repeat: no-repeat;
+			    background-position: 5px center;
+			    color: rgba(0,0,0,0.5);
+
+			    &:focus{
+			    	border: none;
+			    	outline: none;
+			    }
+	    	}
+
+	    	.username{
+				background-image: url("../images/iconUser.svg");
+	    	}
+
+	    	.password{
+				background-image: url("../images/iconPassword.svg");
+				border-bottom: none;
+	    	}
+	    }
+
+	    .buttonLogin{
+    	    background: $colorPrimary;
+		    color: white;
+		    line-height: 50px;
+		    font-size: 14px;
+		    margin-top: 20px;
+		    border-radius: 3px;
+		    cursor: pointer;
+	    }
+    }
 
     .patientsMainContainer{
 		position: absolute;
@@ -207,12 +283,14 @@ body{
 					    position: relative;
 					    padding-left: 30px;
 					    border-left: 1px solid rgba(0,0,0,0.1);
-					    margin-top: 5px;
-					    margin-right: 20px;
+					    padding-right: 20px;
+					    padding-top: 5px;
+					    padding-bottom: 5px;
+					    cursor: pointer;
 
 					    .icon{
 					    	position: absolute;
-						    top: 0;
+						    top: 5;
 						    left: 0;
 						    height: 18px;
 						    width: 30px;
@@ -221,16 +299,68 @@ body{
 						    background-position: center;
 						    opacity: 0.5;
 					    }
+
+					    .optionDetails{
+					    	display: none;
+					    	position: absolute;
+						    width: 240px;
+						    background: white;
+						    top: 28px;
+						    border: 1px solid rgba(0,0,0,0.1);
+						    z-index: 100;
+						    border-top: none;
+
+						    .optionValue{
+					    	    line-height: 30px;
+							    padding-left: 30px;
+							    padding-right: 10px;
+							    border-bottom: 1px solid rgba(0,0,0,0.05);
+							    cursor: pointer;
+
+							    &:hover{
+							    	background-color: #fafafa;
+							    }
+
+							    &.active{
+						    	    background-image: url(../images/iconTick.svg);
+								    background-size: 12px;
+								    background-repeat: no-repeat;
+								    background-position: 10px center;
+							    }
+
+							    &:last-child{
+							    	border-bottom: none;
+							    }
+						    }
+					    }
+
+					    &.open{
+					    	background: white;
+
+					    	.optionDetails{
+					    		display: block;
+					    	}
+					    }
 				    }
 				}
 
 				.optionFilter{
+
+					.optionDetails{
+						right: -75px;
+					}
+
 					.icon{
 						background-image: url("../images/iconFilter.svg");
 					}
 				}
 
 				.optionSort{
+
+					.optionDetails{
+						right: 0px;
+					}
+					
 					.icon{
 						background-image: url("../images/iconSort.svg");
 					}
@@ -255,6 +385,77 @@ body{
 		    	// overflow: hidden;
 				padding-left: 40px;
 		    }
+		}
+
+		.alarms{
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			display: none;
+
+			.patientContainer{
+	    		float: none;
+			    width: 100%;
+			    margin-left: 0px !important;
+			    margin-bottom: 0px;
+			    box-shadow: none;
+		        padding-left: 20px;
+			    padding-top: 15px;
+			    padding-bottom: 15px;
+			    border-bottom: 1px solid rgba(0,0,0,0.1);
+			    position: relative;
+
+			    .patientInfo{
+			    	padding: 0;
+			    	overflow: hidden;
+			    }
+
+			    .patientName{
+			    	font-size: 18px;
+			    	float: left;
+			    	margin-bottom: 0px;
+			    }
+
+			    .patientDetails{
+			    	float: left;
+			    	margin-left: 10px;
+			    	padding-left: 1px solid rgba(0,0,0,0.1);
+			    	padding-left: 10px;
+			    	line-height: 12px;
+
+			    	.alarmDesktop{
+			    		margin-top: 0;
+			    	}
+			    }
+
+			    &:first-child{
+			    	outline: none;
+			    }
+	    	}
+
+			.alarmHistory{
+				margin-top: 10px;
+			}
+
+			.alarmItem{
+				overflow: hidden;
+				line-height: 18px;
+				color: rgba(0,0,0,0.3);
+
+				.td{
+				    float: left;
+				    font-size: 10px;
+				    width: 16%;
+				}
+
+				&.title{
+					color: $colorPrimary;
+				}
+
+				&.ongoing{
+					color: $colorError;
+				}
+			}
 		}
 
 		.patientContainer{
@@ -580,6 +781,7 @@ body{
 					    margin-right: 40px;
 					    color: rgba(0,0,0,0.8);
 					    line-height: 20px;
+					    height: 20px;
 					    padding-left: 18px;
 
 					    .radioOuter{
@@ -683,6 +885,119 @@ body{
 			    	.configOption{
 			    		width: 550px;
 			    		margin-bottom: 10px;
+
+			    		.radioOption{
+			    			width: 30px;
+			    		}
+			    	}
+			    }
+		    }
+		}
+
+		.patientLiveData{
+		    width: 100%;
+		    height: 100%;
+		    position: relative;
+
+		    .liveDataContainer{
+	    	    position: absolute;
+			    top: 0;
+			    left: 0;
+			    height: 100%;
+			    width: 100%;
+			    padding-top: 50px;
+			    padding-left: 10px;
+			    padding-right: 10px;
+			    background: #f1f1f1;
+		    }
+
+		    .row{
+	    	    height: 25%;
+			    position: relative;
+			    margin-top: 10px;
+			    position: relative;
+
+			    .dataBox{
+					box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+					background: white;
+					border-radius: 3px;
+			    }
+
+			    &.withGraph{
+			    	.dataBox{
+			    		width: 100%;
+			    		height: 100%;
+			    		padding-right: 120px;
+			    	}
+
+			    	.graph{
+		    		    width: 100%;
+					    height: 100%;
+					    background: rgba(0,0,0,0.7);
+					    border-radius: 3px 0px 0px 3px;
+			    	}
+
+			    	.readingContainer{
+		    		    position: absolute;
+					    top: 0;
+					    right: 0;
+					    width: 120px;
+					    height: 100%;
+			    	}
+			    }
+
+			    &.split{
+			    	padding-left: 10px;
+			    	overflow: hidden;
+
+			    	.dataBox{
+			    		float: left;
+			    		width: 50%;
+			    		height: 100%;
+			    		margin-left: 10px;
+
+			    		&:first-child{
+			    			margin-left: -10px;
+			    		}
+			    	}
+
+			    	.readingContainer{
+			    		width: 100%;
+			    		height: 100%;
+			    		position: relative;
+			    	}
+			    }
+
+			    &:first-child{
+			    	margin-top: -40px;
+			    }
+
+			    .readingContainer{
+
+			    	.reading{
+			    		position: absolute;
+			    		top: 50%;
+			    		left: 0;
+			    		width: 100%;
+			    		text-align: center;
+			    		transform: translateY(-50%);
+			    	}
+
+			    	.readingTitle{
+		    		    color: #4fc3f7;
+						font-size: 12px;
+			    	}
+
+			    	.readingValue{
+			    		color: rgba(0,0,0,0.5);
+					    font-size: 32px;
+					    margin-top: 5px;
+			    	}
+
+			    	.readingMeta{
+			    		color: rgba(0,0,0,0.4);
+					    font-size: 10px;
+					    margin-top: 5px;
 			    	}
 			    }
 		    }
@@ -694,6 +1009,7 @@ body{
 
 @media (max-width: 600px) {
   #mainContainer{
+  	min-width: 300px;
 
   	.patientsMainContainer{
 	    padding-top: 40px;
@@ -1018,4 +1334,32 @@ body{
   	}
 
   }
+}
+
+@media (min-width: 600px) {
+	#mainContainer .patientsMainContainer .alarms .patientContainer{
+		&:first-child{
+			background: $colorPrimary;
+
+			.patientName{
+				color: white;
+			}
+
+			.patientDetails{
+				color: rgba(255, 255, 255, 0.8);
+			}
+
+			.alarmDesktop{
+				color: rgba(255, 255, 255, 0.8);
+			}
+
+			.alarmHistory .alarmItem{
+				color: rgba(255, 255, 255, 0.8);
+
+				&.title{
+					color: white;
+				}
+			}
+		}
+	}
 }
