@@ -33,7 +33,7 @@ body{
     left: 0;
     height: 100%;
     width: 100%;
-    // min-width: 1200px; for testing
+    min-width: 1200px; //for testing
 
     .loginMainContainer{
     	position: absolute;
@@ -239,6 +239,7 @@ body{
 				background: #fafafa;
 				border-top: 1px solid  rgba(0,0,0,0.05);
 				border-bottom: 1px solid  rgba(0,0,0,0.05);
+				padding-right: 160px;
 
 				.search{
 				    width: 100%;
@@ -267,6 +268,7 @@ body{
 					    padding: 0;
 					    font-weight: 300;
 					    margin: 0;
+					    width: 100%;
 					}
 				}
 
@@ -365,21 +367,36 @@ body{
 						background-image: url("../images/iconSort.svg");
 					}
 				}
+
+				.optionGroup{
+
+					.optionDetails{
+						right: 0px;
+					}
+					
+					.icon{
+						background-image: url("../images/iconGroup.svg");
+					}
+				}
+			}
+
+			.filtersAlarms{
+				display: none;
 			}
 		}
 
-		.patients{
+		.listTitle{
+    	    font-size: 13px;
+    	    margin-top: 20px;
+		    margin-bottom: 20px;
+		    color: rgba(0,0,0,0.3);
+	    }
+
+		.patients, .patientsSearched{
 		    width: 100%;
 		    height: 100%;
 		    padding: 0px 20px;
 		    overflow: auto;
-
-		    .listTitle{
-	    	    font-size: 13px;
-	    	    margin-top: 20px;
-			    margin-bottom: 20px;
-			    color: rgba(0,0,0,0.3);
-		    }
 
 		    .patientsList{
 		    	// overflow: hidden;
@@ -387,11 +404,20 @@ body{
 		    }
 		}
 
-		.alarms{
+		.patientsSearched{
+			display: none;
+			padding-top: 20px;
+		}
+
+		.alarms, .alarmsSearched{
 			width: 100%;
 			height: 100%;
 			overflow: auto;
 			display: none;
+
+			.listTitle{
+				padding-left: 20px;
+			}
 
 			.patientContainer{
 	    		float: none;
@@ -491,6 +517,26 @@ body{
     			.alarmDesktop{
     				margin-top: 5px;
     				color: rgba(0,0,0,0.2);
+
+    				.condition{
+					    display: inline-block;
+					    position: relative;
+					    padding-right: 20px;
+    				}
+
+    				.moreAlarms{
+					    position: absolute;
+					    height: 18px;
+					    width: 18px;
+					    background: $colorError;
+					    border-radius: 3px;
+					    top: -2px;
+					    right: -4px;
+					    color: white;
+					    font-size: 9px;
+					    text-align: center;
+					    line-height: 18px;
+    				}
 
     				&.active{
     					color: $colorError;
@@ -601,7 +647,7 @@ body{
 		width: 50%;
 		background: white;
 		box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15);
-		padding-top: 80px;
+		padding-top: 100px;
 
 		.patientDetails{
 		    padding: 15px 20px;
@@ -609,7 +655,7 @@ body{
 		    position: absolute;
 		    top: 0;
 		    left: 0;
-		    height: 80px;
+		    height: 100px;
 		    width: 100%;
 
 		    .patientInfo{
@@ -625,11 +671,17 @@ body{
 				    margin-top: 6px;
 				    opacity: 0.7;
 		    	}
+
+		    	.currentAlarms{
+	    		    font-size: 10px;
+				    color: $colorError;
+				    margin-top: 6px;
+		    	}
 		    }
 
 		    .actions{
 		    	position: absolute;
-		    	top: 15px;
+		    	top: 25px;
 		    	right: 0;
 		    	width: 200px;
 		    	overflow: hidden;
@@ -898,6 +950,7 @@ body{
 		    width: 100%;
 		    height: 100%;
 		    position: relative;
+		    display: none;
 
 		    .liveDataContainer{
 	    	    position: absolute;
@@ -1119,18 +1172,22 @@ body{
     		}
     	}
 
-    	.patients{
-    		padding: 0;
+    	.listTitle{
+		    margin-top: 10px;
+		    margin-bottom: 10px;
+		    padding-left: 20px
+		}
 
-    		.listTitle{
-			    margin-top: 10px;
-			    margin-bottom: 10px;
-			    padding-left: 20px
-    		}
+    	.patients, .patientsSearched{
+    		padding: 0;
 
     		.patientsList{
     			padding-left: 0px;
     		}
+    	}
+
+    	.patientsSearched{
+    		padding-top: 0;
     	}
 
     	.patientContainer{
@@ -1165,6 +1222,13 @@ body{
 
 		    	.alarmDesktop{
 		    		margin-top: 0;
+
+		    		.moreAlarms{
+	    			    background: none;
+					    color: inherit;
+					    position: static;
+					    display: inline-block;
+		    		}
 		    	}
 		    }
 
@@ -1259,8 +1323,22 @@ body{
   		width: 100%;
 
   		.patientDetails{
+  			padding-left: 50px;
+
+			.buttonBack{
+				background-image: url("../images/iconLeftWhite.svg");
+			    position: absolute;
+			    top: 0;
+			    height: 100%;
+			    width: 50px;
+			    left: 0px;
+			    background-size: 20px;
+			    background-position: center;
+			    background-repeat: no-repeat;
+			}
+
   			.actions{
-  				top: 10px;
+  				top: 20px;
   				width: 150px;
 
   				.action{
@@ -1337,7 +1415,7 @@ body{
 }
 
 @media (min-width: 600px) {
-	#mainContainer .patientsMainContainer .alarms .patientContainer{
+	#mainContainer .patientsMainContainer .alarms .patientContainer, #mainContainer .patientsMainContainer .alarmsSearched .patientContainer{
 		&:first-child{
 			background: $colorPrimary;
 

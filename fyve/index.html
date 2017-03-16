@@ -48,28 +48,28 @@
 					</div>
 				</div>
 				<div class="patientsContainer">
-					<div class="filters">
+					<div class="filters filtersPatients">
 						<div class="search">
 							<div class="icon"></div>
-							<input type="text" placeholder="Search for patients here">
+							<input type="text" placeholder="Search for patients here" class="patientSearch">
 						</div>
 						<div class="otherOptions">
 							<div class="option optionFilter">
 								<div class="icon"></div>
 								<div class="optionLabel">Filter</div>
 								<div class="optionDetails">
-									<div class="optionValue active">All patients</div>
-									<div class="optionValue">Old Patients</div>
-									<div class="optionValue">Patients with recent alarms</div>
+									<div class="optionValue active default">All patients</div>
+									<div class="optionValue filtered">Old Patients</div>
+									<div class="optionValue filtered">Patients with recent alarms</div>
 								</div>
 							</div>
 							<div class="option optionSort">
 								<div class="icon"></div>
 								<div class="optionLabel">Sort</div>
 								<div class="optionDetails">
-									<div class="optionValue active">Standard</div>
-									<div class="optionValue">Age Decreasing</div>
-									<div class="optionValue">Alarm</div>
+									<div class="optionValue active default">Standard</div>
+									<div class="optionValue filtered">Age Decreasing</div>
+									<div class="optionValue filtered">Alarm</div>
 								</div>
 							</div>
 						</div>
@@ -90,14 +90,51 @@
 							<div style="clear: both"></div>
 						</div>
 					</div>
+					<div class="patientsSearched">
+						<div class="patientsList"></div>
+					</div>
+					<div class="filters filtersAlarms">
+						<div class="search">
+							<div class="icon"></div>
+							<input type="text" placeholder="Search for patients here" class="patientSearch">
+						</div>
+						<div class="otherOptions">
+							<div class="option optionFilter">
+								<div class="icon"></div>
+								<div class="optionLabel">Filter</div>
+								<div class="optionDetails">
+									<div class="optionValue active">All</div>
+									<div class="optionValue">High alarms</div>
+									<div class="optionValue">Medium & High alarms</div>
+								</div>
+							</div>
+							<div class="option optionGroup">
+								<div class="icon"></div>
+								<div class="optionLabel">Group</div>
+								<div class="optionDetails">
+									<div class="optionValue active default">No Grouping</div>
+									<div class="optionValue filtered">Group by hospital</div>
+									<div class="optionValue filtered">Group by ward</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="alarms"></div>
+					<div class="alarmsSearched">
+						<div class="listTitle">Group Title 1</div>
+						<div class="alarmsGroup"></div>
+						<div class="listTitle">Group Title 2</div>
+						<div class="alarmsGroup"></div>
+					</div>
 				</div>
 			</div>
 			<div class="patientDetailsContainer">
 				<div class="patientDetails">
+					<div class="buttonBack"></div>
 					<div class="patientInfo">
 						<div class="patientName">Haripad Bhatia</div>
-						<div class="patientDescription">Male | 32 Years | Ward no. 3 - Bed no. 52</div>
+						<div class="patientDescription">M32 | B1 W5 City Hospital</div>
+						<div class="currentAlarms">Tachycardia, High BP, Low RR</div>
 					</div>
 					<div class="actions">
 						<div class="action active history">
@@ -419,11 +456,20 @@
 						${name}
 					</div>
 					<div class="patientDetails">
-						<div class="detailsDesktop">${sex} | ${age} Yrs | Bed no. ${bed}</div>
+						<div class="detailsDesktop">${sex}${age} | B${bed} W5 City Hospital</div>
 						{{if alarm.active}}
-							<div class="alarmDesktop active">${alarm.message}</div>
+							<div class="alarmDesktop active">
+									<div class="condition">
+										${alarm.conditions[0]}
+										{{if alarm.conditions.length > 1}}
+											<div class="moreAlarms">+${alarm.conditions.length - 1}</div>
+										{{/if}}
+									</div>
+								
+							</div>
 						{{else}}
-							<div class="alarmDesktop">${alarm.message}</div>
+							<div class="alarmDesktop">
+							${alarm.message}</div>
 						{{/if}}
 					</div>
 				</div>
@@ -467,7 +513,7 @@
 						${name}
 					</div>
 					<div class="patientDetails">
-						<div class="detailsDesktop">${sex} | ${age} Yrs | Bed no. ${bed}</div>
+						<div class="detailsDesktop">${sex}${age} | B${bed} W5 City Hospital</div>
 						<div class="alarmDesktop">${hr} •  ${rr} • ${spo} • ${temp} • ${nibp}</div>
 					</div>
 				</div>
@@ -485,8 +531,8 @@
 					    	<div class="alarmItem ongoing">
 						    	<div class="td">${time}</div>
 						    	<div class="td">Medium</div>
-						    	<div class="td">${duration}</div>
 						    	<div class="td">${parameter}</div>
+						    	<div class="td">${duration}</div>
 						    	<div class="td">${average}</div>
 						    	<div class="td">${peak}</div>
 						    </div>
@@ -494,8 +540,8 @@
 					    	<div class="alarmItem">
 						    	<div class="td">${time}</div>
 						    	<div class="td">Medium</div>
-						    	<div class="td">${duration}</div>
 						    	<div class="td">${parameter}</div>
+						    	<div class="td">${duration}</div>
 						    	<div class="td">${average}</div>
 						    	<div class="td">${peak}</div>
 						    </div>
