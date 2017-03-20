@@ -467,15 +467,45 @@ $(document).ready(function(){
 
 	$('.patientDetailsContainer .action.history').bind('click', function(){
 		$('.patientDetailsContainer .action.vitals').removeClass('active');
+		$('.patientDetailsContainer .action.settings').removeClass('active');
 		$(this).addClass('active');
 		$('.patientDetailsContainer .patientHistory').show();
 		$('.patientDetailsContainer .patientLiveData').hide();
+		$('.patientDetailsContainer .patientSettings').hide();
 	})
 
 	$('.patientDetailsContainer .action.vitals').bind('click', function(){
 		$('.patientDetailsContainer .action.history').removeClass('active');
+		$('.patientDetailsContainer .action.settings').removeClass('active');
 		$(this).addClass('active');
 		$('.patientDetailsContainer .patientHistory').hide();
 		$('.patientDetailsContainer .patientLiveData').show();
+		$('.patientDetailsContainer .patientSettings').hide();
 	})
+
+	$('.patientDetailsContainer .action.settings').bind('click', function(){
+		$('.patientDetailsContainer .action.history').removeClass('active');
+		$('.patientDetailsContainer .action.vitals').removeClass('active');
+		$(this).addClass('active');
+
+		$('.patientDetailsContainer .patientHistory').hide();
+		$('.patientDetailsContainer .patientLiveData').hide();
+		$('.patientDetailsContainer .patientSettings').show();
+	})
+
+	$('.iconNotification').bind('click', function(){
+		$('.notificationsList').show();
+		$('.iconNotification .counter').hide();
+
+		$('.iconNotification').unbind().bind('click', function(){
+			$('.notificationsList').hide();
+		})
+	})
+
+	$('.notifications .buttonClear').bind('click', function(){
+		$('.notificationSingle').hide();
+		$('.noNotifications').show();
+		$(this).addClass('disable');
+	})
+
 })

@@ -22,7 +22,8 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  min-width: 1200px; }
   #mainContainer .loginMainContainer {
     position: absolute;
     top: 0;
@@ -106,9 +107,15 @@ body {
         width: 100px; }
       #mainContainer .patientsMainContainer .header .refreshBlock {
         line-height: 50px;
-        margin-left: 30px;
+        margin-left: 15px;
         float: left;
-        font-size: 10px; }
+        font-size: 10px;
+        height: 50px;
+        width: 20px;
+        background-image: url(../images/iconRefresh.svg);
+        background-size: 14px;
+        background-repeat: no-repeat;
+        background-position: center; }
         #mainContainer .patientsMainContainer .header .refreshBlock .status {
           color: rgba(0, 0, 0, 0.4); }
         #mainContainer .patientsMainContainer .header .refreshBlock .button {
@@ -148,6 +155,103 @@ body {
             background-image: url("../images/iconListBlack.svg"); }
           #mainContainer .patientsMainContainer .header .tabs .tab.tabPatients.active .icon {
             background-image: url("../images/iconListActive.svg"); }
+      #mainContainer .patientsMainContainer .header .notifications {
+        float: right;
+        height: 50px;
+        width: 50px;
+        position: relative; }
+        #mainContainer .patientsMainContainer .header .notifications .iconNotification {
+          position: absolute;
+          height: 50px;
+          width: 50px;
+          background-image: url(../images/iconNotification.svg);
+          background-size: 15px;
+          background-repeat: no-repeat;
+          background-position: center;
+          top: 0;
+          left: 0;
+          cursor: pointer; }
+        #mainContainer .patientsMainContainer .header .notifications .counter {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: #4fc3f7;
+          color: white;
+          border-radius: 15px;
+          font-size: 9px;
+          width: 15px;
+          height: 15px;
+          text-align: center;
+          line-height: 15px; }
+        #mainContainer .patientsMainContainer .header .notifications .notificationsList {
+          width: 300px;
+          background: white;
+          position: absolute;
+          top: 50px;
+          right: 0px;
+          box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+          /* position: relative; */
+          height: 300px;
+          padding-bottom: 40px;
+          display: none; }
+        #mainContainer .patientsMainContainer .header .notifications .notificationsContainer {
+          height: 100%;
+          width: 100%;
+          overflow: auto;
+          position: relative; }
+        #mainContainer .patientsMainContainer .header .notifications .notificationSingle {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          padding: 10px 15px;
+          padding-left: 50px;
+          position: relative; }
+          #mainContainer .patientsMainContainer .header .notifications .notificationSingle .icon {
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            left: 15px;
+            top: 13px; }
+            #mainContainer .patientsMainContainer .header .notifications .notificationSingle .icon.patient {
+              background-image: url(../images/iconNotificationPatient.svg); }
+            #mainContainer .patientsMainContainer .header .notifications .notificationSingle .icon.alarm {
+              background-image: url(../images/iconNotificationAlarm.svg); }
+          #mainContainer .patientsMainContainer .header .notifications .notificationSingle .text {
+            font-size: 10px;
+            color: rgba(0, 0, 0, 0.5); }
+          #mainContainer .patientsMainContainer .header .notifications .notificationSingle .time {
+            font-size: 10px;
+            color: rgba(0, 0, 0, 0.3);
+            margin-top: 5px; }
+        #mainContainer .patientsMainContainer .header .notifications .noNotifications {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          font-size: 10px;
+          color: rgba(0, 0, 0, 0.3);
+          text-align: center;
+          width: 100%;
+          display: none; }
+        #mainContainer .patientsMainContainer .header .notifications .buttonClear {
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          line-height: 40px;
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+          text-align: center;
+          width: 100%;
+          font-size: 10px;
+          color: rgba(0, 0, 0, 0.5);
+          cursor: pointer; }
+          #mainContainer .patientsMainContainer .header .notifications .buttonClear:hover {
+            background: #fafafa; }
+          #mainContainer .patientsMainContainer .header .notifications .buttonClear.disable {
+            opacity: 0.5;
+            cursor: default; }
+            #mainContainer .patientsMainContainer .header .notifications .buttonClear.disable:hover {
+              background: none; }
     #mainContainer .patientsMainContainer .mobileHeader {
       display: none; }
     #mainContainer .patientsMainContainer .patientsContainer {
@@ -455,16 +559,16 @@ body {
         position: absolute;
         top: 25px;
         right: 0;
-        width: 200px;
         overflow: hidden;
         padding-top: 10px;
         padding-bottom: 10px;
         background: #4fc3f7; }
         #mainContainer .patientDetailsContainer .patientDetails .actions .action {
-          width: 50%;
+          width: 100px;
           float: left;
           line-height: 30px;
-          text-align: center; }
+          text-align: center;
+          border-right: 1px solid rgba(255, 255, 255, 0.3); }
           #mainContainer .patientDetailsContainer .patientDetails .actions .action .actionName {
             font-size: 11px;
             color: white;
@@ -478,10 +582,16 @@ body {
               background-image: url("../images/iconHistoryWhite.svg"); }
             #mainContainer .patientDetailsContainer .patientDetails .actions .action .actionName.vitals {
               background-image: url("../images/iconVitalsWhite.svg"); }
-          #mainContainer .patientDetailsContainer .patientDetails .actions .action:first-child {
-            border-right: 1px solid rgba(255, 255, 255, 0.3); }
+            #mainContainer .patientDetailsContainer .patientDetails .actions .action .actionName.settings {
+              background-image: url("../images/iconSettingsWhite.svg"); }
+          #mainContainer .patientDetailsContainer .patientDetails .actions .action:last-child {
+            border-right: none; }
           #mainContainer .patientDetailsContainer .patientDetails .actions .action.active .actionName {
             opacity: 1; }
+          #mainContainer .patientDetailsContainer .patientDetails .actions .action.settings {
+            width: 50px; }
+            #mainContainer .patientDetailsContainer .patientDetails .actions .action.settings .actionName {
+              background-position: center; }
     #mainContainer .patientDetailsContainer .patientHistory {
       width: 100%;
       height: 100%;
@@ -708,6 +818,72 @@ body {
           color: rgba(0, 0, 0, 0.4);
           font-size: 10px;
           margin-top: 5px; }
+    #mainContainer .patientDetailsContainer .patientSettings {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: none; }
+      #mainContainer .patientDetailsContainer .patientSettings .settingsCategory {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+        #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryTitle {
+          height: 50px;
+          position: relative; }
+          #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryTitle .categoryName {
+            line-height: 50px;
+            color: rgba(0, 0, 0, 0.5);
+            margin-left: 30px; }
+          #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryTitle .buttonExpand {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-family: Arial;
+            font-weight: 300;
+            font-size: 24px;
+            color: rgba(0, 0, 0, 0.2); }
+        #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryDetails {
+          background: #fafafa;
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+          padding: 20px 50px;
+          font-size: 12px; }
+          #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryDetails .groupTitle {
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px; }
+          #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryDetails .groupDetails {
+            color: rgba(0, 0, 0, 0.4);
+            padding-left: 20px; }
+            #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryDetails .groupDetails .block {
+              margin-bottom: 15px; }
+              #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryDetails .groupDetails .block .cb {
+                clear: both; }
+              #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryDetails .groupDetails .block .key {
+                float: left;
+                width: 110px;
+                line-height: 30px; }
+              #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryDetails .groupDetails .block .value {
+                float: left; }
+                #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryDetails .groupDetails .block .value .toggleContainer {
+                  overflow: hidden;
+                  border: 1px solid rgba(0, 0, 0, 0.2); }
+                  #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryDetails .groupDetails .block .value .toggleContainer .on, #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryDetails .groupDetails .block .value .toggleContainer .off {
+                    float: left;
+                    padding: 0px 10px;
+                    line-height: 28px; }
+                  #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryDetails .groupDetails .block .value .toggleContainer .on {
+                    color: #fafafa;
+                    background: rgba(0, 0, 0, 0.2); }
+                #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryDetails .groupDetails .block .value select {
+                  height: 30px;
+                  color: rgba(0, 0, 0, 0.5);
+                  background-color: transparent;
+                  padding-left: 5px;
+                  font-size: 12px;
+                  border: 1px solid rgba(0, 0, 0, 0.3); }
+                #mainContainer .patientDetailsContainer .patientSettings .settingsCategory .categoryDetails .groupDetails .block .value .textInput {
+                  height: 30px;
+                  background: none;
+                  border: 1px solid rgba(0, 0, 0, 0.3);
+                  color: rgba(0, 0, 0, 0.5);
+                  padding-left: 10px; }
 
 @media (max-width: 600px) {
   #mainContainer {
