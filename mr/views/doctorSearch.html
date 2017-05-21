@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>Find a Doctor</title>
+		<meta name="viewport" content="width=device-width">
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="manifest" href="/manifest.json">
+		<script type="text/javascript" src="../scripts/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../scripts/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="../scripts/main.js"></script>
+		<script type="text/javascript" src="../scripts/doctorSearch.js"></script>
+	</head>
+	<body>
+		<div id="mainContainer">
+			<div class="screen doctorSearch">
+				<div class="navbar">
+					<div class="buttonBack"></div>
+					<div class="navTitle">Find a Doctor</div>
+					<div class="locationContainer">
+						<div class="area">Hyderabad</div>
+						<div class="subArea">All Areas</div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="searchContainer">
+						<div class="inputContainer">
+							<input type="text" placeholder="Name or Specialization">
+						</div>
+						<div class="buttonPrimary">Search</div>
+					</div>
+					<div class="suggestionsMainContainer">
+						<div class="sectionTitle">Popular Searches</div>
+
+						<div class="suggestion" style="border-top: none">
+							<div class="icon" style="background-image:url('../images/iconPhysician.png')"></div>
+							<div class="details">
+								<div class="title">General Physician</div>
+								<div class="description">First aid, minor injuries and minor illnesses.</div>
+							</div>
+						</div>
+						<div class="suggestion">
+							<div class="icon" style="background-image:url('../images/iconDentist.png')"></div>
+							<div class="details">
+								<div class="title">Dentist</div>
+								<div class="description">Dental and mouth related problems.</div>
+							</div>
+						</div>
+						<div class="suggestion">
+							<div class="icon" style="background-image:url('../images/iconOptometrist.png')"></div>
+							<div class="details">
+								<div class="title">Ophthalmologist / Optometrist</div>
+								<div class="description">Eye related problems.</div>
+							</div>
+						</div>
+						<div class="suggestion">
+							<div class="icon" style="background-image:url('../images/iconPsychiatrist.png')"></div>
+							<div class="details">
+								<div class="title">Psychiatrist / Psychologist</div>
+								<div class="description">Stress, anxiety or mental issues.</div>
+							</div>
+						</div>
+						<div class="suggestion">
+							<div class="icon" style="background-image:url('../images/iconENT.png')"></div>
+							<div class="details">
+								<div class="title">ENT Specialist</div>
+								<div class="description">Problems related to ear, nose or throat.</div>
+							</div>
+						</div>
+						<div class="suggestion">
+							<div class="icon" style="background-image:url('../images/iconCardiologist.png')"></div>
+							<div class="details">
+								<div class="title">Cardiologist</div>
+								<div class="description">Heart related problems.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

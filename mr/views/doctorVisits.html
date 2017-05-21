@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<title>Visits</title>
+		<meta name="viewport" content="width=device-width">
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="manifest" href="/manifest.json">
+		<script type="text/javascript" src="../scripts/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../scripts/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="../scripts/main.js"></script>
+	</head>
+	<body>
+		<div id="mainContainer">
+			<div class="screen doctorVisits">
+				<div class="navbar">
+					<div class="buttonBack"></div>
+					<div class="navTitle">Visits</div>
+				</div>
+				<div class="content">
+					<div class="tabs">
+						<div class="tab active">Doctor Visits</div>
+						<div class="tab">Lab Visits</div>
+					</div>
+					<div class="visits">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/jquery-tmpl" id="visitTemplate">
+
+			<div class="visitContainer">
+				<div class="doctor">
+					${doctor}
+					<!-- <div class="buttonEdit">Edit</div> -->
+				</div>
+				<div class="visitDate">${date}</div>
+				<div class="patient">${patient}</div>
+				<div class="ratingContainer">
+					{{if rating == 0}}
+						<div class="rating notRated"></div>
+						<div class="action">Rate</div>
+					{{else}}
+						<div class="rating">
+							<div class="starsEmpty"></div>
+							<div class="starsFull" style="width:${rating/5 * 100}%"></div>
+						</div>
+						<div class="action">Change</div>
+					{{/if}}
+				</div>
+				<div class="refer">Refer to</div>
+			</div>
+		</script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				var reports = [
+					{
+						doctor : 'Dr. Geetanjali',
+						patient : 'Mr. Ravindar Miryala',
+						date : '10 May 17',
+						rating : 4,
+					},{
+						doctor : 'Dr. Srikanth',
+						patient : 'Mr. Ravindar Miryala',
+						date : '10 May 17',
+						rating : 0,
+					},{
+						doctor : 'Dr. Geetanjali',
+						patient : 'Mr. Ravindar Miryala',
+						date : '08 May 17',
+						rating : 5,
+					},{
+						doctor : 'Dr. Geetanjali',
+						patient : 'Mr. Ravindar Miryala',
+						date : '07 May 17',
+						rating : 3,
+					},{
+						doctor : 'Dr. Srikanth',
+						patient : 'Mr. Ravindar Miryala',
+						date : '05 May 17',
+						rating : 5,
+					},{
+						doctor : 'Dr. Geetanjali',
+						patient : 'Mr. Ravindar Miryala',
+						date : '03 May 17',
+						rating : 4,
+					},{
+						doctor : 'Dr. Srikanth',
+						patient : 'Mr. Ravindar Miryala',
+						date : '01 May 17',
+						rating : 0,
+					}
+				]
+
+				$.tmpl( $('#visitTemplate').html(), reports).prependTo( ".visits" )
+			})
+		</script>
+
+	</body>
+</html>

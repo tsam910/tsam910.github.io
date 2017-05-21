@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<title>Lab Reports</title>
+		<meta name="viewport" content="width=device-width">
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="manifest" href="/manifest.json">
+		<script type="text/javascript" src="../scripts/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../scripts/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="../scripts/main.js"></script>
+	</head>
+	<body>
+		<div id="mainContainer">
+			<div class="screen labReports">
+				<div class="navbar">
+					<div class="buttonBack"></div>
+					<div class="navTitle">Lab Reports</div>
+				</div>
+				<div class="content">
+					<div class="tabs">
+						<div class="tab active">All Lab Reports</div>
+						<div class="tab">Report Values</div>
+					</div>
+					<div class="reports">
+						
+					</div>
+				</div>
+
+				<div class="fab">
+					+
+				</div>
+				
+			</div>
+		</div>
+
+		<script type="text/jquery-tmpl" id="reportTemplate">
+
+			<div class="reportContainer">
+				<div class="reportName">
+					${name}
+					<!-- <div class="buttonEdit">Edit</div> -->
+				</div>
+				<div class="reportDate">${date}</div>
+				<div class="provider">${provider}</div>
+				<div class="number">9100004479</div>
+				<div class="actionsContainer">
+					<div class="actionContainer">
+						<div class="action edit">Edit</div>
+					</div>
+					<div class="actionContainer">
+						<div class="action download">Download</div>
+					</div>
+					<div class="actionContainer">
+						<div class="action delete">Delete</div>
+					</div>
+				</div>
+			</div>
+		</script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				var reports = [
+					{
+						name : 'Urine Examination',
+						date : '10 May 17',
+						provider : 'MedRecordz Diagnostics'
+					},{
+						name : 'Blood Examination',
+						date : '10 May 17',
+						provider : 'MedRecordz Diagnostics'
+					},{
+						name : 'Urine Examination',
+						date : '08 May 17',
+						provider : 'MedRecordz Diagnostics'
+					},{
+						name : 'Bone Examination',
+						date : '07 May 17',
+						provider : 'MedRecordz Diagnostics'
+					},{
+						name : 'Blood Examination',
+						date : '05 May 17',
+						provider : 'MedRecordz Diagnostics'
+					},{
+						name : 'Urine Examination',
+						date : '03 May 17',
+						provider : 'MedRecordz Diagnostics'
+					},{
+						name : 'Blood Examination',
+						date : '01 May 17',
+						provider : 'MedRecordz Diagnostics'
+					}
+				]
+
+				$.tmpl( $('#reportTemplate').html(), reports).prependTo( ".reports" )
+			})
+		</script>
+
+	</body>
+</html>

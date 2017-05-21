@@ -1,0 +1,534 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype"); }
+/* line 19, main.scss */
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+  font-weight: 400; }
+
+/* line 25, main.scss */
+body {
+  padding: 0;
+  margin: 0;
+  background: #f1f1f1; }
+
+/* line 31, main.scss */
+#mainContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white; }
+
+/* line 40, main.scss */
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 60px; }
+  /* line 48, main.scss */
+  .screen .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #18bc9c;
+    color: white; }
+    /* line 57, main.scss */
+    .screen .navbar .buttonBack {
+      float: left;
+      height: 60px;
+      width: 20px;
+      background-image: url("../images/iconLeftWhite.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: 10px; }
+    /* line 68, main.scss */
+    .screen .navbar .navTitle {
+      float: left;
+      margin-left: 10px;
+      font-size: 16px;
+      color: white;
+      font-weight: 600;
+      line-height: 60px; }
+  /* line 78, main.scss */
+  .screen .content {
+    width: 100%;
+    height: 100%;
+    overflow: auto; }
+  /* line 84, main.scss */
+  .screen .buttonPrimary {
+    background: #18bc9c;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 20px;
+    border-radius: 3px;
+    font-size: 14px; }
+  /* line 94, main.scss */
+  .screen .sectionTitle {
+    text-transform: uppercase;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 600;
+    margin-bottom: 10px; }
+  /* line 102, main.scss */
+  .screen .tabs {
+    background: #f1f1f1;
+    overflow: hidden; }
+    /* line 106, main.scss */
+    .screen .tabs .tab {
+      width: 50%;
+      float: left;
+      text-align: center;
+      line-height: 40px;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.3);
+      border-bottom: 3px solid rgba(0, 0, 0, 0.1); }
+      /* line 115, main.scss */
+      .screen .tabs .tab.active {
+        color: rgba(0, 0, 0, 0.6);
+        border-bottom: 3px solid #18bc9c; }
+  /* line 122, main.scss */
+  .screen .fab {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    height: 50px;
+    width: 50px;
+    background: #18bc9c;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 49px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 32px;
+    font-weight: 300;
+    font-family: 'Times New Roman'; }
+
+/* line 141, main.scss */
+.doctorSearch .searchContainer {
+  width: 100%;
+  position: relative;
+  padding: 15px;
+  padding-right: 130px;
+  height: 70px;
+  background: #fafafa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  /* line 150, main.scss */
+  .doctorSearch .searchContainer .inputContainer {
+    width: 100%;
+    height: 100%; }
+    /* line 154, main.scss */
+    .doctorSearch .searchContainer .inputContainer input {
+      width: 100%;
+      height: 100%;
+      font-size: 14px;
+      border: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      background: transparent; }
+  /* line 164, main.scss */
+  .doctorSearch .searchContainer .buttonPrimary {
+    position: absolute;
+    top: 15px;
+    right: 15px; }
+/* line 171, main.scss */
+.doctorSearch .locationContainer {
+  float: right;
+  height: 40px;
+  margin-top: 10px;
+  background-image: url(../images/iconLocationWhite.png);
+  background-size: auto 20px;
+  padding-right: 27px;
+  background-repeat: no-repeat;
+  background-position: right center;
+  margin-right: 15px;
+  text-align: right;
+  font-size: 10px;
+  padding-top: 5px;
+  color: rgba(255, 255, 255, 0.8); }
+/* line 187, main.scss */
+.doctorSearch .suggestionsMainContainer {
+  padding: 15px; }
+  /* line 190, main.scss */
+  .doctorSearch .suggestionsMainContainer .suggestion {
+    padding: 15px 0px;
+    border-top: 1px dotted rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-left: 60px; }
+    /* line 196, main.scss */
+    .doctorSearch .suggestionsMainContainer .suggestion .icon {
+      position: absolute;
+      top: 0;
+      left: 10px;
+      height: 100%;
+      width: 30px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.7; }
+    /* line 208, main.scss */
+    .doctorSearch .suggestionsMainContainer .suggestion .title {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.6);
+      margin-bottom: 3px; }
+    /* line 215, main.scss */
+    .doctorSearch .suggestionsMainContainer .suggestion .description {
+      font-size: 10px;
+      color: rgba(0, 0, 0, 0.4); }
+
+/* line 225, main.scss */
+.doctorResults .doctorContainer {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  position: relative; }
+  /* line 230, main.scss */
+  .doctorResults .doctorContainer .doctorName {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7); }
+  /* line 235, main.scss */
+  .doctorResults .doctorContainer .doctorSpecialization {
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 5px;
+    margin-bottom: 3px; }
+  /* line 242, main.scss */
+  .doctorResults .doctorContainer .locations {
+    margin-top: 10px;
+    margin-bottom: 5px; }
+  /* line 247, main.scss */
+  .doctorResults .doctorContainer .location {
+    padding-left: 23px;
+    padding-top: 10px;
+    position: relative;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px; }
+    /* line 254, main.scss */
+    .doctorResults .doctorContainer .location .locationIcon {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      height: 15px;
+      width: 15px;
+      background-image: url(../images/iconLocation.png);
+      background-size: auto 14px;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.6; }
+    /* line 267, main.scss */
+    .doctorResults .doctorContainer .location .locationName {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.6); }
+      /* line 271, main.scss */
+      .doctorResults .doctorContainer .location .locationName.disable {
+        color: rgba(0, 0, 0, 0.2); }
+    /* line 276, main.scss */
+    .doctorResults .doctorContainer .location .locationAddress {
+      font-size: 10px;
+      color: rgba(0, 0, 0, 0.4);
+      margin-top: 4px; }
+    /* line 282, main.scss */
+    .doctorResults .doctorContainer .location .buttonCall {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      color: #18bc9c;
+      font-size: 12px;
+      transform: translateY(-50%);
+      background-image: url("../images/iconCallPrimary.png");
+      padding-left: 20px;
+      background-size: auto 80%;
+      background-position: left;
+      background-repeat: no-repeat; }
+    /* line 296, main.scss */
+    .doctorResults .doctorContainer .location:last-child {
+      border-bottom: none; }
+  /* line 301, main.scss */
+  .doctorResults .doctorContainer .bookContainer {
+    position: relative;
+    overflow: hidden; }
+    /* line 305, main.scss */
+    .doctorResults .doctorContainer .bookContainer .buttonBook {
+      float: right; }
+    /* line 309, main.scss */
+    .doctorResults .doctorContainer .bookContainer .preferredContainer {
+      float: left;
+      font-size: 10px;
+      color: rgba(0, 0, 0, 0.5);
+      line-height: 40px; }
+      /* line 315, main.scss */
+      .doctorResults .doctorContainer .bookContainer .preferredContainer .labelPreferred {
+        float: left; }
+      /* line 319, main.scss */
+      .doctorResults .doctorContainer .bookContainer .preferredContainer .valuePreferred {
+        float: left;
+        margin-left: 5px;
+        color: #18bc9c; }
+  /* line 327, main.scss */
+  .doctorResults .doctorContainer .favoriteContainer {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    height: 15px;
+    width: 15px; }
+    /* line 334, main.scss */
+    .doctorResults .doctorContainer .favoriteContainer .iconFavorite {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: url("../images/iconHeartPrimary.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
+      /* line 345, main.scss */
+      .doctorResults .doctorContainer .favoriteContainer .iconFavorite.filled {
+        background-image: url("../images/iconHeartPrimaryFilled.png"); }
+
+/* line 354, main.scss */
+.labReports .reportContainer {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative; }
+  /* line 358, main.scss */
+  .labReports .reportContainer .reportName {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    margin-top: 20px;
+    padding-left: 15px; }
+  /* line 365, main.scss */
+  .labReports .reportContainer .reportDate {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    padding-left: 15px; }
+  /* line 374, main.scss */
+  .labReports .reportContainer .provider {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px; }
+  /* line 382, main.scss */
+  .labReports .reportContainer .number {
+    font-size: 12px;
+    color: #18bc9c;
+    padding-left: 15px; }
+  /* line 388, main.scss */
+  .labReports .reportContainer .actionsContainer {
+    overflow: hidden;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: 15px;
+    background: #fafafa;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    /* line 397, main.scss */
+    .labReports .reportContainer .actionsContainer .actionContainer {
+      overflow: hidden;
+      float: left;
+      width: 33%;
+      text-align: center;
+      padding-top: 5px;
+      padding-bottom: 5px; }
+      /* line 405, main.scss */
+      .labReports .reportContainer .actionsContainer .actionContainer .action {
+        display: inline-block;
+        font-size: 12px;
+        color: black;
+        opacity: 0.3;
+        background-size: auto 80%;
+        background-position: left;
+        background-repeat: no-repeat;
+        padding-left: 22px; }
+        /* line 415, main.scss */
+        .labReports .reportContainer .actionsContainer .actionContainer .action.edit {
+          background-image: url("../images/iconEdit.png"); }
+        /* line 419, main.scss */
+        .labReports .reportContainer .actionsContainer .actionContainer .action.download {
+          background-image: url("../images/iconDownload.png"); }
+        /* line 423, main.scss */
+        .labReports .reportContainer .actionsContainer .actionContainer .action.delete {
+          background-image: url("../images/iconDelete.png"); }
+      /* line 428, main.scss */
+      .labReports .reportContainer .actionsContainer .actionContainer:nth-child(2) {
+        width: 34%;
+        border-left: 1px solid rgba(0, 0, 0, 0.05);
+        border-right: 1px solid rgba(0, 0, 0, 0.05); }
+
+/* line 439, main.scss */
+.doctorVisits .visitContainer {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative; }
+  /* line 443, main.scss */
+  .doctorVisits .visitContainer .doctor {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    margin-top: 20px;
+    padding-left: 15px; }
+  /* line 450, main.scss */
+  .doctorVisits .visitContainer .visitDate {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    padding-left: 15px; }
+  /* line 459, main.scss */
+  .doctorVisits .visitContainer .patient {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px; }
+  /* line 467, main.scss */
+  .doctorVisits .visitContainer .ratingContainer {
+    padding-left: 15px;
+    overflow: hidden; }
+    /* line 471, main.scss */
+    .doctorVisits .visitContainer .ratingContainer .rating {
+      float: left;
+      height: 20px;
+      width: 105px;
+      position: relative; }
+      /* line 477, main.scss */
+      .doctorVisits .visitContainer .ratingContainer .rating .starsEmpty, .doctorVisits .visitContainer .ratingContainer .rating .starsFull {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/starEmpty.png);
+        background-size: contain;
+        background-position: left; }
+      /* line 488, main.scss */
+      .doctorVisits .visitContainer .ratingContainer .rating .starsFull {
+        background-image: url(../images/starFilled.png); }
+      /* line 492, main.scss */
+      .doctorVisits .visitContainer .ratingContainer .rating.notRated {
+        background-image: url(../images/starBlack.png);
+        background-size: contain;
+        background-position: left;
+        opacity: 0.1; }
+    /* line 500, main.scss */
+    .doctorVisits .visitContainer .ratingContainer .action {
+      float: left;
+      font-size: 12px;
+      line-height: 21px;
+      margin-left: 10px;
+      color: #18bc9c; }
+  /* line 509, main.scss */
+  .doctorVisits .visitContainer .refer {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 15px; }
+
+/* line 521, main.scss */
+.charts .childrenContainer {
+  padding: 15px;
+  padding-bottom: 5px; }
+  /* line 527, main.scss */
+  .charts .childrenContainer .selectedChild select {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #18bc9c;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    font-size: 14px;
+    padding-left: 15px;
+    background: #18bc9c;
+    color: white;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    background-image: url(../images/iconDownWhite.png);
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: right 20px center; }
+  /* line 545, main.scss */
+  .charts .childrenContainer .childActions {
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    /* line 550, main.scss */
+    .charts .childrenContainer .childActions .actionContainer {
+      overflow: hidden;
+      float: left;
+      width: 33%;
+      text-align: center;
+      padding-top: 5px;
+      padding-bottom: 5px; }
+      /* line 558, main.scss */
+      .charts .childrenContainer .childActions .actionContainer .action {
+        display: inline-block;
+        font-size: 12px;
+        color: black;
+        opacity: 0.3;
+        background-size: auto 80%;
+        background-position: left;
+        background-repeat: no-repeat;
+        padding-left: 22px; }
+        /* line 568, main.scss */
+        .charts .childrenContainer .childActions .actionContainer .action.edit {
+          background-image: url("../images/iconEdit.png"); }
+        /* line 572, main.scss */
+        .charts .childrenContainer .childActions .actionContainer .action.add {
+          background-image: url("../images/iconAdd.png"); }
+        /* line 576, main.scss */
+        .charts .childrenContainer .childActions .actionContainer .action.delete {
+          background-image: url("../images/iconDelete.png"); }
+      /* line 581, main.scss */
+      .charts .childrenContainer .childActions .actionContainer:nth-child(2) {
+        width: 34%; }
+/* line 592, main.scss */
+.charts .chart .row {
+  overflow: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: rgba(0, 0, 0, 0.5); }
+  /* line 598, main.scss */
+  .charts .chart .row:nth-child(2n+1) {
+    background: #f1f1f1; }
+  /* line 602, main.scss */
+  .charts .chart .row.header {
+    background: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.95);
+    overflow: hidden; }
+/* line 609, main.scss */
+.charts .chart .td {
+  width: 18%;
+  float: left;
+  font-size: 11px;
+  padding: 5px;
+  padding-top: 15px;
+  padding-bottom: 16px;
+  min-height: 34px; }
+  /* line 618, main.scss */
+  .charts .chart .td .edit {
+    height: 13px;
+    width: 20px;
+    background-image: url(../images/iconEdit.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.4; }
+  /* line 628, main.scss */
+  .charts .chart .td:nth-child(6) {
+    width: 10%; }
+/* line 633, main.scss */
+.charts .chart .unit {
+  opacity: 0.6; }
+
+/*# sourceMappingURL=main.css.map */

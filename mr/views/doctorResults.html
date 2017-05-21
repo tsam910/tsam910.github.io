@@ -1,0 +1,183 @@
+<html>
+	<head>
+		<title>Search Results</title>
+		<meta name="viewport" content="width=device-width">
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="manifest" href="/manifest.json">
+		<script type="text/javascript" src="../scripts/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../scripts/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="../scripts/main.js"></script>
+	</head>
+	<body>
+		<div id="mainContainer">
+			<div class="screen doctorResults">
+				<div class="navbar">
+					<div class="buttonBack"></div>
+					<div class="navTitle">Search Results</div>
+				</div>
+				<div class="content">
+					<div class="doctorsList">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/jquery-tmpl" id="doctorTemplate">
+
+			<div class="doctorContainer">
+				<div class="favoriteContainer">
+					{{if favorite}}
+						<div class="iconFavorite filled"></div>
+					{{else}}
+						<div class="iconFavorite"></div>
+					{{/if}}
+				</div>
+				<div class="doctorName">${name}</div>
+				<div class="doctorSpecialization">${specialization}</div>
+				<div class="locations">
+					{{each locations}}
+						<div class="location">
+							<div class="locationIcon"></div>
+							{{if name}}
+								<div class="locationName">${name}</div>
+							{{else}}
+								<div class="locationName disable">No Clinic Name</div>
+							{{/if}}
+							<div class="locationAddress">${address}</div>
+							<div class="buttonCall">Call</div>
+						</div>
+					{{/each}}
+				</div>
+				<div class="bookContainer">
+					{{if preferred}}
+						<div class="preferredContainer">
+							<div class="labelPreferred">Preferred By</div>
+							<div class="valuePreferred">${preferred} contacts</div>
+						</div>
+					{{/if}}
+					<div class="buttonBook buttonPrimary">Book Appointment</div>
+				</div>
+
+			</div>
+		</script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				var doctors = [
+					{
+						name : 'Dr. Geetanjali',
+						specialization : 'Gynaecologist / Obstetrician',
+						preferred : 2,
+						favorite : true,
+						locations : [
+							{
+								name : 'Geetanjali  Test Tube Baby Center',
+								address : 'A. S. Rao Nagar'
+							},{
+								name : 'Geetanjali Test Tube Baby Center',
+								address : 'A. S. Rao Nagar'
+							},{
+								name : false,
+								address : 'A. S. Rao Nagar'
+							}
+						]
+					},{
+						name : 'Dr. Nasreen Ashfaq',
+						specialization : 'Gynaecologist',
+						preferred : 5,
+						locations : [
+							{
+								name : 'Eva\'s Healthcare',
+								address : 'Shaikpet'
+							},{
+								name : 'Geetanjali Test Tube Baby Center',
+								address : 'A. S. Rao Nagar'
+							},{
+								name : false,
+								address : 'A. S. Rao Nagar'
+							}
+						]
+					},{
+						name : 'Dr. K Nageshwari Rao',
+						specialization : 'Gynaecologist / Obstetrician',
+						preferred : 2,
+						favorite : true,
+						locations : [
+							{
+								name : 'Aishwarya Health Care',
+								address : 'A. S. Rao Nagar'
+							}
+						]
+					},{
+						name : 'Dr. Saritha Mallepally',
+						specialization : 'Gynaecologist / Obstetrician',
+						locations : [
+							{
+								name : 'Aishwarya Health Care',
+								address : 'A. S. Rao Nagar'
+							}
+						]
+					},{
+						name : 'Dr. Geetanjali',
+						specialization : 'Gynaecologist / Obstetrician',
+						preferred : 2,
+						favorite : true,
+						locations : [
+							{
+								name : 'Geetanjali  Test Tube Baby Center',
+								address : 'A. S. Rao Nagar'
+							},{
+								name : 'Geetanjali Test Tube Baby Center',
+								address : 'A. S. Rao Nagar'
+							},{
+								name : false,
+								address : 'A. S. Rao Nagar'
+							}
+						]
+					},{
+						name : 'Dr. Nasreen Ashfaq',
+						specialization : 'Gynaecologist',
+						preferred : 5,
+						locations : [
+							{
+								name : 'Eva\'s Healthcare',
+								address : 'Shaikpet'
+							},{
+								name : 'Geetanjali Test Tube Baby Center',
+								address : 'A. S. Rao Nagar'
+							},{
+								name : false,
+								address : 'A. S. Rao Nagar'
+							}
+						]
+					},{
+						name : 'Dr. K Nageshwari Rao',
+						specialization : 'Gynaecologist / Obstetrician',
+						preferred : 2,
+						locations : [
+							{
+								name : 'Aishwarya Health Care',
+								address : 'A. S. Rao Nagar'
+							}
+						]
+					},{
+						name : 'Dr. Saritha Mallepally',
+						specialization : 'Gynaecologist / Obstetrician',
+						locations : [
+							{
+								name : 'Aishwarya Health Care',
+								address : 'A. S. Rao Nagar'
+							}
+						]
+					}
+				]
+
+				$.tmpl( $('#doctorTemplate').html(), doctors).prependTo( ".doctorsList" )
+			})
+		</script>
+
+	</body>
+</html>

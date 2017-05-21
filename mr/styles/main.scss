@@ -1,0 +1,637 @@
+@font-face{
+	font-family: 'Montserrat';
+	font-weight: 400;
+  	src: url('../fonts/Montserrat-Regular.ttf') format('truetype')
+}
+
+@font-face{
+	font-family: 'Montserrat';
+	font-weight: 600;
+  	src: url('../fonts/Montserrat-Bold.ttf') format('truetype')
+}
+
+// variables
+
+$colorPrimary : #18bc9c;
+$colorError : #EF585A;
+// common styles
+
+*{
+	box-sizing: border-box;
+	font-family: 'Montserrat';
+	font-weight: 400;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	background: #f1f1f1;
+}
+
+#mainContainer{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+.screen{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 60px;
+
+	.navbar{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 60px;
+		background-color: $colorPrimary;
+		color: white;
+
+		.buttonBack{
+			float: left;
+			height: 60px;
+			width: 20px;
+			background-image: url('../images/iconLeftWhite.png');
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+			margin-left: 10px;
+		}
+
+		.navTitle{
+			float: left;
+			margin-left: 10px;
+			font-size: 16px;
+			color: white;
+			font-weight: 600;
+			line-height: 60px;
+		}
+	}
+
+	.content{
+	    width: 100%;
+	    height: 100%;
+	    overflow: auto;
+	}
+
+	.buttonPrimary{
+	    background: $colorPrimary;
+	    color: white;
+	    height: 40px;
+	    line-height: 40px;
+	    padding: 0px 20px;
+	    border-radius: 3px;
+	    font-size: 14px;
+	}
+
+	.sectionTitle{
+	    text-transform: uppercase;
+	    font-size: 10px;
+	    color: rgba(0,0,0,0.4);
+	    font-weight: 600;
+	    margin-bottom: 10px;
+	}
+
+	.tabs{
+		background: #f1f1f1;
+    	overflow: hidden;
+
+    	.tab{
+    		width: 50%;
+		    float: left;
+		    text-align: center;
+		    line-height: 40px;
+		    font-size: 12px;
+		    color: rgba(0,0,0,0.3);
+		    border-bottom: 3px solid rgba(0,0,0,0.1);
+
+		    &.active{
+	    	    color: rgba(0,0,0,0.6);
+				border-bottom: 3px solid $colorPrimary;
+		    }
+    	}
+	}
+
+	.fab{
+	    position: absolute;
+	    right: 25px;
+	    bottom: 25px;
+	    height: 50px;
+	    width: 50px;
+	    background: #18bc9c;
+	    border-radius: 100px;
+	    text-align: center;
+	    line-height: 49px;
+	    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+	    color: white;
+	    font-size: 32px;
+	    font-weight: 300;
+	    font-family: 'Times New Roman';
+	}
+}
+
+.doctorSearch{
+	.searchContainer{
+	    width: 100%;
+	    position: relative;
+	    padding: 15px;
+	    padding-right: 130px;
+	    height: 70px;
+	    background: #fafafa;
+	    border-bottom: 1px solid rgba(0,0,0,0.1);
+
+	    .inputContainer{
+	    	width: 100%;
+    		height: 100%;
+
+    		input{
+			    width: 100%;
+			    height: 100%;
+			    font-size: 14px;
+			    border: none;
+			    border-bottom: 1px solid rgba(0,0,0,0.2);
+			    background: transparent;
+    		}
+	    }
+
+		.buttonPrimary{
+			position: absolute;
+		    top: 15px;
+		    right: 15px;
+		}
+	}
+
+	.locationContainer{
+	    float: right;
+	    height: 40px;
+	    margin-top: 10px;
+	    background-image: url(../images/iconLocationWhite.png);
+	    background-size: auto 20px;
+	    padding-right: 27px;
+	    background-repeat: no-repeat;
+	    background-position: right center;
+	    margin-right: 15px;
+	    text-align: right;
+	    font-size: 10px;
+	    padding-top: 5px;
+	    color: rgba(255, 255, 255, 0.8);
+	}
+
+	.suggestionsMainContainer{
+		padding: 15px;
+
+		.suggestion{
+			padding: 15px 0px;
+		    border-top: 1px dotted rgba(0,0,0,0.1);
+		    position: relative;
+		    padding-left: 60px;
+
+		    .icon{
+	    	    position: absolute;
+			    top: 0;
+			    left: 10px;
+			    height: 100%;
+			    width: 30px;
+			    background-size: contain;
+			    background-repeat: no-repeat;
+			    background-position: center;
+			    opacity: 0.7;
+		    }
+
+		    .title{
+	    	    font-size: 14px;
+			    color: rgba(0,0,0,0.6);
+			    // color: $colorPrimary;
+			    margin-bottom: 3px;
+		    }
+
+		    .description{
+	    	    font-size: 10px;
+    			color: rgba(0,0,0,0.4);
+		    }
+		}
+	}
+}
+
+.doctorResults{
+
+	.doctorContainer{
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+    	padding: 15px;
+    	position: relative;
+
+    	.doctorName{
+    		font-size: 16px;
+			color: rgba(0,0,0,0.7);
+    	}
+
+    	.doctorSpecialization{
+    		font-size: 10px;
+		    color: rgba(0,0,0,0.5);
+		    margin-top: 5px;
+		    margin-bottom: 3px;
+    	}
+
+    	.locations{
+    		margin-top: 10px;
+    		margin-bottom: 5px;
+    	}
+
+    	.location{
+		    padding-left: 23px;
+		    padding-top: 10px;
+		    position: relative;
+		    border-bottom: 1px dotted rgba(0,0,0,0.1);
+		    padding-bottom: 10px;
+
+		    .locationIcon{
+		    	position: absolute;
+		    	top: 10px;
+		    	left: 0;
+		    	height: 15px;
+		    	width: 15px;
+				background-image: url(../images/iconLocation.png);
+			    background-size: auto 14px;
+			    background-repeat: no-repeat;
+			    background-position: center;
+			    opacity: 0.6;
+		    }
+
+		    .locationName{
+	    	    font-size: 12px;
+				color: rgba(0,0,0,0.6);
+
+				&.disable{
+					color: rgba(0,0,0,0.2);
+				}
+		    }
+
+		    .locationAddress{
+		    	font-size: 10px;
+			    color: rgba(0,0,0,0.4);
+			    margin-top: 4px;
+		    }
+
+		    .buttonCall{
+		    	position: absolute;
+			    top: 50%;
+			    right: 0;
+			    color: $colorPrimary;
+			    font-size: 12px;
+			    transform: translateY(-50%);
+			    background-image: url('../images/iconCallPrimary.png');
+			    padding-left: 20px;
+			    background-size:auto 80%;
+			    background-position: left;
+			    background-repeat: no-repeat;
+		    }
+
+		    &:last-child{
+		    	border-bottom: none;
+		    }
+    	}
+
+    	.bookContainer{
+    		position: relative;
+    		overflow: hidden;
+
+    		.buttonBook{
+    			float: right;
+    		}
+
+    		.preferredContainer{
+    			float: left;
+			    font-size: 10px;
+			    color: rgba(0,0,0,0.5);
+			    line-height: 40px;		
+
+			    .labelPreferred{
+			    	float: left;
+			    }
+
+			    .valuePreferred{
+			    	float: left;
+				    margin-left: 5px;
+				    color: $colorPrimary;
+			    }
+    		}
+    	}
+
+    	.favoriteContainer{
+    		position: absolute;
+    		top: 20px;
+    		right: 15px;
+    		height: 15px;
+    		width: 15px;
+
+    		.iconFavorite{
+    			position: absolute;
+    			top: 0;
+    			left: 0;
+    			height: 100%;
+    			width: 100%;
+    			background-image: url('../images/iconHeartPrimary.png');
+    			background-size: contain;
+    			background-repeat: no-repeat;
+    			background-position: center;
+
+    			&.filled{
+    				background-image: url('../images/iconHeartPrimaryFilled.png');
+    			}
+    		}
+    	}
+	}
+}
+
+.labReports{
+	.reportContainer{
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		position: relative;
+
+		.reportName{
+			font-size: 16px;
+    		color: rgba(0,0,0,0.7);
+    		margin-top: 20px;
+    		padding-left: 15px;
+		}
+
+		.reportDate{
+	        font-size: 12px;
+		    color: rgba(0, 0, 0, 0.3);
+		    position: absolute;
+		    top: 0px;
+		    right: 15px;
+		    padding-left: 15px;
+		}
+
+		.provider{
+		    font-size: 12px;
+			color: rgba(0,0,0,0.4);
+			margin-top: 10px;
+		    margin-bottom: 10px;
+		    padding-left: 15px;
+		}
+
+		.number{
+		    font-size: 12px;
+			color: #18bc9c;
+			padding-left: 15px;
+		}
+
+		.actionsContainer{
+	        overflow: hidden;
+		    // height: 50px;
+		    border-top: 1px solid rgba(0,0,0,0.05);
+		    margin-top: 15px;
+		    background: #fafafa;
+		    padding-top: 10px;
+		    padding-bottom: 10px;
+
+		    .actionContainer{
+	    	    overflow: hidden;
+			    float: left;
+			    width: 33%;
+			    text-align: center;
+			    padding-top: 5px;
+			    padding-bottom: 5px;
+
+			    .action{
+	    	        display: inline-block;
+				    font-size: 12px;
+				    color: black;
+				    opacity: 0.3;
+				    background-size: auto 80%;
+				    background-position: left;
+				    background-repeat: no-repeat;
+				    padding-left: 22px;
+
+				    &.edit{
+				    	background-image: url('../images/iconEdit.png');
+				    }
+
+				    &.download{
+				    	background-image: url('../images/iconDownload.png');
+				    }
+
+				    &.delete{
+				    	background-image: url('../images/iconDelete.png');
+				    }
+			    }
+
+			    &:nth-child(2){
+			    	width: 34%;
+			    	border-left: 1px solid rgba(0,0,0,0.05);
+			    	border-right: 1px solid rgba(0,0,0,0.05);
+			    }
+		    }
+		}
+	}
+}
+
+.doctorVisits{
+	.visitContainer{
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		position: relative;
+
+		.doctor{
+			font-size: 16px;
+    		color: rgba(0,0,0,0.7);
+    		margin-top: 20px;
+    		padding-left: 15px;
+		}
+
+		.visitDate{
+	        font-size: 12px;
+		    color: rgba(0, 0, 0, 0.3);
+		    position: absolute;
+		    top: 0px;
+		    right: 15px;
+		    padding-left: 15px;
+		}
+
+		.patient{
+		    font-size: 12px;
+			color: rgba(0,0,0,0.4);
+			margin-top: 10px;
+		    margin-bottom: 10px;
+		    padding-left: 15px;
+		}
+
+		.ratingContainer{
+			padding-left: 15px;
+			overflow: hidden;
+
+			.rating{
+				float: left;
+				height: 20px;
+			    width: 105px;
+			    position: relative;
+
+			    .starsEmpty, .starsFull{
+			    	position: absolute;
+			    	top: 0;
+			    	left: 0;
+			    	width: 100%;
+			    	height: 100%;
+			    	background-image: url(../images/starEmpty.png);
+				    background-size: contain;
+				    background-position: left;
+			    }
+
+			    .starsFull{
+			    	background-image: url(../images/starFilled.png);
+			    }
+
+			    &.notRated{
+			    	background-image: url(../images/starBlack.png);
+				    background-size: contain;
+				    background-position: left;
+				    opacity: 0.1;
+			    }
+			}
+
+			.action{
+		    	float: left;
+			    font-size: 12px;
+			    line-height: 21px;
+			    margin-left: 10px;
+			    color: #18bc9c;
+		    }
+		}
+
+		.refer{
+		    font-size: 12px;
+		    color: rgba(0, 0, 0, 0.4);
+		    margin-top: 10px;
+		    margin-bottom: 20px;
+		    padding-left: 15px;
+		}
+
+	}
+}
+
+.charts{
+	.childrenContainer{
+		padding: 15px;
+		padding-bottom: 5px;
+
+		.selectedChild{
+
+			select{
+				width: 100%;
+			    height: 50px;
+			    border: 1px solid #18bc9c;
+			    -webkit-appearance: none;
+			    border-radius: 3px;
+			    font-size: 14px;
+			    padding-left: 15px;
+			    background: #18bc9c;
+			    color: white;
+			    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+			    background-image: url(../images/iconDownWhite.png);
+			    background-size: 12px;
+			    background-repeat: no-repeat;
+			    background-position: right 20px center;
+			}
+		}
+
+		.childActions{
+	        overflow: hidden;
+		    padding-top: 10px;
+		    padding-bottom: 10px;
+
+		    .actionContainer{
+	    	    overflow: hidden;
+			    float: left;
+			    width: 33%;
+			    text-align: center;
+			    padding-top: 5px;
+			    padding-bottom: 5px;
+
+			    .action{
+	    	        display: inline-block;
+				    font-size: 12px;
+				    color: black;
+				    opacity: 0.3;
+				    background-size: auto 80%;
+				    background-position: left;
+				    background-repeat: no-repeat;
+				    padding-left: 22px;
+
+				    &.edit{
+				    	background-image: url('../images/iconEdit.png');
+				    }
+
+				    &.add{
+				    	background-image: url('../images/iconAdd.png');
+				    }
+
+				    &.delete{
+				    	background-image: url('../images/iconDelete.png');
+				    }
+			    }
+
+			    &:nth-child(2){
+			    	width: 34%;
+			    	// border-left: 1px solid rgba(0,0,0,0.05);
+			    	// border-right: 1px solid rgba(0,0,0,0.05);
+			    }
+		    }
+		}
+	}
+
+	.chart{
+
+		.row{
+			overflow: hidden;
+		    padding-left: 20px;
+		    padding-right: 20px;
+		    color: rgba(0,0,0,0.5);
+
+		    &:nth-child(2n+1){
+	    	    background: #f1f1f1;
+		    }
+
+		    &.header{
+		    	background: rgba(0,0,0,0.4);
+			    color: rgba(255, 255, 255, 0.95);
+			    overflow: hidden;
+		    }
+		}
+
+		.td{
+			width: 18%;
+		    float: left;
+		    font-size: 11px;
+		    padding: 5px;
+		    padding-top: 15px;
+		    padding-bottom: 16px;
+		    min-height: 34px;
+
+		    .edit{
+		    	height: 13px;
+			    width: 20px;
+			    background-image: url(../images/iconEdit.png);
+			    background-size: contain;
+			    background-repeat: no-repeat;
+			    background-position: center;
+			    opacity: 0.4;
+		    }
+
+		    &:nth-child(6){
+		    	width: 10%;
+		    }
+		}
+
+		.unit{
+			opacity: 0.6;
+		}
+	}
+}
